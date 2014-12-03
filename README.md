@@ -4,7 +4,7 @@
 
 The "Remember the Date" demo app demonstrates how to use the Zendesk Mobile SDK to build native support into your mobile application.
 
-### The following Zendesk Mobile SDK features are demonstrated in the "Remember The Date" app.
+#### The following Zendesk Mobile SDK features are demonstrated in the "Remember The Date" app.
 
 * Create/Submit a Zendesk ticket request
 * View an existing Zendesk ticket request
