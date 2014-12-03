@@ -1,0 +1,93 @@
+/*
+ Localizable.strings
+ CoreSDKSample
+ 
+ Created by RTD on 18/03/2014.
+ Copyright (c) 2014 RTD. All rights reserved.
+ */
+
+
+//shared
+"ios.ZDKRequests.connectionError" = "No internet connection";
+
+
+// request creation
+"ios.ZDKRequests.createRequest.title" = "Contact us";
+"ios.ZDKRequests.createRequest.requestSubject" = "RTD SDK request";
+"ios.ZDKRequests.createRequest.cancel.button" = "Cancel";
+"ios.ZDKRequests.createRequest.submit.button" = "Submit";
+"ios.ZDKRequests.createRequest.description.placeholder" = "Description";
+"ios.ZDKRequests.createRequest.error.request" = "Your request failed to send";
+"ios.ZDKRequests.createRequest.email.placeholder" = "Email (mandatory)";
+
+// request list
+"ios.ZDKRequests.requestList.empty" = "No requests currently open";
+"ios.ZDKRequests.requestList.error" = "Failed to get request list";
+"ios.ZDKRequests.requestList.retryButton" = "Retry";
+"ios.ZDKRequests.requestList.title" = "Request List";
+
+
+// request comments
+"ios.ZDKRequests.commentSubmittion.error" = "Failed to send comment";
+
+
+// device details labels
+"ios.ZDKKAPI.request.sendFeedback.device.osVersion" = "OS version:";
+"ios.ZDKAPI.request.sendFeedback.device.model" = "Model:";
+"ios.ZDKAPI.request.sendFeedback.device.location" = "Location Services:";
+"ios.ZDKAPI.request.sendFeedback.device.totalMemory" = "Total Device Memory:";
+"ios.ZDKAPI.request.sendFeedback.device.freeDiskspace" = "Free Diskspace:";
+"ios.ZDKAPI.request.sendFeedback.device.batteryLevel" = "Battery Level:";
+
+// comment submission
+"ios.ZDKRequests.commentEntry.placeholder" = "Comment";
+
+//comment list
+"ios.ZDKRequests.commentList.error" = "Failed to get request list";
+"ios.ZDKRequests.commentList.retryButton" = "Retry";
+
+// help center
+"ios.ZDKHelpCenter.support.title" = "Knowledge Base";
+"ios.ZDKHelpCenter.searchField.placeholder" = "How can we help?";
+
+//No results found
+"ios.ZDKHelpCenter.noCategories.title" = "No categories found";
+"ios.ZDKHelpCenter.noSections.title" = "No sections found";
+"ios.ZDKHelpCenter.noArticles.title" = "No articles found";
+"ios.ZDKHelpCenter.noSearchResults.title" = "No articles found";
+
+// Errors
+"ios.ZDKHelpCenter.toastRetryButton" = "Retry";
+"ios.ZDKHelpCenter.toastOkButton" = "Ok";
+"ios.ZDKHelpCenter.categoriesError" = "Error retrieving categories";
+"ios.ZDKHelpCenter.sectionsError" = "Error retrieving sections";
+"ios.ZDKHelpCenter.articlesError" = "Error retrieving articles";
+"ios.ZDKHelpCenter.articleError" = "Error retrieving article";
+
+//Rate my app
+"ios.RMA.dialog.rateApp.button" = "Yes, rate RTD";
+"ios.RMA.dialog.sendFeedback.button" = "No, send us Feedback";
+"ios.RMA.dialog.dismiss.button" = "Don't ask me again";
+"ios.RMA.dialog.header.title" = "Are you happy with RTD?";
+"ios.RMA.request.header.title" = "Sorry about that";
+"ios.RMA.request.header.description" = "We want to make it better. Please tell us about any issues you're having.";
+"ios.RMA.request.success.title" = "Feeback sent.";
+"ios.RMA.request.success.description" = "Thank you for contacting RTD. We'll respond as soon as possible.";
+"ios.RMA.request.error.title" = "Something went wrong.";
+"ios.RMA.request.error.description" = "There was an error. Please try again or go back and edit your feedback.";
+"ios.RMA.request.textView.placeholder" = "Describe your issue";
+"ios.RMA.request.back.button" = "Back";
+"ios.RMA.request.sendFeedback.close.button" = "Close";
+"ios.RMA.request.sendFeedback.tryAgain.button" = "Try again";
+"ios.RMA.request.sendFeedback.button" = "Send Feedback";
+"ios.RMA.request.sendFeedback.subject" = "Rate my app request";
+"ios.RMA.request.sendFeedback.additionalSubdomain" = "Subdomain:";
+"ios.RMA.request.sendFeedback.success.toastMessage" = "Thank you for contacting RTD";
+"ios.RMA.request.sendFeedback.error.toastMessage" = "There was an error, please try again";
+"ios.ZDKAPI.request.sendFeedback.device.osVersion" = "OS version:";
+"ios.ZDKAPI.request.sendFeedback.device.model" = "Model:";
+"ios.ZDKAPI.request.sendFeedback.device.location" = "Location Services:";
+"ios.ZDKAPI.request.sendFeedback.device.totalMemory" = "Total Device Memory:";
+"ios.ZDKAPI.request.sendFeedback.device.freeDiskspace" = "Free Diskspace:";
+"ios.ZDKAPI.request.sendFeedback.device.batteryLevel" = "Battery Level:";
+
