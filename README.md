@@ -1,6 +1,6 @@
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning:
 
-# Zendesk Mobile SDK Demo app
+# Zendesk Mobile SDK iOS Demo app
 
 The "Remember the Date" demo app demonstrates how to use the Zendesk Mobile SDK to build native support into your mobile application.
 
@@ -15,7 +15,4 @@ Please submit bug reports to [Zendesk](https://rememberthedate.zendesk.com/reque
 
 ### Licence:
 
-By downloading or accessing this software, You agree to the Zendesk Terms of Service
-(https://www.zendesk.com/company/terms) and Application Developer and API License
-Agreement (https://www.zendesk.com/company/application-developer-and-api-license-agreement)
-and acknowledge that such terms govern Your use of and access to the software.
+By downloading or accessing this software, You agree to the Zendesk Terms of Service (https://www.zendesk.com/company/terms) and Application Developer and API License Agreement (https://www.zendesk.com/company/application-developer-and-api-license-agreement) and acknowledge that such terms govern Your use of and access to the software.
