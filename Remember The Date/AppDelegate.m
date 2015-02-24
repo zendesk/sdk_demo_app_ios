@@ -62,6 +62,12 @@
     [[ZDKRequestListTableCell appearance] setLeftInset:20];
     [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
     
+    //Temp fix for 1.1 appearance issue
+    [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.967f alpha:1.0f]];
+    [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
+    
+
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
