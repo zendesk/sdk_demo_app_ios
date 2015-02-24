@@ -81,8 +81,6 @@
         [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         
-        [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc]
-                                              initWithJwtUserIdentifier:self.emailTextField.text];
         
         [self dismissViewControllerAnimated:YES completion:^{
             

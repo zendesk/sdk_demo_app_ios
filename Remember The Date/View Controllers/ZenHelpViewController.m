@@ -17,24 +17,25 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
+@property (nonatomic, strong) ZDKJwtIdentity *identity;
+
 @end
 
 @implementation ZenHelpViewController
 
 
-
--(NSString *) userEmail {
-    NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
+- (void) setupIdentity {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([defaults stringForKey:@"userName"] != nil)
-    {
-        NSString* email = [defaults stringForKey:@"email"];
-        if ([email length]>0) {
-            return email;
+    if ([defaults stringForKey:@"userName"]) {
+        NSString *email = [defaults stringForKey:@"email"];
+        if ( [email length] > 0) {
+            _identity = [[ZDKJwtIdentity alloc] initWithJwtUserIdentifier:email];
+            [ZDKConfig instance].userIdentity = _identity;
         }
+    } else {
+        _identity = nil;
     }
-
-    return nil;
 }
 
 -(void) setupSupportInformation {
@@ -65,7 +66,8 @@
     if(selfHeight > contentViewHeight) {
         _scrollView.scrollEnabled = NO;
     }
-
+    
+    
 }
 
 //
@@ -75,7 +77,7 @@
 
 - (IBAction)showHelpCenter:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
+    if (_identity) {
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         [tabbarController hideTabbar];
         
@@ -95,7 +97,7 @@
 
 - (IBAction)contactSupport:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
+    if (_identity) {
         [ZDKRequests showRequestCreationWithNavController:self.navigationController
                                               withSuccess:^(NSData *data) {
                                                   
@@ -125,8 +127,7 @@
 
 - (IBAction)sendFeedback:(id)sender {
     
-    NSString *email = [self userEmail];
-    if ([email length] > 0) {
+    if (_identity) {
         
          // Setup Rate My App
         [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {
@@ -167,7 +168,7 @@
 
 - (IBAction)showMyRequests:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
+    if (_identity) {
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         [tabbarController hideTabbar];
@@ -190,6 +191,7 @@
     // Setup the support information
     //
     [self setupSupportInformation];
+    [self setupIdentity];
     
     SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
     [tabbarController showTabbar];
