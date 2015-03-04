@@ -24,7 +24,7 @@
         vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     }];
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIButton    *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     plusButton.backgroundColor  = [UIColor whiteColor];
     [plusButton setImage:[UIImage imageNamed:@"icoAdd"] forState:UIControlStateNormal];

@@ -22,19 +22,21 @@
 @implementation ZenHelpViewController
 
 
-
--(NSString *) userEmail {
-    NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
+- (BOOL) setupIdentity {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    if ([defaults stringForKey:@"userName"] != nil)
-    {
-        NSString* email = [defaults stringForKey:@"email"];
-        if ([email length]>0) {
-            return email;
+    if ([defaults stringForKey:@"userName"]) {
+        
+        NSString *email = [defaults stringForKey:@"email"];
+        
+        if ( email.length > 0) {
+            
+            [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc] initWithJwtUserIdentifier:email];
+            return YES;
         }
     }
-
-    return nil;
+    
+    return NO;
 }
 
 -(void) setupSupportInformation {
@@ -65,7 +67,8 @@
     if(selfHeight > contentViewHeight) {
         _scrollView.scrollEnabled = NO;
     }
-
+    
+    
 }
 
 //
@@ -75,11 +78,11 @@
 
 - (IBAction)showHelpCenter:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
+    if ([self setupIdentity]) {
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         [tabbarController hideTabbar];
         
-        [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController];
+        [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController layoutGudie:ZDKLayoutRespectTop];
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
@@ -95,17 +98,15 @@
 
 - (IBAction)contactSupport:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
-        [ZDKRequests showRequestCreationWithNavController:self.navigationController
+    if ([self setupIdentity]) {
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+        [ZDKRequests showRequestCreationWithNavController:(UINavigationController*)self.tabBarController
                                               withSuccess:^(NSData *data) {
-                                                  
-                                                  // do something here if you want to...
                                                   
                                               } andError:^(NSError *err) {
                                                   
-                                                  // do something here if you want to...
                                               }];
-
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
@@ -125,8 +126,7 @@
 
 - (IBAction)sendFeedback:(id)sender {
     
-    NSString *email = [self userEmail];
-    if ([email length] > 0) {
+    if ([self setupIdentity]) {
         
          // Setup Rate My App
         [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {
@@ -167,13 +167,13 @@
 
 - (IBAction)showMyRequests:(id)sender {
     
-    if ([[self userEmail] length] > 0) {
+    if ([self setupIdentity]) {
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         [tabbarController hideTabbar];
         
-        RequestListViewController *vc = [RequestListViewController new];
-        [self.navigationController pushViewController:vc animated:YES];
+        
+        [ZDKRequests showRequestListWithNavController:self.navigationController layoutGudie:ZDKLayoutRespectTop];
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];

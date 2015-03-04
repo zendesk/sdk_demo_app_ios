@@ -59,8 +59,14 @@
     [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
     [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
     
-    [[ZDKRequestListTableCell appearance] setLeftInset:20];
+    [[ZDKRequestListTableCell appearance] setLeftInset:@20];
     [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
+    
+    //Temp fix for 1.1 appearance issue
+    [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.967f alpha:1.0f]];
+    [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
+    
+
     
 }
 
@@ -96,6 +102,12 @@
     [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
              zendeskUrl:@"https://rememberthedate.zendesk.com"
                   andClientId:@"client_for_rtd_jwt_endpoint"];
+    
+    #ifdef DEBUG
+        [ZDKLogger enable:YES];
+    #else
+        [ZDKLogger enable:NO];
+    #endif
     
     
     //

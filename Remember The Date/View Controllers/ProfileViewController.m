@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 RememberTheDate. All rights reserved.
 //
 
+#import <ZendeskSDK/ZendeskSDK.h>
 #import "ProfileViewController.h"
+
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
@@ -56,6 +58,8 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [ZDKConfig instance].userIdentity = [ZDKJwtIdentity new];
     
     [self dismissViewControllerAnimated:YES completion:^{
         
