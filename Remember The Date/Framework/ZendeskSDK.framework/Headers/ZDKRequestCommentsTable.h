@@ -23,6 +23,7 @@
 /**
  * Table presenting the list of comments for a request.
  */
+__deprecated_msg(" As of version 1.1.1.1");
 @interface ZDKRequestCommentsTable : UITableView <UITableViewDataSource, UITableViewDelegate, ZDKCommentListRetryDelegate>
 
 
@@ -52,6 +53,9 @@
 @property (nonatomic, assign) BOOL fetchCommentsErrored;
 
 @property (nonatomic, retain) NSString *errorString;
+
+@property (nonatomic, strong) UIColor *tableSeparatorColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *viewBackgroundColor UI_APPEARANCE_SELECTOR;
 
 /**
  * Init with provided frame and request.

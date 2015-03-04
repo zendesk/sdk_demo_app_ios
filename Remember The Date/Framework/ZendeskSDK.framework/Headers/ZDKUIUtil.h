@@ -20,7 +20,7 @@
 CG_INLINE CGRect
 CGRectMakeCenteredInScreen(CGFloat width, CGFloat height)
 {
-    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGRect screen = [UIScreen mainScreen].bounds;
     
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     
@@ -66,7 +66,107 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
 }
 
 
+/**
+ * Helper for device orientation.
+ */
+CG_INLINE BOOL
+ZDKUIIsLandscape()
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    return UIInterfaceOrientationIsLandscape(orientation);
+}
+
+
+/**
+ * Returns the full screen frame with no attempt to account for the status bar.
+ */
+CG_INLINE CGRect
+ZDKUIScreenFrame()
+{
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+
+    CGFloat width = screenSize.width;
+    CGFloat height = screenSize.height;
+
+    if (ZDKUIIsLandscape() && width < height) {
+
+        width = height;
+        height = screenSize.width;
+    }
+
+    return CGRectMake(0, 0, width, height);
+}
+
+
+/**
+ * Get the origin of the supplied view in the window.
+ */
+CG_INLINE CGPoint
+ZDKUIOriginInWindow(UIView *view)
+{
+    return [view convertPoint:view.bounds.origin
+                       toView:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+}
+
+
+
 @interface ZDKUIUtil : NSObject
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a class.
+ *
+ *  @param class    The appearance value will come from this class.
+ *  @param selector The appearance selector
+ *
+ *  @return An appearance value or nil if none have been set.
+ */
++ (id) appearanceForClass:(Class)class selector:(SEL)selector;
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a class returning a default value if none have been set.
+ *
+ *  @param class        The appearance value will come from this class.
+ *  @param selector     The appearance selector
+ *  @param defaultValue The default value to use if no appearance value has been set.
+ *
+ *  @return An appearance value.
+ */
++ (id) appearanceForClass:(Class)class selector:(SEL)selector defaultValue:(id)defaultValue;
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a view.
+ *
+ *  @param view     The appearance value will come from this view.
+ *  @param selector The appearance selector.
+ *
+ *  @return The appearance value or nil if none has been set.
+ */
++ (id) appearanceForView:(UIView*)view selector:(SEL)selector;
+
+
+/**
+ *  Gets the UI_APPEARANCE_SELECTOR value for a view returning a default if none has been set.
+ *
+ *  @param view         The appearance value will come from this view.
+ *  @param selector     The appearance selector.
+ *  @param defaultValue A default value to use if no appearance value has been set.
+ *
+ *  @return An appearance value.
+ */
++ (id) appearanceForView:(UIView*)view selector:(SEL)selector defaultValue:(id)defaultValue;
+
+
+/**
+ *  Checks to see if the majorVersionNumber is less than the current device version
+ *
+ *  @param majorVersionNumber is a single integer, eg: 7
+ *
+ *  @return YES if the current device number is less than majorVersionNumber.
+ */
++ (BOOL) isOlderVersion:(NSNumber *) majorVersionNumber;
 
 
 /**
@@ -99,5 +199,51 @@ CGCenterRectInRect(CGRect rect, CGRect inRect)
  * @return A new button.
  */
 + (UIButton*) buildButtonWithFrame:(CGRect)frame andTitle:(NSString*)title;
+
+
+/**
+ *  Returns current interface orientation. If orientation is unknown presume portrait
+ *
+ *  @return Current interface orientation
+ */
++ (UIInterfaceOrientation) currentInterfaceOrientation;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @param size  <#size description#>
+ *  @param width <#width description#>
+ *
+ *  @return <#return value description#>
+ */
++ (CGFloat) scaledHeightForSize:(CGSize)size constrainedByWidth:(CGFloat)width;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
++ (BOOL) isPad;
+
+
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
++ (BOOL) isLandscape;
+
+
+/*
+ *  Physically transform an image to match its imageRotation property.
+ *
+ *  @param image Image to rotate.
+ *
+ *  @return Correctly rotated image.
+ */
++ (UIImage *)fixOrientationOfImage:(UIImage*)image;
+
 
 @end
