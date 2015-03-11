@@ -10,6 +10,8 @@
 	<string>Remember The Date</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>7179E6179408C973CAA30B4DEBBD118BF1A661AE</key>
+		<string>https://github.com/ergalleg886/sdk_demo_app_ios.git</string>
 		<key>FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74</key>
 		<string>github.com:zendesk/sdk_demo_app_ios.git</string>
 	</dict>
@@ -17,15 +19,17 @@
 	<string>Remember The Date.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74</key>
+		<key>7179E6179408C973CAA30B4DEBBD118BF1A661AE</key>
 		<string>../..</string>
+		<key>FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74</key>
+		<string>../../../Remember%20The%20Date</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:zendesk/sdk_demo_app_ios.git</string>
+	<string>https://github.com/ergalleg886/sdk_demo_app_ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74</string>
+	<string>7179E6179408C973CAA30B4DEBBD118BF1A661AE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Remember%20The%20Date</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7179E6179408C973CAA30B4DEBBD118BF1A661AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sdk_demo_app_ios</string>
 		</dict>
 	</array>
 </dict>

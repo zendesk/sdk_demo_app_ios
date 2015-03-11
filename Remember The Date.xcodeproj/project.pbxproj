@@ -464,10 +464,11 @@
 				TargetAttributes = {
 					4D246FA219E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 689VA4CD22;
+						DevelopmentTeam = 574EBD8ND7;
 					};
 					4D246FBE19E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 574EBD8ND7;
 						TestTargetID = 4D246FA219E7499600A46373;
 					};
 				};
@@ -737,8 +738,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3726cbde-ffe7-4352-96ba-52674f4f2bf0";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -757,8 +758,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3726cbde-ffe7-4352-96ba-52674f4f2bf0";
-				TARGETED_DEVICE_FAMILY = 1;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

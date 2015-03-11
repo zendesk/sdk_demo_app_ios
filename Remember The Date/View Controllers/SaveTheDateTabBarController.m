@@ -24,17 +24,30 @@
         vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     }];
     
-    
     UIButton    *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     plusButton.backgroundColor  = [UIColor whiteColor];
-    [plusButton setImage:[UIImage imageNamed:@"icoAdd"] forState:UIControlStateNormal];
-    [plusButton setImage:[UIImage imageNamed:@"icoAddActive"] forState:UIControlStateHighlighted];
-    plusButton.layer.cornerRadius   = 30;
-    plusButton.frame        = CGRectMake((CGRectGetWidth(self.view.frame)/2)-30, CGRectGetHeight(self.view.frame)-60, 60, 60);
-    
+    [plusButton setImage:[UIImage imageNamed:@"plus_icon"] forState:UIControlStateNormal];
+    [plusButton setImage:[UIImage imageNamed:@"plus_active_icon"] forState:UIControlStateHighlighted];
+    plusButton.layer.cornerRadius   = plusButton.currentImage.size.width/2;
+
     [plusButton addTarget:self action:@selector(didTapAdd:) forControlEvents:UIControlEventTouchUpInside];
     [plusButton setTag:BUTTON_ADD_TAG];
     [self.view addSubview:plusButton];
+
+    [self.view viewWithTag:BUTTON_ADD_TAG].translatesAutoresizingMaskIntoConstraints = NO;
+    
+    int constSpacing = 0;
+    //Plus button padding for the iphone
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        constSpacing = -13;
+    }
+    
+    //Adding horizontal constraint for plus button
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:[self.view viewWithTag:BUTTON_ADD_TAG] attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    
+    //Adding vertical constraint for plus button
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:[self.view viewWithTag:BUTTON_ADD_TAG] attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:constSpacing]];
+    
     
     [self.tabBar setClipsToBounds:YES];
         

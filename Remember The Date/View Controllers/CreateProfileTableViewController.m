@@ -43,12 +43,10 @@
         NSString *documentsDirectory = [paths firstObject];
         NSString *getImagePath = [documentsDirectory stringByAppendingPathComponent:@"savedImage.png"];
         UIImage *img = [UIImage imageWithContentsOfFile:getImagePath];
-        
         if (img != nil)
             [self.pictureButton setImage:img forState:UIControlStateNormal];
     }
-    
-    
+
     self.pictureButton.layer.cornerRadius   = CGRectGetWidth(self.pictureButton.frame)/2;
     self.pictureButton.layer.masksToBounds  = YES;
     
@@ -116,9 +114,20 @@
         picker.allowsEditing    = YES;
         picker.sourceType       = UIImagePickerControllerSourceTypeCamera;
         
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
+        //iOS 8 workaround for compability with iPad
+        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self presentViewController:picker animated:YES completion:^{
+                
+                }];
+            }];
+        }
+        else
+        {
+            [self presentViewController:picker animated:YES completion:^{
+            }];
+        }
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"Photo Library", @"")])
     {
@@ -127,9 +136,20 @@
         picker.allowsEditing    = YES;
         picker.sourceType       = UIImagePickerControllerSourceTypePhotoLibrary;
         
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
+        //iOS 8 workaround for compability with iPad
+        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self presentViewController:picker animated:YES completion:^{
+                    
+                }];
+            }];
+        }
+        else
+        {
+            [self presentViewController:picker animated:YES completion:^{
+            }];
+        }
     }
 }
 
@@ -139,7 +159,6 @@
 {
     UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
     [self.pictureButton setImage:img forState:UIControlStateNormal];
-    
     // Let's save the file
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths firstObject];

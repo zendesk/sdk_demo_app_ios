@@ -26,7 +26,7 @@
 {
     [super viewWillAppear:animated];
     NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
-    
+
     if ([defaults stringForKey:@"userName"] != nil)
     {
         self.nameLabel.text         = [defaults stringForKey:@"userName"];
@@ -40,10 +40,6 @@
         
         self.userImageView.image    = img;
     }
-    
-    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
-    self.userImageView.layer.masksToBounds  = YES;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +69,15 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+//Modifications that rely on the autolayout constraints 
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    //Modify the radius with autolayout constraints
+    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
+    self.userImageView.layer.masksToBounds  = YES;
 }
 
 @end
