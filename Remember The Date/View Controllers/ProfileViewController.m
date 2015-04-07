@@ -10,6 +10,8 @@
 #import "ProfileViewController.h"
 
 
+extern NSString *APNS_ID_KEY;
+
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -42,9 +44,6 @@
         
         self.userImageView.image    = img;
     }
-    
-    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
-    self.userImageView.layer.masksToBounds  = YES;
 
 }
 
@@ -60,6 +59,20 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [ZDKConfig instance].userIdentity = [ZDKJwtIdentity new];
+    
+    NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
+    
+    
+    [[ZDKConfig instance] disablePush:pushIdentifier callback:^(NSNumber *responseCode, NSError *error) {
+        if (error) {
+            
+            [ZDKLogger log:@"Couldn't unregister device: %@. Error: %@ in %@", pushIdentifier, error, self.class];
+            
+        } else if (responseCode) {
+            
+            [ZDKLogger log:@"Successfully unregistered device: %@ in %@", pushIdentifier, self.class];
+        }
+    }];
     
     [self dismissViewControllerAnimated:YES completion:^{
         
@@ -77,6 +90,15 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+//Modifications that rely on the autolayout constraints
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    //Modify the radius with autolayout constraints
+    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
+    self.userImageView.layer.masksToBounds  = YES;
 }
 
 @end
