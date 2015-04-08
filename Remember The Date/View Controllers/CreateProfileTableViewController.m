@@ -9,6 +9,8 @@
 #import <ZendeskSDK/ZendeskSDK.h>
 #import "CreateProfileTableViewController.h"
 
+extern NSString *APNS_ID_KEY;
+
 @interface CreateProfileTableViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -81,6 +83,25 @@
         [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         
+        [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc]
+                                             initWithJwtUserIdentifier:self.emailTextField.text];
+        
+        NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
+        
+        //Push is en
+        if(pushIdentifier) {
+            [[ZDKConfig instance] enablePush:pushIdentifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+                
+                if (error) {
+                    
+                    [ZDKLogger log:@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class];
+                    
+                } else if (registrationResponse) {
+                    
+                    [ZDKLogger log:@"Successfully registered device: %@ in %@", pushIdentifier, self.class];
+                }
+            }];
+        }
         
         [self dismissViewControllerAnimated:YES completion:^{
             
@@ -114,9 +135,22 @@
         picker.allowsEditing    = YES;
         picker.sourceType       = UIImagePickerControllerSourceTypeCamera;
         
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
+        //iOS 8 workaround for compability with iPad
+        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self presentViewController:picker animated:YES completion:^{
+                    
+                }];
+            }];
+        }
+        else
+        {
+            [self presentViewController:picker animated:YES completion:^{
+                
+            }];
+        }
+
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"Photo Library", @"")])
     {
@@ -125,9 +159,22 @@
         picker.allowsEditing    = YES;
         picker.sourceType       = UIImagePickerControllerSourceTypePhotoLibrary;
         
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
+        //iOS 8 workaround for compability with iPad
+        if([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0 && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self presentViewController:picker animated:YES completion:^{
+                    
+                }];
+            }];
+        }
+        else
+        {
+            [self presentViewController:picker animated:YES completion:^{
+                
+            }];
+        }
+
     }
 }
 

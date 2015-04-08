@@ -1,0 +1,33 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "icoPhoto.png"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "filename" : "icoPhoto@2x.png"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "filename" : "icoPhoto@3x.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "icoPhoto@2x-1.png"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "icoPhoto@3x-1.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

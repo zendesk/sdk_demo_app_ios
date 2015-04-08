@@ -80,9 +80,21 @@
     
     if ([self setupIdentity]) {
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
-        [tabbarController hideTabbar];
         
-        [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController layoutGudie:ZDKLayoutRespectTop];
+        
+        self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        
+        if([ZDKUIUtil isPad]) {
+            
+            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController];
+            
+        } else {
+            
+            [tabbarController hideTabbar];
+            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+        }
+
+        
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
@@ -101,12 +113,13 @@
     if ([self setupIdentity]) {
         
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        [ZDKRequests showRequestCreationWithNavController:(UINavigationController*)self.tabBarController
-                                              withSuccess:^(NSData *data) {
-                                                  
-                                              } andError:^(NSError *err) {
-                                                  
-                                              }];
+        
+        if([ZDKUIUtil isPad]) {
+            
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        }
+        
+        [ZDKRequests showRequestCreationWithNavController:self.navigationController];
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
@@ -170,10 +183,20 @@
     if ([self setupIdentity]) {
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
-        [tabbarController hideTabbar];
         
         
-        [ZDKRequests showRequestListWithNavController:self.navigationController layoutGudie:ZDKLayoutRespectTop];
+        if([ZDKUIUtil isPad]) {
+            
+            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [ZDKRequests presentRequestListWithNavController:self.navigationController];
+            
+        } else {
+            
+            [tabbarController hideTabbar];
+            [ZDKRequests showRequestListWithNavController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+        }
+
+        
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
