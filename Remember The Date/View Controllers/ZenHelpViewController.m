@@ -43,18 +43,55 @@
 
     [ZDKRequests configure:^(ZDKAccount *account, ZDKRequestCreationConfig *requestCreationConfig) {
         // configgure additional info
-        NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
-                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
-                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        NSString *appVersionString = [NSString stringWithFormat:@"version_%@",
+                                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
         
-        NSString *appVersion = [NSString stringWithFormat:@"App version: %@", versionString];
         
-        NSString *additionalText = [NSString stringWithFormat:@"%@\n\n%@",
-                         appVersion,
-                         [ZDKDeviceInfo deviceInfoString]];
+        
+        NSString *additionalText = [ZDKDeviceInfo deviceInfoString];
 
-        requestCreationConfig.tags = @[@"ios"];
-        requestCreationConfig.additionalRequestInfo = [NSString stringWithFormat:@"\n\n\n\n%@", additionalText];
+        
+        // Setting the custom form id to use the IOS Support form
+        [ZDKConfig instance].ticketFormId = @62609;
+        
+        // adding Application Version information
+        ZDKCustomField *customeFieldApplicationVersion = [[ZDKCustomField alloc] initWithFieldId:@24328555 andValue:appVersionString];
+        //OS version
+        ZDKCustomField *customFieldOSVersion = [[ZDKCustomField alloc] initWithFieldId:@24273979
+                                                                              andValue:[UIDevice currentDevice].systemVersion];
+        //Device model
+        ZDKCustomField *customFieldDeviceModel = [[ZDKCustomField alloc] initWithFieldId:@24273989
+                                                                                andValue:[ZDKDeviceInfo deviceType]];
+        //Device memory
+        NSString *deviceMemory = [NSString stringWithFormat:@"%f MB", [ZDKDeviceInfo totalDeviceMemory]];
+        ZDKCustomField *customFieldDeviceMemory = [[ZDKCustomField alloc] initWithFieldId:@24273999
+                                                                                andValue:deviceMemory];
+        //Device free space
+        NSString *deviceFreeSpace = [NSString stringWithFormat:@"%f GB", [ZDKDeviceInfo freeDiskspace]];
+        ZDKCustomField *customFieldDeviceFreeSpace = [[ZDKCustomField alloc] initWithFieldId:@24274009 andValue:deviceFreeSpace];
+        //Device battery level
+        NSString *deviceBatteryLevel = [NSString stringWithFormat:@"%f", [ZDKDeviceInfo batteryLevel]];
+        ZDKCustomField *customFieldDeviceBatteryLevel = [[ZDKCustomField alloc] initWithFieldId:@24274019 andValue:deviceBatteryLevel];
+        
+        
+        [ZDKConfig instance].customTicketFields = @[customeFieldApplicationVersion,
+                                                    customFieldOSVersion,
+                                                    customFieldDeviceModel,
+                                                    customFieldDeviceMemory,
+                                                    customFieldDeviceFreeSpace,
+                                                    customFieldDeviceBatteryLevel];
+
+        
+        requestCreationConfig.tags = @[@"ratemyapp_ios", @"paying_customer"];
+        
+        NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
+        
+        if(appName) {
+            requestCreationConfig.additionalRequestInfo =
+            [NSString stringWithFormat:@"%@-------------\nSent from %@.", requestCreationConfig.contentSeperator, appName];
+        }
+            
+        
     }];
 }
 
@@ -117,9 +154,12 @@
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            self.tabBarController.modalPresentationStyle = UIModalPresentationFormSheet;
+            
         }
         
-        [ZDKRequests showRequestCreationWithNavController:self.navigationController];
+        [ZDKRequests showRequestCreationWithNavController:(UINavigationController*)self.tabBarController];
+        
     }
     else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];

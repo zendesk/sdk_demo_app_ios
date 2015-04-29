@@ -63,6 +63,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
         [[ZDKUITextView appearance] setTintColor:RED_COLOR];
         [spinner setTintColor:RED_COLOR];
+    } else {
+        [[UINavigationBar appearance] setTintColor:RED_COLOR];
     }
     
     [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
@@ -172,6 +174,21 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
 }
 
+//iOS 7 and 8
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [ZDKPushUtil handlePush:userInfo
+             forApplication:application
+          presentationStyle:UIModalPresentationFormSheet
+                layoutGuide:ZDKLayoutRespectTop
+                  withAppId:APP_ID
+                 zendeskUrl:ZENDESK_URL
+                   clientId:CLIENT_ID
+     fetchCompletionHandler:completionHandler];
+    
+}
+
+//iOS 6
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [ZDKPushUtil handlePush:userInfo
