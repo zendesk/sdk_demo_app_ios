@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSData+RememberTheDate.h"
 #import <ZendeskSDK/ZendeskSDK.h>
 #import <ZendeskSDK/ZDKSupportView.h>
 
@@ -21,13 +22,17 @@
 #define NAVBAR_COLOR [UIColor colorWithRed:240.0f/255.f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f]
 #define EMAIL_COLOR [UIColor colorWithRed:214.0f/255.f green:214.0f/255.0f blue:214.0f/255.0f alpha:1.0f]
 
+static NSString * APP_ID = @"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd";
+static NSString * ZENDESK_URL = @"https://rememberthedate.zendesk.com";
+static NSString * CLIENT_ID = @"client_for_rtd_jwt_endpoint";
+
+NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 
 -(void) setupSDKStyle {
@@ -38,23 +43,29 @@
     // nav bar
     NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
-    
+
     
     [[ZDKCreateRequestView appearance] setPlaceholderTextColor:TEXT_COLOR_40];
     [[ZDKCreateRequestView appearance] setTextEntryColor:TEXT_COLOR];
     
-    [[ZDKUITextView appearance] setTintColor:RED_COLOR];
     
     [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont fontWithName:@"Helvetica" size:16]];
     
     
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    [spinner setTintColor:RED_COLOR];
+
     [spinner setColor:RED_COLOR];
+    
+    if ([ZDKUIUtil isNewerVersion:@6]){
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
+        [[ZDKUITextView appearance] setTintColor:RED_COLOR];
+        [spinner setTintColor:RED_COLOR];
+    } else {
+        [[UINavigationBar appearance] setTintColor:RED_COLOR];
+    }
     
     [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
     [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
@@ -70,11 +81,13 @@
     
 }
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // sync the default
     NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
+
     // Visual setup
     
     [[UITabBar appearance] setSelectedImageTintColor: [UIColor colorWithRed:0.38 green:0.85 blue:0.82 alpha:1.0]];
@@ -86,29 +99,39 @@
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+
+    // Register for remote notfications    
+    if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
+        
+        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+        
+    } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
+        
+        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+        
+        [application registerForRemoteNotificationTypes:types];
+    }
+    //
+    // Enable logging for debug builds
+    //
     
-    
-    
-    
+#ifdef DEBUG
+    [ZDKLogger enable:YES];
+#else
+    [ZDKLogger enable:NO];
+#endif
+
     //
     // Initialize the sdk
     //
     
-    // Note:    If you do need to display the request list to your users, you will need to setup JWT until version 1.0
-    // ----     If you don't need tthe request list, use the short initialize method (which is not deprecated)
-    //          [[ZDKConfig instance] initializeWithAppId:(NSString *) andZendeskUrl:(NSString *)]
-    //
-    
     [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
-             zendeskUrl:@"https://rememberthedate.zendesk.com"
-                  andClientId:@"client_for_rtd_jwt_endpoint"];
-    
-    #ifdef DEBUG
-        [ZDKLogger enable:YES];
-    #else
-        [ZDKLogger enable:NO];
-    #endif
-    
+                                   zendeskUrl:@"https://rememberthedate.zendesk.com"
+                                  andClientId:@"client_for_rtd_jwt_endpoint"];
     
     //
     // Style the SDK
@@ -123,4 +146,58 @@
     return YES;
 }
 
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    //
+    // Register SDK for push notifications
+    //
+
+    NSString *identifier = [deviceToken deviceIdentifier];
+    [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APNS_ID_KEY];
+    
+    if([[ZDKConfig instance] userIdentity] != nil) {
+
+    [[ZDKConfig instance] enablePush:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+
+        if (error) {
+
+            [ZDKLogger log:@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class];
+
+        } else if (registrationResponse) {
+
+            [ZDKLogger log:@"Successfully registered device: %@ in %@", identifier, self.class];
+        }
+    }];
+        
+    }
+
+}
+
+//iOS 7 and 8
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [ZDKPushUtil handlePush:userInfo
+             forApplication:application
+          presentationStyle:UIModalPresentationFormSheet
+                layoutGuide:ZDKLayoutRespectTop
+                  withAppId:APP_ID
+                 zendeskUrl:ZENDESK_URL
+                   clientId:CLIENT_ID
+     fetchCompletionHandler:completionHandler];
+    
+}
+
+//iOS 6
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [ZDKPushUtil handlePush:userInfo
+             forApplication:application
+          presentationStyle:UIModalPresentationFormSheet
+                layoutGuide:ZDKLayoutRespectTop
+                  withAppId:APP_ID
+                 zendeskUrl:ZENDESK_URL
+                   clientId:CLIENT_ID];
+    
+}
 @end
