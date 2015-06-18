@@ -162,11 +162,11 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
         if (error) {
 
-            [ZDKLogger log:@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class];
+            NSLog(@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class);
 
         } else if (registrationResponse) {
 
-            [ZDKLogger log:@"Successfully registered device: %@ in %@", identifier, self.class];
+            NSLog(@"Successfully registered device: %@ in %@", identifier, self.class);
         }
     }];
         

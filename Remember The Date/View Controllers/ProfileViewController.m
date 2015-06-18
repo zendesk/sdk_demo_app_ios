@@ -66,11 +66,11 @@ extern NSString *APNS_ID_KEY;
     [[ZDKConfig instance] disablePush:pushIdentifier callback:^(NSNumber *responseCode, NSError *error) {
         if (error) {
             
-            [ZDKLogger log:@"Couldn't unregister device: %@. Error: %@ in %@", pushIdentifier, error, self.class];
+            NSLog(@"Couldn't unregister device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
             
         } else if (responseCode) {
             
-            [ZDKLogger log:@"Successfully unregistered device: %@ in %@", pushIdentifier, self.class];
+            NSLog(@"Successfully unregistered device: %@ in %@", pushIdentifier, self.class);
         }
     }];
     
