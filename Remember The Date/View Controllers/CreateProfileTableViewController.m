@@ -94,11 +94,11 @@ extern NSString *APNS_ID_KEY;
                 
                 if (error) {
                     
-                    [ZDKLogger log:@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class];
+                    NSLog(@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
                     
                 } else if (registrationResponse) {
                     
-                    [ZDKLogger log:@"Successfully registered device: %@ in %@", pushIdentifier, self.class];
+                    NSLog(@"Successfully registered device: %@ in %@", pushIdentifier, self.class);
                 }
             }];
         }
