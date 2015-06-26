@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B920A91B3D3F8B00DF2F0B /* ZDCChat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21B920A71B3D3F8B00DF2F0B /* ZDCChat.bundle */; };
+		21B920AA1B3D3F8B00DF2F0B /* ZDCChatStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21B920A81B3D3F8B00DF2F0B /* ZDCChatStrings.bundle */; };
+		21B920AC1B3D3F9700DF2F0B /* ZDCChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B920AB1B3D3F9700DF2F0B /* ZDCChat.framework */; };
+		21B920AE1B3D3FBA00DF2F0B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B920AD1B3D3FBA00DF2F0B /* MobileCoreServices.framework */; };
 		4D246FA919E7499600A46373 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D246FA819E7499600A46373 /* main.m */; };
 		4D246FAC19E7499600A46373 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D246FAB19E7499600A46373 /* AppDelegate.m */; };
 		4D246FB519E7499600A46373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FB319E7499600A46373 /* Main.storyboard */; };
@@ -114,6 +118,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B920A71B3D3F8B00DF2F0B /* ZDCChat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZDCChat.bundle; path = Framework/ZDCChat.bundle; sourceTree = "<group>"; };
+		21B920A81B3D3F8B00DF2F0B /* ZDCChatStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZDCChatStrings.bundle; path = Framework/ZDCChatStrings.bundle; sourceTree = "<group>"; };
+		21B920AB1B3D3F9700DF2F0B /* ZDCChat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZDCChat.framework; path = "Remember The Date/Framework/ZDCChat.framework"; sourceTree = "<group>"; };
+		21B920AD1B3D3FBA00DF2F0B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4D246FA319E7499600A46373 /* Remember The Date.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remember The Date.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D246FA719E7499600A46373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D246FA819E7499600A46373 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -228,7 +236,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B920AE1B3D3FBA00DF2F0B /* MobileCoreServices.framework in Frameworks */,
 				B8ED8D6A1A03E7DF0070259D /* ZendeskSDK.framework in Frameworks */,
+				21B920AC1B3D3F9700DF2F0B /* ZDCChat.framework in Frameworks */,
 				B8F46E3E19EEC94000E6D8EF /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,8 +256,10 @@
 		4D246F9A19E7499600A46373 = {
 			isa = PBXGroup;
 			children = (
+				21B920AB1B3D3F9700DF2F0B /* ZDCChat.framework */,
 				B8ED8D691A03E7DF0070259D /* ZendeskSDK.framework */,
 				B8F46E3D19EEC94000E6D8EF /* SystemConfiguration.framework */,
+				21B920AD1B3D3FBA00DF2F0B /* MobileCoreServices.framework */,
 				4D246FA519E7499600A46373 /* Remember The Date */,
 				4D246FC219E7499600A46373 /* Remember The DateTests */,
 				4D246FA419E7499600A46373 /* Products */,
@@ -283,6 +295,8 @@
 		4D246FA619E7499600A46373 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21B920A71B3D3F8B00DF2F0B /* ZDCChat.bundle */,
+				21B920A81B3D3F8B00DF2F0B /* ZDCChatStrings.bundle */,
 				B869C9EA1A06DB55006CDC5C /* ZendeskSDKStrings.bundle */,
 				B8ED8D6B1A03E7E90070259D /* ZendeskSDK.bundle */,
 				4D246FA719E7499600A46373 /* Info.plist */,
@@ -542,6 +556,7 @@
 				4D246FBA19E7499600A46373 /* LaunchScreen.xib in Resources */,
 				B857427319F060450043B3F6 /* rma_error.png in Resources */,
 				B837E5E619EFDD0A00075019 /* helplanding.png in Resources */,
+				21B920AA1B3D3F8B00DF2F0B /* ZDCChatStrings.bundle in Resources */,
 				4D24702F19E74EED00A46373 /* emtpy.png in Resources */,
 				4D24703D19E74EED00A46373 /* icon@2x.png in Resources */,
 				4D24703C19E74EED00A46373 /* icon100.png in Resources */,
@@ -591,6 +606,7 @@
 				4D294BEE19EDED970070A30E /* EmptyView.xib in Resources */,
 				4D24702219E74EED00A46373 /* icoHelp@2x.png in Resources */,
 				B837E5E119EFDD0A00075019 /* btnHelpCenter@2x.png in Resources */,
+				21B920A91B3D3F8B00DF2F0B /* ZDCChat.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +763,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/Remember",
+					The,
+					Date/Framework,
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -767,6 +786,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)/Remember",
+					The,
+					Date/Framework,
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;

@@ -7,6 +7,7 @@
 //
 
 #import <ZendeskSDK/ZendeskSDK.h>
+#import <ZDCChat/ZDCChat.h>
 
 #import "ZenHelpViewController.h"
 #import "RequestListViewController.h"
@@ -245,6 +246,46 @@
     
 }
 
+- (IBAction)showChat:(id)sender {
+
+    // update the visitor info before starting the chat
+
+    NSString *visitorEmail = [self userEmail];
+
+    if (visitorEmail) {
+
+        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
+
+            visitor.name = [self userName];
+            visitor.email = [self userEmail];
+        }];
+    }
+
+    // present as new modal using global pre-chat config and whatever visitor info has been persisted
+    [ZDCChat startChat:nil];
+}
+
+-(NSString *) userEmail {
+
+    NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
+
+    if ([defaults stringForKey:@"userName"] != nil)
+    {
+        NSString* email = [defaults stringForKey:@"email"];
+        if ([email length]>0) {
+            return email;
+        }
+    }
+
+    return nil;
+}
+
+
+- (NSString *) userName {
+
+    NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
+    return [defaults stringForKey:@"userName"];
+}
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
