@@ -10,6 +10,7 @@
 #import "NSData+RememberTheDate.h"
 #import <ZendeskSDK/ZendeskSDK.h>
 #import <ZendeskSDK/ZDKSupportView.h>
+#import <ZDCChat/ZDCChat.h>
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -76,9 +77,9 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //Temp fix for 1.1 appearance issue
     [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.967f alpha:1.0f]];
     [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
-    
 
-    
+    // chat SDK
+    [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
 }
 
 
@@ -126,7 +127,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 #endif
 
     //
-    // Initialize the sdk
+    // Initialize the Zendesk SDK
     //
     
     [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
@@ -138,6 +139,16 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     
     [self setupSDKStyle];
+
+    //
+    // Initialise the chat SDK
+    //
+    [ZDCChat configure:^(ZDCConfig *defaults) {
+
+        defaults.accountKey = @"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK";
+        defaults.preChatDataRequirements.department = ZDCPreChatDataOptional;
+        defaults.preChatDataRequirements.message = ZDCPreChatDataOptional;
+    }];
     
     //
     //  The rest of the Mobile SDK code can be found in ZenHelpViewController.m
