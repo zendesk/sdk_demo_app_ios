@@ -62,35 +62,4 @@
  */
 - (NSDictionary *) toJson;
 
-
-/**
- *  Cache a search.
- *
- *  @since 1.3.0.1
- *
- *  @param lastSearch The search to be cached.
- */
-+ (void) cacheLastSearch:(ZDKHelpCenterLastSearch*)lastSearch;
-
-
-/**
- *  Get the cached last search.
- *
- *  @since 1.3.0.1
- *
- *  @return The last search.
- */
-+ (ZDKHelpCenterLastSearch *)getLastSearch;
-
-
-/**
- *  Returns a dictionary representation of the last search model.
- *
- *  @since 1.3.0.1
- *
- *  @return A dictionary representation of the model.
- */
-+ (NSDictionary *)getLastSearchJSON;
-
-
 @end
