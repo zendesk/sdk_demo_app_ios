@@ -486,12 +486,12 @@
 		4D246F9B19E7499600A46373 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = RememberTheDate;
 				TargetAttributes = {
 					4D246FA219E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 7529UAQB93;
+						DevelopmentTeam = 689VA4CD22;
 					};
 					4D246FBE19E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
@@ -695,6 +695,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -770,8 +771,9 @@
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d5364b03-e39f-4747-a953-cab9e6feb27e";
+				PROVISIONING_PROFILE = "4f45d040-3dda-41a4-af0b-66d477568025";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -793,8 +795,9 @@
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d5364b03-e39f-4747-a953-cab9e6feb27e";
+				PROVISIONING_PROFILE = "4f45d040-3dda-41a4-af0b-66d477568025";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -813,6 +816,7 @@
 				);
 				INFOPLIST_FILE = "Remember The DateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remember The Date.app/Remember The Date";
 			};
@@ -828,6 +832,7 @@
 				);
 				INFOPLIST_FILE = "Remember The DateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remember The Date.app/Remember The Date";
 			};

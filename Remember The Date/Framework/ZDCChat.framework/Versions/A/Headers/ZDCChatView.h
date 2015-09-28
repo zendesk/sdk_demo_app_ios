@@ -32,6 +32,7 @@ extern NSString * const ZDC_CHATCELL_TIMEOUT;
 extern NSString * const ZDC_CHATCELL_TYPING;
 extern NSString * const ZDC_CHATCELL_SYSTEM_TRIGGER;
 extern NSString * const ZDC_CHATCELL_RATING;
+extern NSString * const ZDC_CHATCELL_OPTIONS;
 
 
 /**

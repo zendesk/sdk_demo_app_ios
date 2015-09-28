@@ -18,7 +18,7 @@
 #import "ZDCLog.h"
 
 
-#define ZDC_SDK_VERSION @"0.9.3"
+#define ZDC_SDK_VERSION @"1.0"
 
 
 extern CGFloat const ZDC_TOAST_DURATION;
