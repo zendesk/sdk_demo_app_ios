@@ -90,7 +90,7 @@ extern NSString *APNS_ID_KEY;
         
         //Push is en
         if(pushIdentifier) {
-            [[ZDKConfig instance] enablePush:pushIdentifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+            [[ZDKConfig instance] enablePushWithDeviceID:pushIdentifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
                 
                 if (error) {
                     
