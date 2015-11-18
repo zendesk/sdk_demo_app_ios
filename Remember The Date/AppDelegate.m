@@ -54,24 +54,35 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont fontWithName:@"Helvetica" size:16]];
     
     
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    UIActivityIndicatorView *createRequestSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    createRequestSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    UIActivityIndicatorView *requestListSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    requestListSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    UIActivityIndicatorView *commentListSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    commentListSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
 
-    [spinner setColor:RED_COLOR];
+    [createRequestSpinner setColor:RED_COLOR];
+    [requestListSpinner setColor:RED_COLOR];
+    [commentListSpinner setColor:RED_COLOR];
     
     if ([ZDKUIUtil isNewerVersion:@6]){
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
         [[ZDKUITextView appearance] setTintColor:RED_COLOR];
-        [spinner setTintColor:RED_COLOR];
+        [createRequestSpinner setTintColor:RED_COLOR];
+        [requestListSpinner setTintColor:RED_COLOR];
+        [commentListSpinner setTintColor:RED_COLOR];
     } else {
         [[UINavigationBar appearance] setTintColor:RED_COLOR];
     }
     
-    [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
-    [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)spinner];
+    [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)createRequestSpinner];
+    [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)requestListSpinner];
+    [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)commentListSpinner];
     
-    [[ZDKRequestListTableCell appearance] setLeftInset:@20];
+    [[ZDKRequestListTableCell appearance] setLeftInset:@25];
     [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
     
     //Temp fix for 1.1 appearance issue
