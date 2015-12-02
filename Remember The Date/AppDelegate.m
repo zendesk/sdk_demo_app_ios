@@ -179,8 +179,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APNS_ID_KEY];
     
     if([[ZDKConfig instance] userIdentity] != nil) {
-
-    [[ZDKConfig instance] enablePush:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
+        
+    [[ZDKConfig instance] enablePushWithDeviceID:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
 
         if (error) {
 
