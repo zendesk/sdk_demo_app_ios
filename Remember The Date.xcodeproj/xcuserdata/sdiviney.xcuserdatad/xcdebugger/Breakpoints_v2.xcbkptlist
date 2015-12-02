@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Remember The Date/View Controllers/ZenHelpViewController.m"
-            timestampString = "439301927.598481"
+            timestampString = "469472068.344967"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-showHelpCenter:"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-setupSupportInformation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
