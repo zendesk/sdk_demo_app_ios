@@ -18,10 +18,14 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-#import "ZDKAPIDispatcher.h"
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIViewController.h"
 #import "ZDKUITextView.h"
+
+
+typedef void (^ZDKCreateRequestSuccess) (id result);
+typedef void (^ZDKCreateRequestError) (NSError *error);
+
 
 @class ZDKCreateRequestView;
 
@@ -40,11 +44,11 @@
 
 
 /**
- *  API success block, called after succesfull request creation.
+ *  API success block, called after successful request creation.
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, copy) ZDKAPISuccess onSuccess;
+@property (nonatomic, copy) ZDKCreateRequestSuccess onSuccess;
 
 
 /**
@@ -52,7 +56,7 @@
  *
  *  @since 0.9.3.1
  */
-@property (nonatomic, copy) ZDKAPIError onError;
+@property (nonatomic, copy) ZDKCreateRequestError onError;
 
 
 /**
@@ -72,8 +76,8 @@
  *  @param error the request object this comment is for
  *  @return the instance
  */
-- (instancetype) initWithSuccess:(ZDKAPISuccess)success
-                        andError:(ZDKAPIError)error;
+- (instancetype) initWithSuccess:(ZDKCreateRequestSuccess)success
+                        andError:(ZDKCreateRequestError)error;
 
 
 @end

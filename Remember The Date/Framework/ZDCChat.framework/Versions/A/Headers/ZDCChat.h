@@ -64,6 +64,8 @@
 #import "ZDCWebViewer.h"
 #import "ZDCRatingCell.h"
 #import "ZDCRatingCommentEditor.h"
+#import "ZDCAccountOfflineCell.h"
+#import "ZDCMobileProvisionAnalyzer.h"
 
 
 /**
@@ -134,6 +136,11 @@ typedef void (^ZDCSessionConfigBlock) (ZDCSessionConfig *config);
  * Defines whether an available chat session should be resumed on launch.
  */
 @property (nonatomic, assign) BOOL shouldResumeOnLaunch;
+
+/**
+ * Sets the parameter by the same name on the chat view controller when it is pushed onto an existing view controller.
+ */
+@property (nonatomic, assign) BOOL hidesBottomBarWhenPushed;
 
 
 /**
