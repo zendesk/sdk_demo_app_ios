@@ -156,7 +156,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     [ZDCChat configure:^(ZDCConfig *defaults) {
 
-        defaults.accountKey = @"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK";
+        defaults.accountKey = @"2PT4TD5ox8d19nrLoBAGpMk87L4r4VQQ";
         defaults.preChatDataRequirements.department = ZDCPreChatDataOptional;
         defaults.preChatDataRequirements.message = ZDCPreChatDataOptional;
     }];
