@@ -16,6 +16,7 @@
 @interface ZenHelpViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (atomic) BOOL sdkIsready;
 
 @end
 
@@ -95,6 +96,24 @@
     }];
 }
 
+- (void) setupSDK {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
+                                       zendeskUrl:@"https://rememberthedate.zendesk.com"
+                                         ClientId:@"client_for_rtd_jwt_endpoint"
+                                        onSuccess:^{
+                                            _sdkIsready = YES;
+        }
+                                          onError:^(NSError *error) {
+            
+        }];
+    });
+    
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,8 +133,13 @@
 //
 
 - (IBAction)showHelpCenter:(id)sender {
-    
     if ([self setupIdentity]) {
+        
+        if ( ! _sdkIsready ) {
+            [self showInitializationAlert];
+            return;
+        }
+        
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         
         
@@ -134,8 +158,7 @@
         
     }
     else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [self showLoginAlert];
     }
 
 }
@@ -148,6 +171,11 @@
 - (IBAction)contactSupport:(id)sender {
     
     if ([self setupIdentity]) {
+        
+        if ( ! _sdkIsready ) {
+            [self showInitializationAlert];
+            return;
+        }
         
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
@@ -162,8 +190,7 @@
         
     }
     else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [self showLoginAlert];
     }
 
 }
@@ -180,6 +207,11 @@
 - (IBAction)sendFeedback:(id)sender {
     
     if ([self setupIdentity]) {
+        
+        if ( ! _sdkIsready ) {
+            [self showInitializationAlert];
+            return;
+        }
         
          // Setup Rate My App
         [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {
@@ -213,14 +245,18 @@
         [ZDKRMA showAlwaysInView:self.view];
         
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and enter your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [self showLoginAlert];
     }
 }
 
 - (IBAction)showMyRequests:(id)sender {
     
     if ([self setupIdentity]) {
+        
+        if ( ! _sdkIsready ) {
+            [self showInitializationAlert];
+            return;
+        }
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         
@@ -239,10 +275,19 @@
         
     }
     else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [self showLoginAlert];
     }
     
+}
+
+- (void) showLoginAlert {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void) showInitializationAlert {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"I just need to herd some cats" delegate:self cancelButtonTitle:@"OK, I'll try again in a moment" otherButtonTitles:nil];
+    [alert show];
 }
 
 - (IBAction)showChat:(id)sender {
@@ -289,6 +334,8 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    //Initalize the SDK
+    [self setupSDK];
     //
     // Setup the support information
     //
