@@ -138,12 +138,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 #endif
 
     //
-    // Initialize the Zendesk SDK
-    //
-    
-    
-    
-    //
     // Style the SDK
     //
     

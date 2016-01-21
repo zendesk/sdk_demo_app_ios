@@ -16,11 +16,13 @@
 @interface ZenHelpViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (atomic) BOOL sdkIsready;
 
 @end
 
 @implementation ZenHelpViewController
+
+static BOOL isZendeskSDKInitialised = NO;
+
 
 
 - (BOOL) setupIdentity {
@@ -104,7 +106,7 @@
                                        zendeskUrl:@"https://rememberthedate.zendesk.com"
                                          ClientId:@"client_for_rtd_jwt_endpoint"
                                         onSuccess:^{
-                                            _sdkIsready = YES;
+                                            isZendeskSDKInitialised = YES;
         }
                                           onError:^(NSError *error) {
             
@@ -135,7 +137,7 @@
 - (IBAction)showHelpCenter:(id)sender {
     if ([self setupIdentity]) {
         
-        if ( ! _sdkIsready ) {
+        if ( ! isZendeskSDKInitialised ) {
             [self showInitializationAlert];
             return;
         }
@@ -172,7 +174,7 @@
     
     if ([self setupIdentity]) {
         
-        if ( ! _sdkIsready ) {
+        if ( ! isZendeskSDKInitialised ) {
             [self showInitializationAlert];
             return;
         }
@@ -208,7 +210,7 @@
     
     if ([self setupIdentity]) {
         
-        if ( ! _sdkIsready ) {
+        if ( ! isZendeskSDKInitialised ) {
             [self showInitializationAlert];
             return;
         }
@@ -253,7 +255,7 @@
     
     if ([self setupIdentity]) {
         
-        if ( ! _sdkIsready ) {
+        if ( ! isZendeskSDKInitialised ) {
             [self showInitializationAlert];
             return;
         }
