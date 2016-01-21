@@ -99,8 +99,7 @@ static BOOL isZendeskSDKInitialised = NO;
 }
 
 - (void) setupSDK {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if ( ! isZendeskSDKInitialised ) {
         
         [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
                                        zendeskUrl:@"https://rememberthedate.zendesk.com"
@@ -111,7 +110,7 @@ static BOOL isZendeskSDKInitialised = NO;
                                           onError:^(NSError *error) {
             
         }];
-    });
+    }
     
     
 }
