@@ -21,9 +21,6 @@
 
 @implementation ZenHelpViewController
 
-static BOOL isZendeskSDKInitialised = NO;
-
-
 
 - (BOOL) setupIdentity {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -98,23 +95,6 @@ static BOOL isZendeskSDKInitialised = NO;
     }];
 }
 
-- (void) setupSDK {
-    if ( ! isZendeskSDKInitialised ) {
-        
-        [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
-                                       zendeskUrl:@"https://rememberthedate.zendesk.com"
-                                         ClientId:@"client_for_rtd_jwt_endpoint"
-                                        onSuccess:^{
-                                            isZendeskSDKInitialised = YES;
-        }
-                                          onError:^(NSError *error) {
-            
-        }];
-    }
-    
-    
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -134,13 +114,8 @@ static BOOL isZendeskSDKInitialised = NO;
 //
 
 - (IBAction)showHelpCenter:(id)sender {
+    
     if ([self setupIdentity]) {
-        
-        if ( ! isZendeskSDKInitialised ) {
-            [self showInitializationAlert];
-            return;
-        }
-        
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         
         
@@ -159,7 +134,8 @@ static BOOL isZendeskSDKInitialised = NO;
         
     }
     else {
-        [self showLoginAlert];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        [alert show];
     }
 
 }
@@ -172,11 +148,6 @@ static BOOL isZendeskSDKInitialised = NO;
 - (IBAction)contactSupport:(id)sender {
     
     if ([self setupIdentity]) {
-        
-        if ( ! isZendeskSDKInitialised ) {
-            [self showInitializationAlert];
-            return;
-        }
         
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
@@ -191,7 +162,8 @@ static BOOL isZendeskSDKInitialised = NO;
         
     }
     else {
-        [self showLoginAlert];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        [alert show];
     }
 
 }
@@ -208,11 +180,6 @@ static BOOL isZendeskSDKInitialised = NO;
 - (IBAction)sendFeedback:(id)sender {
     
     if ([self setupIdentity]) {
-        
-        if ( ! isZendeskSDKInitialised ) {
-            [self showInitializationAlert];
-            return;
-        }
         
          // Setup Rate My App
         [ZDKRMA configure:^(ZDKAccount *account, ZDKRMAConfigObject *config) {
@@ -246,18 +213,14 @@ static BOOL isZendeskSDKInitialised = NO;
         [ZDKRMA showAlwaysInView:self.view];
         
     } else {
-        [self showLoginAlert];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and enter your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        [alert show];
     }
 }
 
 - (IBAction)showMyRequests:(id)sender {
     
     if ([self setupIdentity]) {
-        
-        if ( ! isZendeskSDKInitialised ) {
-            [self showInitializationAlert];
-            return;
-        }
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         
@@ -276,19 +239,10 @@ static BOOL isZendeskSDKInitialised = NO;
         
     }
     else {
-        [self showLoginAlert];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        [alert show];
     }
     
-}
-
-- (void) showLoginAlert {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-    [alert show];
-}
-
-- (void) showInitializationAlert {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"I just need to herd some cats" delegate:self cancelButtonTitle:@"OK, I'll try again in a moment" otherButtonTitles:nil];
-    [alert show];
 }
 
 - (IBAction)showChat:(id)sender {
@@ -335,8 +289,6 @@ static BOOL isZendeskSDKInitialised = NO;
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //Initalize the SDK
-    [self setupSDK];
     //
     // Setup the support information
     //
