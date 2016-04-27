@@ -45,14 +45,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
-
-    
-    [[ZDKCreateRequestView appearance] setPlaceholderTextColor:TEXT_COLOR_40];
-    [[ZDKCreateRequestView appearance] setTextEntryColor:TEXT_COLOR];
-    
-    
-    [[ZDKCreateRequestView appearance] setTextEntryFont:[UIFont fontWithName:@"Helvetica" size:16]];
-    
     
     UIActivityIndicatorView *createRequestSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     createRequestSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -70,24 +62,14 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     if ([ZDKUIUtil isNewerVersion:@6]){
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
-        [[ZDKUITextView appearance] setTintColor:RED_COLOR];
         [createRequestSpinner setTintColor:RED_COLOR];
         [requestListSpinner setTintColor:RED_COLOR];
         [commentListSpinner setTintColor:RED_COLOR];
     } else {
         [[UINavigationBar appearance] setTintColor:RED_COLOR];
     }
-    
-    [[ZDKCreateRequestView appearance] setSpinner:(id<ZDKSpinnerDelegate>)createRequestSpinner];
-    [[ZDRequestListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)requestListSpinner];
-    [[ZDKCommentsListLoadingTableCell appearance] setSpinner:(id<ZDKSpinnerDelegate>)commentListSpinner];
-    
-    [[ZDKRequestListTableCell appearance] setLeftInset:@25];
+
     [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
-    
-    //Temp fix for 1.1 appearance issue
-    [[ZDKEndUserCommentTableCell appearance] setCellBackground:[UIColor colorWithWhite:0.967f alpha:1.0f]];
-    [[ZDKAgentCommentTableCell appearance] setCellBackground:[UIColor whiteColor]];
 
     // chat SDK
     [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
@@ -143,7 +125,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     
     [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
                                    zendeskUrl:@"https://rememberthedate.zendesk.com"
-                                  andClientId:@"client_for_rtd_jwt_endpoint"];
+                                     clientId:@"client_for_rtd_jwt_endpoint"];
     
     //
     // Style the SDK
