@@ -46,25 +46,9 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     
-    UIActivityIndicatorView *createRequestSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    createRequestSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    
-    UIActivityIndicatorView *requestListSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    requestListSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    
-    UIActivityIndicatorView *commentListSpinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    commentListSpinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-
-    [createRequestSpinner setColor:RED_COLOR];
-    [requestListSpinner setColor:RED_COLOR];
-    [commentListSpinner setColor:RED_COLOR];
-    
     if ([ZDKUIUtil isNewerVersion:@6]){
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
-        [createRequestSpinner setTintColor:RED_COLOR];
-        [requestListSpinner setTintColor:RED_COLOR];
-        [commentListSpinner setTintColor:RED_COLOR];
     } else {
         [[UINavigationBar appearance] setTintColor:RED_COLOR];
     }
