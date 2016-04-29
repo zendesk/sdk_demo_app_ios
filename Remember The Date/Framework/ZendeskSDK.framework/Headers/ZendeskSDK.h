@@ -3,7 +3,7 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 04/27/2016
+ *  Created by Zendesk on 04/29/2016
  *
  *  Copyright (c) 2016 Zendesk. All rights reserved.
  *
@@ -44,7 +44,6 @@
 #import "ZDKHelpCenterSectionsDataSource.h"
 #import "ZDKHelpCenterTableDelegate.h"
 #import "ZDKImageViewerViewController.h"
-#import "ZDKLocalization.h"
 #import "ZDKPushUtil.h"
 #import "ZDKRMA.h"
 #import "ZDKRMAConfigObject.h"

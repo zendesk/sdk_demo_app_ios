@@ -85,6 +85,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *fontName;
 
 /**
+ *  Apply the theme to the SDK
+ *
+ *  @since 1.6.0.1
+ */
+- (void)apply;
+
+/**
  *  Returns a newly created instance filled with values from the Base SDK UI starndard theme.
  *
  *  Theme properties will be set to the standard theme.
@@ -92,6 +99,14 @@ NS_ASSUME_NONNULL_BEGIN
  *  @since 1.6.0.1
  */
 + (instancetype)baseTheme;
+
+/**
+ *  Get the current theme used in the SDK
+ *
+ *  @since 1.6.0.1
+ */
++ (instancetype)currentAppliedTheme;
+
 
 /**
  *  Use +[ZDKTheme baseTheme] instead to return a theme that you can edit

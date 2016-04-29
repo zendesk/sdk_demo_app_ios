@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/ZDKConfig.h</key>
 		<data>
-		zLUYbkRBotYbqf32QNp1/x3NXSw=
+		nmCskwXRSaBLEVo/EG+D82MdFMY=
 		</data>
 		<key>Headers/ZDKContactUsSettings.h</key>
 		<data>
@@ -180,6 +180,10 @@
 		<data>
 		vtqZPCO0PI0VooiFDptlZh4ioBo=
 		</data>
+		<key>Headers/ZDKLocalization.h</key>
+		<data>
+		+GWwvbQkFB3NbKsVZr05r5Esob4=
+		</data>
 		<key>Headers/ZDKLogger.h</key>
 		<data>
 		kE4rtXbKZ2y2jwak7hLxLDsvtRA=
@@ -282,7 +286,7 @@
 		</data>
 		<key>Headers/ZendeskProviderSDK.h</key>
 		<data>
-		+sMG85eZL+0+HIb5LkiNoi72ibU=
+		0aZB0y9KKlS3Dud5GyNsyDu+B3Y=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
@@ -520,11 +524,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zLUYbkRBotYbqf32QNp1/x3NXSw=
+			nmCskwXRSaBLEVo/EG+D82MdFMY=
 			</data>
 			<key>hash2</key>
 			<data>
-			oqEmyxcNG3EXCEcFAhkizRFCAn6IawWw6mkNBH9as2g=
+			sNhzSF7yaWccnbDvd6kyXf5i+NZXNsFyFxovW0cQ+/o=
 			</data>
 		</dict>
 		<key>Headers/ZDKContactUsSettings.h</key>
@@ -835,6 +839,17 @@
 			il2q6Z5yiSMBe385yAmApkKExx0tfKNz1jdvH03ELSc=
 			</data>
 		</dict>
+		<key>Headers/ZDKLocalization.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+GWwvbQkFB3NbKsVZr05r5Esob4=
+			</data>
+			<key>hash2</key>
+			<data>
+			77QwheW2mfDhrBPVYxBFvJkHHOjQTQN91HbroD2fuzg=
+			</data>
+		</dict>
 		<key>Headers/ZDKLogger.h</key>
 		<dict>
 			<key>hash</key>
@@ -1114,11 +1129,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+sMG85eZL+0+HIb5LkiNoi72ibU=
+			0aZB0y9KKlS3Dud5GyNsyDu+B3Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			XoMJBrVXudpxEA84/Q/NBDPgZ2DRxOutIjCFi0CSMpo=
+			2gy3h/39Teyn/lhdpOFW+9afmaDN9QDpBL4xfj04f6U=
 			</data>
 		</dict>
 		<key>Headers/ZendeskSDKConstants.h</key>

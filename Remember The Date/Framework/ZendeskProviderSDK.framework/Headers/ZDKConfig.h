@@ -77,13 +77,6 @@ typedef void (^ZDKInitializeSuccess)(void);
 @property (nonatomic, assign, readonly) ZDKAuthenticationType authenticationType;
 
 
-/**
- *  The theme used to style the SDK UI components.
- *
- *  @since 1.6.0.1
- */
-@property (nonatomic, assign) ZDKTheme *theme;
-
 
 /**
  *  Override the default locale specified via the SDK admin.

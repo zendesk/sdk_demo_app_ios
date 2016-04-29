@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 04/27/2016
+ *  Created by Zendesk on 04/29/2016
  *
  *  Copyright (c) 2016 Zendesk. All rights reserved.
  *
@@ -64,6 +64,7 @@
 #import "ZDKJsonUtil.h"
 #import "ZDKJwtIdentity.h"
 #import "ZDKKeychainWrapper.h"
+#import "ZDKLocalization.h"
 #import "ZDKLogger.h"
 #import "ZDKMobileProvisionAnalyzer.h"
 #import "ZDKNSCodingUtil.h"

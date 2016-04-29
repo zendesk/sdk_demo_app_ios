@@ -100,10 +100,6 @@
 		<data>
 		geZ45g+NBWGCLVK/vsBALaswp0c=
 		</data>
-		<key>Headers/ZDKLocalization.h</key>
-		<data>
-		+GWwvbQkFB3NbKsVZr05r5Esob4=
-		</data>
 		<key>Headers/ZDKPushUtil.h</key>
 		<data>
 		V6ePA7DLuhHkhAib9JXrsUN/X7Y=
@@ -186,7 +182,7 @@
 		</data>
 		<key>Headers/ZDKTheme.h</key>
 		<data>
-		8Qz7yQWfqTygGNTPuG+q8XjmJf8=
+		SGlMrXa1s6ClVxup+Us35slTpow=
 		</data>
 		<key>Headers/ZDKToast.h</key>
 		<data>
@@ -226,7 +222,7 @@
 		</data>
 		<key>Headers/ZendeskSDK.h</key>
 		<data>
-		eeNhAy/rFHZQckSh/6P722yRbO4=
+		rFNu6/PluCMwKLuOcQW5jUGJ8Z4=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -515,17 +511,6 @@
 			dnRCVcJfKZfYtPvIXJcBVx4DnvhVDWrtNQAyd9zrFNQ=
 			</data>
 		</dict>
-		<key>Headers/ZDKLocalization.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+GWwvbQkFB3NbKsVZr05r5Esob4=
-			</data>
-			<key>hash2</key>
-			<data>
-			77QwheW2mfDhrBPVYxBFvJkHHOjQTQN91HbroD2fuzg=
-			</data>
-		</dict>
 		<key>Headers/ZDKPushUtil.h</key>
 		<dict>
 			<key>hash</key>
@@ -750,11 +735,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8Qz7yQWfqTygGNTPuG+q8XjmJf8=
+			SGlMrXa1s6ClVxup+Us35slTpow=
 			</data>
 			<key>hash2</key>
 			<data>
-			WPqyVhP5P43YjWfE3TVzwzPDJJT1pv5WkqJa5pgfhgM=
+			of/OdUsooXW9nvmG97gMnseYOH4lNCsKQpgYVASiRQE=
 			</data>
 		</dict>
 		<key>Headers/ZDKToast.h</key>
@@ -860,11 +845,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eeNhAy/rFHZQckSh/6P722yRbO4=
+			rFNu6/PluCMwKLuOcQW5jUGJ8Z4=
 			</data>
 			<key>hash2</key>
 			<data>
-			rMZHWcJPQgEriH6IRwSttWhU2fze2QcYw6D/tli+zRg=
+			Z2A750w2P8Q/UbI/T65MEMAWoYmXIWJNHosWTQFtklk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
