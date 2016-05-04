@@ -45,10 +45,6 @@
         // configgure additional info
         NSString *appVersionString = [NSString stringWithFormat:@"version_%@",
                                    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-        
-        
-        
-        NSString *additionalText = [ZDKDeviceInfo deviceInfoString];
 
         
         // Setting the custom form id to use the IOS Support form
@@ -123,12 +119,12 @@
         
         if([ZDKUIUtil isPad]) {
             
-            [ZDKHelpCenter presentHelpCenterWithNavController:self.navigationController];
+            [ZDKHelpCenter presentHelpCenterWithViewController:self];
             
         } else {
             
             [tabbarController hideTabbar];
-            [ZDKHelpCenter showHelpCenterWithNavController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
         }
 
         
@@ -158,7 +154,7 @@
             
         }
         
-        [ZDKRequests showRequestCreationWithNavController:(UINavigationController*)self.tabBarController];
+        [ZDKRequests presentRequestCreationWithViewController:(UIViewController*)self.tabBarController];
         
     }
     else {
@@ -191,10 +187,36 @@
             
             NSString *appVersion = [NSString stringWithFormat:@"App version: %@", versionString];
             
+            if ([ZDKBundleUtils frameworkStringsBundle] == nil) {
+                [ZDKLogger w:@"Zendesk SDK Strings Bundle must be present in order to use %s", __PRETTY_FUNCTION__];
+                return;
+            }
             
-            NSString *additionalText = [NSString stringWithFormat:@"%@\n\n%@",
-                                        appVersion,
-                                        [ZDKDeviceInfo deviceInfoString]];
+            NSString *osVersion = [NSString stringWithFormat:@"%@ %@",
+                                   [ZDKLocalization localizedStringWithKey:@"ios.ZDKAPI.request.sendFeedback.device.osVersion"],
+                                   [UIDevice currentDevice].systemVersion];
+            
+            NSString *model = [NSString stringWithFormat:@"%@ %@",
+                               [ZDKLocalization localizedStringWithKey:@"ios.ZDKAPI.request.sendFeedback.device.model"],
+                               [ZDKDeviceInfo deviceType]];
+            
+            NSString *totalMemory = [NSString stringWithFormat:@"%@ %.f",
+                                     [ZDKLocalization localizedStringWithKey:@"ios.ZDKAPI.request.sendFeedback.device.totalMemory"],
+                                     [ZDKDeviceInfo totalDeviceMemory]];
+            
+            NSString *space = [NSString stringWithFormat:@"%@ %.2f GB",
+                               [ZDKLocalization localizedStringWithKey:@"ios.ZDKAPI.request.sendFeedback.device.freeDiskspace"],
+                               [ZDKDeviceInfo freeDiskspace]];
+            
+            NSString *batteryLevel = [NSString stringWithFormat:@"%@ %.0f%%",
+                                      [ZDKLocalization localizedStringWithKey:@"ios.ZDKAPI.request.sendFeedback.device.batteryLevel"],
+                                      [ZDKDeviceInfo batteryLevel]];
+            
+            
+            
+            
+            
+            NSString *additionalText = [NSString stringWithFormat:@"%@\n\n%@\n%@\n%@\n%@\n%@",appVersion, osVersion, model, totalMemory, space, batteryLevel];
 
             
             config.additionalRequestInfo = [NSString stringWithFormat:@"\n\n\n\n%@", additionalText];
@@ -228,12 +250,12 @@
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKRequests presentRequestListWithNavController:self.navigationController];
+            [ZDKRequests presentRequestListWithViewController:self];
             
         } else {
             
             [tabbarController hideTabbar];
-            [ZDKRequests showRequestListWithNavController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+            [ZDKRequests pushRequestListWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
         }
 
         
