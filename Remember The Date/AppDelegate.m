@@ -23,9 +23,9 @@
 #define NAVBAR_COLOR [UIColor colorWithRed:240.0f/255.f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f]
 #define EMAIL_COLOR [UIColor colorWithRed:214.0f/255.f green:214.0f/255.0f blue:214.0f/255.0f alpha:1.0f]
 
-static NSString * APP_ID = @"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd";
-static NSString * ZENDESK_URL = @"https://rememberthedate.zendesk.com";
-static NSString * CLIENT_ID = @"client_for_rtd_jwt_endpoint";
+static NSString * APP_ID = @"028b15da813ba20ee3b2168553a01502bcd7a79c2aef6fcd";
+static NSString * ZENDESK_URL = @"https://geomappers.zd-master.com";
+static NSString * CLIENT_ID = @"mobile_sdk_client_79d5933cc2d2fb2a49ae";
 
 NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
@@ -79,20 +79,20 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     }
 
     // Register for remote notfications    
-    if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
-        
-        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-        
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [application registerUserNotificationSettings:settings];
-        [application registerForRemoteNotifications];
-        
-    } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
-        
-        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
-        
-        [application registerForRemoteNotificationTypes:types];
-    }
+//    if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
+//        
+//        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+//        
+//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+//        [application registerUserNotificationSettings:settings];
+//        [application registerForRemoteNotifications];
+//        
+//    } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
+//        
+//        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+//        
+//        [application registerForRemoteNotificationTypes:types];
+//    }
     //
     // Enable logging for debug builds
     //
@@ -107,9 +107,9 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     // Initialize the Zendesk SDK
     //
     
-    [[ZDKConfig instance] initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd"
-                                   zendeskUrl:@"https://rememberthedate.zendesk.com"
-                                     clientId:@"client_for_rtd_jwt_endpoint"];
+    [[ZDKConfig instance] initializeWithAppId:APP_ID
+                                   zendeskUrl:ZENDESK_URL
+                                     clientId:CLIENT_ID];
     
     //
     // Style the SDK

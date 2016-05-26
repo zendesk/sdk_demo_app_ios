@@ -7,10 +7,13 @@
 //
 
 #import "SaveTheDateTabBarController.h"
+#import <ZendeskSDK/ZendeskSDK.h>
 
 #define BUTTON_ADD_TAG 100
 
 @interface SaveTheDateTabBarController ()
+
+@property (nonatomic, strong) CLLocationManager * locationManager;
 
 @end
 
@@ -19,6 +22,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self startLocationManager];
+    
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL *stop) {
         vc.title = nil;
         vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
@@ -52,6 +58,33 @@
     [self.tabBar setClipsToBounds:YES];
 
         
+}
+
+
+- (void) startLocationManager {
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager requestAlwaysAuthorization];
+    
+    
+    [_locationManager startUpdatingLocation];
+}
+
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)location {
+    NSLog(@"NewLocation %f %f", [location lastObject].coordinate.latitude, [location lastObject].coordinate.longitude);
+    NSString * locString = @"53.3344707,-6.2628707";//[NSString stringWithFormat:@"%f,%f", [location lastObject].coordinate.latitude, [location lastObject].coordinate.longitude];
+    ZDKCustomField * loc = [[ZDKCustomField alloc] initWithFieldId:@6963343 andValue:locString];
+    
+    [ZDKConfig instance].customTicketFields = @[loc];
+}
+
+
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
 }
 
 

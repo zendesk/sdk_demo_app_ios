@@ -31,7 +31,9 @@
         
         if ( email.length > 0) {
             
-            [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc] initWithJwtUserIdentifier:email];
+            ZDKAnonymousIdentity * ident = [ZDKAnonymousIdentity new];
+            ident.email = email;
+            [ZDKConfig instance].userIdentity = ident;
             return YES;
         }
     }
@@ -82,10 +84,7 @@
         
         NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
         
-        if(appName) {
-            requestCreationConfig.additionalRequestInfo =
-            [NSString stringWithFormat:@"%@-------------\nSent from %@.", requestCreationConfig.contentSeperator, appName];
-        }
+        
             
         
     }];

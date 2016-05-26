@@ -83,8 +83,13 @@ extern NSString *APNS_ID_KEY;
         [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         
-        [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc]
-                                             initWithJwtUserIdentifier:self.emailTextField.text];
+        //[ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc]
+        //                                     initWithJwtUserIdentifier:self.emailTextField.text];
+    
+        ZDKAnonymousIdentity * ident = [ZDKAnonymousIdentity new];
+        ident.email = self.emailTextField.text;
+        [ZDKConfig instance].userIdentity = ident;
+        
         
         NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
         

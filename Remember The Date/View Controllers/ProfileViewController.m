@@ -58,7 +58,7 @@ extern NSString *APNS_ID_KEY;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [ZDKConfig instance].userIdentity = [ZDKJwtIdentity new];
+    [ZDKConfig instance].userIdentity = [ZDKAnonymousIdentity new];
     
     NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
     

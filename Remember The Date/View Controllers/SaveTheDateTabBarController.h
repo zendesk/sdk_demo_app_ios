@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface SaveTheDateTabBarController : UITabBarController
+@interface SaveTheDateTabBarController : UITabBarController <CLLocationManagerDelegate>
 
 -(void) hideTabbar;
 -(void) showTabbar;
