@@ -120,12 +120,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Initialise the chat SDK
     //
-    [ZDCChat configure:^(ZDCConfig *defaults) {
+    [ZDCChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK"];
 
-        defaults.accountKey = @"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK";
-        defaults.preChatDataRequirements.department = ZDCPreChatDataOptional;
-        defaults.preChatDataRequirements.message = ZDCPreChatDataOptional;
-    }];
     
     //
     //  The rest of the Mobile SDK code can be found in ZenHelpViewController.m

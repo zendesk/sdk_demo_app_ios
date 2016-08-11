@@ -117,14 +117,16 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         
+        ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
+        
         if([ZDKUIUtil isPad]) {
             
-            [ZDKHelpCenter presentHelpCenterWithViewController:self];
+            [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
             
         } else {
             
             [tabbarController hideTabbar];
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+            [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
         }
 
         
@@ -283,7 +285,10 @@
     }
 
     // present as new modal using global pre-chat config and whatever visitor info has been persisted
-    [ZDCChat startChat:nil];
+    [ZDCChat startChat:^(ZDCConfig *config) {
+        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
+        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
+    }];
 }
 
 -(NSString *) userEmail {
