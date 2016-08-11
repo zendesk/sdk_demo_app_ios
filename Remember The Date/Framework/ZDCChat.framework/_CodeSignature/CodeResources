@@ -6,291 +6,139 @@
 	<dict>
 		<key>Headers/ZDCAccountOfflineCell.h</key>
 		<data>
-		Vjc3lEFp3OVgqTu8VY5aYKW/fhc=
-		</data>
-		<key>Headers/ZDCActivityView.h</key>
-		<data>
-		A82vzgsJCUyM9oXv/yIBenhp7Ec=
+		temR1KEVT/DBZdlztJekQ/7Q5q0=
 		</data>
 		<key>Headers/ZDCAgentAttachmentCell.h</key>
 		<data>
-		C+CUKBiFHGw48zt33l/I/FE7clM=
+		VcuYsqLcbNyvc1HwR7ie8G0Vr5E=
 		</data>
 		<key>Headers/ZDCAgentChatCell.h</key>
 		<data>
-		4pfTO123gqiucnHEbqth1cAWUUY=
-		</data>
-		<key>Headers/ZDCAgentOptionsCell.h</key>
-		<data>
-		7Q2G5lS16ZH7Uqx+KeHXNUH68Iw=
+		jJe3KBNDaPZCQzwLKwc2+Qc4Vvk=
 		</data>
 		<key>Headers/ZDCAgentTypingCell.h</key>
 		<data>
-		68cC+/x9cE0JfRDYrSCg3aCCRJk=
-		</data>
-		<key>Headers/ZDCBundleUtils.h</key>
-		<data>
-		APGmGvA11csbNkWlWng2ApvUV8U=
+		EQnFUcswPQ3zyX4pW40UgkXWe7w=
 		</data>
 		<key>Headers/ZDCChat.h</key>
 		<data>
-		KTSoHfW6amfGHdVENyfhSl2AEQU=
-		</data>
-		<key>Headers/ZDCChatAgent.h</key>
-		<data>
-		XfqJhZeW+5nTt0kF8CIhSSfYJ8Q=
-		</data>
-		<key>Headers/ZDCChatAttachment.h</key>
-		<data>
-		DdULH/h3sFCt5onMeyIYDj1zZ/8=
+		1GUsgd8MwWdEF3wZwyw84BKwu00=
 		</data>
 		<key>Headers/ZDCChatAvatar.h</key>
 		<data>
-		Phke98+xotnvamf6x3sVltGoYFY=
+		YbDUeD5qHa7C0WBLb43QnvxJLRo=
 		</data>
 		<key>Headers/ZDCChatCell.h</key>
 		<data>
-		AO7P+/BAU2jKQqvPiKmB/IIkpvA=
+		0huyzFnF6Uiphsp5pTduFBrtMrs=
 		</data>
 		<key>Headers/ZDCChatCellActionDelegate.h</key>
 		<data>
-		0ylNq7bWznr1SP2Mg5ebbWlq1a0=
-		</data>
-		<key>Headers/ZDCChatConstants.h</key>
-		<data>
-		9q6aRm09zfz2Bl0r2zbdP2xcf/M=
-		</data>
-		<key>Headers/ZDCChatDataNode.h</key>
-		<data>
-		vgZh+ANkcPQReHlv256Xdw2B6to=
-		</data>
-		<key>Headers/ZDCChatDataSource.h</key>
-		<data>
-		xxfJCnvl7fzIlXR4lIOigfOmBrg=
-		</data>
-		<key>Headers/ZDCChatEvent.h</key>
-		<data>
-		u1zhQaxmrDieLn/voOahLA6V9ic=
-		</data>
-		<key>Headers/ZDCChatFile.h</key>
-		<data>
-		FR1kdG/8INWz/FViZgBJQ2PqBcw=
-		</data>
-		<key>Headers/ZDCChatIO.h</key>
-		<data>
-		Yhd8gX9+B60LEEV+zNK8s9QUBEI=
+		yMmcLrblWnDco0VMKGjcsrL7ebg=
 		</data>
 		<key>Headers/ZDCChatOverlay.h</key>
 		<data>
-		mxnUrT7H+1rxdutZP0MBMmNd044=
-		</data>
-		<key>Headers/ZDCChatProfile.h</key>
-		<data>
-		v6kxkSkqkc6PUXXPiXHPEldzNT0=
-		</data>
-		<key>Headers/ZDCChatSession.h</key>
-		<data>
-		oEn0pF57S+nU4U4HoOWmxPZqmaw=
+		6EM4ldkQDy3Z/b8GZYAaYO06hPA=
 		</data>
 		<key>Headers/ZDCChatTimedOutCell.h</key>
 		<data>
-		JVGL3gwiCmXWbSMyYLsU8BeNrK4=
+		EfJnt13Gplk4TKkPu9s5w1cqmtQ=
 		</data>
 		<key>Headers/ZDCChatUI.h</key>
 		<data>
-		DD2RvFaADwc7tqZLWyt//AYxfl4=
+		K+vzHhKqQngT1eJpNv7aIvmHrxQ=
 		</data>
 		<key>Headers/ZDCChatUIController.h</key>
 		<data>
-		n1j89qeRJ7gqLft4LvIJFEdhARg=
-		</data>
-		<key>Headers/ZDCChatUpload.h</key>
-		<data>
-		+Ymf9xLT17kPN9X9UNG139Gom7I=
+		TfNw1kG7qPY4MnFOSueumygE6Bs=
 		</data>
 		<key>Headers/ZDCChatView.h</key>
 		<data>
-		K4/oTaSU73bhMu9vxDDdZphS5IA=
+		fWHltlOBtEk1wn1PdJBzi4mLZPQ=
 		</data>
 		<key>Headers/ZDCChatViewController.h</key>
 		<data>
-		mDX8ZdVuNplxyOMsIbymwzPNAxs=
+		wYJWvTaoNV4haTNnl/s37ukswXI=
 		</data>
 		<key>Headers/ZDCConfig.h</key>
 		<data>
-		DwIQOexAjlGnHuEzWRWbB/UKQ6U=
-		</data>
-		<key>Headers/ZDCDeviceInfo.h</key>
-		<data>
-		fCtqCBd1aos+ulhepVvIonfH2rY=
-		</data>
-		<key>Headers/ZDCEmailTranscriptAction.h</key>
-		<data>
-		HJnHxsiBhULGprNKKurs0R3IshI=
-		</data>
-		<key>Headers/ZDCEvents.h</key>
-		<data>
-		nZkNGj4NBfgdJ1lcG3HuMuPymB4=
+		JAAx1vcY+dCpw9Sdkbui4HBw61M=
 		</data>
 		<key>Headers/ZDCFormCell.h</key>
 		<data>
-		ME3v+P6+UoR1tz1LMSQ0HszWzkE=
+		+XjrfLOaFuKReL5O2hIyeFA2pRc=
 		</data>
 		<key>Headers/ZDCFormCellDepartment.h</key>
 		<data>
-		B1Il+d78tZVgMt3rOU7X4iYw0QU=
+		wbPMuFcZBP8kb3Wtefz6B7Qcms0=
 		</data>
 		<key>Headers/ZDCFormCellMessage.h</key>
 		<data>
-		UHKIgd+lvhv0c/ZZGcxcvuPXfnE=
+		STfQdlue32nK7I67qAWDjKlvnAk=
 		</data>
 		<key>Headers/ZDCFormCellSingleLine.h</key>
 		<data>
-		MZzUcdNyyd1Dx9rqzIKS1eCVZOU=
-		</data>
-		<key>Headers/ZDCHttpRequest.h</key>
-		<data>
-		tc8D6O+eLl56+E3Mxb3OS8/NWCk=
-		</data>
-		<key>Headers/ZDCHttpUploadRequest.h</key>
-		<data>
-		9av31kkyKAql+BdAq2VGh0mdlyk=
-		</data>
-		<key>Headers/ZDCImageViewer.h</key>
-		<data>
-		8+/7fly9qIRcvirPYsRgf0QyvL4=
-		</data>
-		<key>Headers/ZDCJSONEncoder.h</key>
-		<data>
-		bt/vP9U0fqyOL/T7QWei56KoO8M=
-		</data>
-		<key>Headers/ZDCJSWidgetIO.h</key>
-		<data>
-		c5oTy89K3PPydAc0qGw1JWqyEx0=
+		SEgASkCyv/Xs32xNyUn7cU0IZfI=
 		</data>
 		<key>Headers/ZDCJoinLeaveCell.h</key>
 		<data>
-		tdS+aieTObMYprszbAGNnCi6mtc=
-		</data>
-		<key>Headers/ZDCKeychainWrapper.h</key>
-		<data>
-		ftZ0XM05VfmRydbLGAZfvoFYuDY=
+		dSNuPT9r/Ff7bLbbRs7rWSpmJv4=
 		</data>
 		<key>Headers/ZDCLoadingErrorView.h</key>
 		<data>
-		J5hDQvEjCBzb3BkjAGEYO/w4OEc=
+		CNsAO0Tp040pGm8g96jqAmikBhk=
 		</data>
 		<key>Headers/ZDCLoadingView.h</key>
 		<data>
-		Y9j66HFUpL95HfbhyCwQ68kgFhg=
-		</data>
-		<key>Headers/ZDCLog.h</key>
-		<data>
-		2hqfLrywKLaF328kSVbidAFekwg=
-		</data>
-		<key>Headers/ZDCMessageMonitor.h</key>
-		<data>
-		Nlu16IR1KciRa9PwLuGDMvUeRDA=
-		</data>
-		<key>Headers/ZDCMobileProvisionAnalyzer.h</key>
-		<data>
-		FZ1Yjix65JEW4GWlxhAc67/x3yE=
+		UPO0jZst/fyeR83xdFWlQhXnniQ=
 		</data>
 		<key>Headers/ZDCOfflineMessageHandler.h</key>
 		<data>
-		NkMi+IZrtGMcoAwwxeeH3YD8YBU=
+		MHabU310QVjclVQ3kyyCN2K5Pqs=
 		</data>
 		<key>Headers/ZDCOfflineMessageView.h</key>
 		<data>
-		Bt9Jw5fd+ZNf5ERwDdiy1fcZ1EM=
+		NTGiarWyLk9aiQVBa28/ClIKSyg=
 		</data>
 		<key>Headers/ZDCPreChatData.h</key>
 		<data>
-		VbHVY8Qu8bFP1BFi0raq5HgrPFI=
+		X14Ro+tmZWX8rkTB1tD0Qfq7yLY=
 		</data>
 		<key>Headers/ZDCPreChatFormView.h</key>
 		<data>
-		kpcNp4iT9uQMGw3OrCtlQ5uVpf4=
+		SLY6I7NrZoEBQSXR6etOmWKWUNk=
 		</data>
 		<key>Headers/ZDCRatingCell.h</key>
 		<data>
-		CIMeva628mNXL5Rd06dUuccMnVw=
-		</data>
-		<key>Headers/ZDCRatingCommentEditor.h</key>
-		<data>
-		V/8V3cYnr8rx6uuIdCTE8oM19hE=
-		</data>
-		<key>Headers/ZDCReachability.h</key>
-		<data>
-		+qtGpXM50+dDx5TPLTFGWyVdcfk=
-		</data>
-		<key>Headers/ZDCSessionConfig.h</key>
-		<data>
-		HNAKAr78U6VS1se40gdV0Rfo8fM=
-		</data>
-		<key>Headers/ZDCSessionStateManager.h</key>
-		<data>
-		V0sb6jcxK9r4hUAR85qqGg44sv0=
+		m5lnbEwLovXi3Mi2nfPIWimZbg4=
 		</data>
 		<key>Headers/ZDCSystemTriggerCell.h</key>
 		<data>
-		B2u82k/hFB4au95Y4Mbyj2NNBzg=
+		mVt+Qrg+IDtmuUYOBArLsuhMON4=
 		</data>
 		<key>Headers/ZDCTextEntryView.h</key>
 		<data>
-		7zYHOJZK1H5bDQT+aDe2SlSXnNs=
-		</data>
-		<key>Headers/ZDCVisitorActionDelegate.h</key>
-		<data>
-		rMGzDRyUD13gIUtNcxuVFMwL07c=
+		LgeecA9UTWFBhlzJypAYkwIY6RI=
 		</data>
 		<key>Headers/ZDCVisitorAttachmentCell.h</key>
 		<data>
-		Rbb643SnNTztVM5UNwSMJhFSEfg=
+		eaAbZg400yllJASs9VIVlsK0rRE=
 		</data>
 		<key>Headers/ZDCVisitorChatCell.h</key>
 		<data>
-		DHmeuzzjDWk2K0AFQ+utOiHrcpo=
-		</data>
-		<key>Headers/ZDCVisitorInfo.h</key>
-		<data>
-		8+EkkYTcbJq+Eqv7mGP488xuktU=
-		</data>
-		<key>Headers/ZDCWebViewer.h</key>
-		<data>
-		OXmh3dUFfUOSByi3h12whTnyMh0=
-		</data>
-		<key>Headers/ZDUActivityViewDelegate.h</key>
-		<data>
-		qoOt771KBYyFX/aIf5ZV4MiMWfg=
+		9KSVMpy3+1+Xiwg2nbtYGAA8mKI=
 		</data>
 		<key>Headers/ZDUExternalImage.h</key>
 		<data>
-		FWLuxg9LbeGjj6WASND8X7Cxyos=
+		R9EfBJhbdZSppzv7YmtFw6zyB4w=
 		</data>
-		<key>Headers/ZDUImageLoader.h</key>
+		<key>Headers/ZDUImageRequestDelegate.h</key>
 		<data>
-		8PR1EI9rI95x/td0C5KypYAH6ls=
-		</data>
-		<key>Headers/ZDUTextView.h</key>
-		<data>
-		O8b57tmSlXlR4S+/yUtp6rpnGXs=
-		</data>
-		<key>Headers/ZDUToastStyle.h</key>
-		<data>
-		MCpwhez5jMksJjeD2Jbqi3/8+YI=
-		</data>
-		<key>Headers/ZDUToastView.h</key>
-		<data>
-		UWDWvhSiDSobv2Iv5TS2qyUTFow=
-		</data>
-		<key>Headers/ZDUUtil.h</key>
-		<data>
-		9U5b9WaHg+4fxa2DSdZui81Mk08=
+		4gkmM1G7dx9+DJN1GsHTE+FzpWc=
 		</data>
 		<key>Headers/ZDUViewController.h</key>
 		<data>
-		QDHLzBCa6dkHhF5Puvmf38ZwSM8=
+		JQkh9f7JKyXwvjesXfhdOlddPhA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -298,315 +146,422 @@
 		</data>
 		<key>PrivateHeaders/ZDCChatAlertHelper.h</key>
 		<data>
-		fPyoeMIWGfeJVgBibV3ueDYFjpM=
+		+YfVmBdel9WwEnHYFnpcb5yyZQU=
 		</data>
 		<key>PrivateHeaders/ZDCConfig+Timeout.h</key>
 		<data>
-		QmVsSlF/+5MyJJ9mvvbS8cvVGS4=
+		l6w9bPTRldC5TqUsnueUYPwJ0Lo=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Headers/ZDCAccountOfflineCell.h</key>
-		<data>
-		Vjc3lEFp3OVgqTu8VY5aYKW/fhc=
-		</data>
-		<key>Headers/ZDCActivityView.h</key>
-		<data>
-		A82vzgsJCUyM9oXv/yIBenhp7Ec=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			temR1KEVT/DBZdlztJekQ/7Q5q0=
+			</data>
+			<key>hash2</key>
+			<data>
+			oYhi/IbsPK9r+CeTqa7ZkVgzsdtUgMK7szgK+g/bRZ0=
+			</data>
+		</dict>
 		<key>Headers/ZDCAgentAttachmentCell.h</key>
-		<data>
-		C+CUKBiFHGw48zt33l/I/FE7clM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			VcuYsqLcbNyvc1HwR7ie8G0Vr5E=
+			</data>
+			<key>hash2</key>
+			<data>
+			wksPgkSB6eJAGs1gtliTx94JF7Q6YCBFru6McA1FAXU=
+			</data>
+		</dict>
 		<key>Headers/ZDCAgentChatCell.h</key>
-		<data>
-		4pfTO123gqiucnHEbqth1cAWUUY=
-		</data>
-		<key>Headers/ZDCAgentOptionsCell.h</key>
-		<data>
-		7Q2G5lS16ZH7Uqx+KeHXNUH68Iw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			jJe3KBNDaPZCQzwLKwc2+Qc4Vvk=
+			</data>
+			<key>hash2</key>
+			<data>
+			Yr1a6yLufKe/IehCFYdTtl5wlklXg6OKcdl4wsvpiXE=
+			</data>
+		</dict>
 		<key>Headers/ZDCAgentTypingCell.h</key>
-		<data>
-		68cC+/x9cE0JfRDYrSCg3aCCRJk=
-		</data>
-		<key>Headers/ZDCBundleUtils.h</key>
-		<data>
-		APGmGvA11csbNkWlWng2ApvUV8U=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			EQnFUcswPQ3zyX4pW40UgkXWe7w=
+			</data>
+			<key>hash2</key>
+			<data>
+			B35SuD0UEHK8OOxIOsgW6L6dkeSgbdlqhZEviE16ZXo=
+			</data>
+		</dict>
 		<key>Headers/ZDCChat.h</key>
-		<data>
-		KTSoHfW6amfGHdVENyfhSl2AEQU=
-		</data>
-		<key>Headers/ZDCChatAgent.h</key>
-		<data>
-		XfqJhZeW+5nTt0kF8CIhSSfYJ8Q=
-		</data>
-		<key>Headers/ZDCChatAttachment.h</key>
-		<data>
-		DdULH/h3sFCt5onMeyIYDj1zZ/8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			1GUsgd8MwWdEF3wZwyw84BKwu00=
+			</data>
+			<key>hash2</key>
+			<data>
+			qFMU2JLRhlfKGkf1FwC/Hf4aWKmXspT/HLA+FsIAXes=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatAvatar.h</key>
-		<data>
-		Phke98+xotnvamf6x3sVltGoYFY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YbDUeD5qHa7C0WBLb43QnvxJLRo=
+			</data>
+			<key>hash2</key>
+			<data>
+			nll6EyI5WfReXQeoZUf7K4iWjmlKS1BPmLzFign/n9g=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatCell.h</key>
-		<data>
-		AO7P+/BAU2jKQqvPiKmB/IIkpvA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			0huyzFnF6Uiphsp5pTduFBrtMrs=
+			</data>
+			<key>hash2</key>
+			<data>
+			VjrDBVSKGsl3on3JPflVbJM9TpK/e/nzXtJbPwpK2KY=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatCellActionDelegate.h</key>
-		<data>
-		0ylNq7bWznr1SP2Mg5ebbWlq1a0=
-		</data>
-		<key>Headers/ZDCChatConstants.h</key>
-		<data>
-		9q6aRm09zfz2Bl0r2zbdP2xcf/M=
-		</data>
-		<key>Headers/ZDCChatDataNode.h</key>
-		<data>
-		vgZh+ANkcPQReHlv256Xdw2B6to=
-		</data>
-		<key>Headers/ZDCChatDataSource.h</key>
-		<data>
-		xxfJCnvl7fzIlXR4lIOigfOmBrg=
-		</data>
-		<key>Headers/ZDCChatEvent.h</key>
-		<data>
-		u1zhQaxmrDieLn/voOahLA6V9ic=
-		</data>
-		<key>Headers/ZDCChatFile.h</key>
-		<data>
-		FR1kdG/8INWz/FViZgBJQ2PqBcw=
-		</data>
-		<key>Headers/ZDCChatIO.h</key>
-		<data>
-		Yhd8gX9+B60LEEV+zNK8s9QUBEI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			yMmcLrblWnDco0VMKGjcsrL7ebg=
+			</data>
+			<key>hash2</key>
+			<data>
+			EBGi1PwCtAe2gjKyigHRX+OOcT2Tg5NNK0dZTOXs1MA=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatOverlay.h</key>
-		<data>
-		mxnUrT7H+1rxdutZP0MBMmNd044=
-		</data>
-		<key>Headers/ZDCChatProfile.h</key>
-		<data>
-		v6kxkSkqkc6PUXXPiXHPEldzNT0=
-		</data>
-		<key>Headers/ZDCChatSession.h</key>
-		<data>
-		oEn0pF57S+nU4U4HoOWmxPZqmaw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			6EM4ldkQDy3Z/b8GZYAaYO06hPA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Qs8NGs5Chmx7cgRkq7SaxNxVe5NsMt3JoIvZ0BT6/ws=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatTimedOutCell.h</key>
-		<data>
-		JVGL3gwiCmXWbSMyYLsU8BeNrK4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			EfJnt13Gplk4TKkPu9s5w1cqmtQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			Kn8Pe1YYx8r3ouYmCSMRWFh0zlzAN98KtntjDEkSRo8=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatUI.h</key>
-		<data>
-		DD2RvFaADwc7tqZLWyt//AYxfl4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			K+vzHhKqQngT1eJpNv7aIvmHrxQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			ReG6qlagfe2yeRZp+VN+R1oYVEHuQYzYdIII4Qdzbq0=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatUIController.h</key>
-		<data>
-		n1j89qeRJ7gqLft4LvIJFEdhARg=
-		</data>
-		<key>Headers/ZDCChatUpload.h</key>
-		<data>
-		+Ymf9xLT17kPN9X9UNG139Gom7I=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			TfNw1kG7qPY4MnFOSueumygE6Bs=
+			</data>
+			<key>hash2</key>
+			<data>
+			c8XchQk01fkuxKPJhDotlB+DX3UqgfinpPbfR94qhU8=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatView.h</key>
-		<data>
-		K4/oTaSU73bhMu9vxDDdZphS5IA=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			fWHltlOBtEk1wn1PdJBzi4mLZPQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			8s1k0T2DRVHeZyXXBBAHNYEM9VUKNi5cGQ0bIC4m0RQ=
+			</data>
+		</dict>
 		<key>Headers/ZDCChatViewController.h</key>
-		<data>
-		mDX8ZdVuNplxyOMsIbymwzPNAxs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			wYJWvTaoNV4haTNnl/s37ukswXI=
+			</data>
+			<key>hash2</key>
+			<data>
+			tAwIdU0NAY023WsNOap+IUfm0OaqBoEpc3LNUCQNQQ4=
+			</data>
+		</dict>
 		<key>Headers/ZDCConfig.h</key>
-		<data>
-		DwIQOexAjlGnHuEzWRWbB/UKQ6U=
-		</data>
-		<key>Headers/ZDCDeviceInfo.h</key>
-		<data>
-		fCtqCBd1aos+ulhepVvIonfH2rY=
-		</data>
-		<key>Headers/ZDCEmailTranscriptAction.h</key>
-		<data>
-		HJnHxsiBhULGprNKKurs0R3IshI=
-		</data>
-		<key>Headers/ZDCEvents.h</key>
-		<data>
-		nZkNGj4NBfgdJ1lcG3HuMuPymB4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JAAx1vcY+dCpw9Sdkbui4HBw61M=
+			</data>
+			<key>hash2</key>
+			<data>
+			wBT44zD70/cv3mmyJ8kVi2tl81M/B4ZIcWcsaNTy674=
+			</data>
+		</dict>
 		<key>Headers/ZDCFormCell.h</key>
-		<data>
-		ME3v+P6+UoR1tz1LMSQ0HszWzkE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+XjrfLOaFuKReL5O2hIyeFA2pRc=
+			</data>
+			<key>hash2</key>
+			<data>
+			nPqEX8ZME5aZ+ByjUYKoKj6c+zu8bULxTxSUDVuetJE=
+			</data>
+		</dict>
 		<key>Headers/ZDCFormCellDepartment.h</key>
-		<data>
-		B1Il+d78tZVgMt3rOU7X4iYw0QU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			wbPMuFcZBP8kb3Wtefz6B7Qcms0=
+			</data>
+			<key>hash2</key>
+			<data>
+			2a3rjz6qUAMKQJX3wGNX/72Oyrcs3YettBbGttho4uQ=
+			</data>
+		</dict>
 		<key>Headers/ZDCFormCellMessage.h</key>
-		<data>
-		UHKIgd+lvhv0c/ZZGcxcvuPXfnE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			STfQdlue32nK7I67qAWDjKlvnAk=
+			</data>
+			<key>hash2</key>
+			<data>
+			quhDE/mTzGRKToI7X/E3pIp/hGnIILctVRLU8n0Tigg=
+			</data>
+		</dict>
 		<key>Headers/ZDCFormCellSingleLine.h</key>
-		<data>
-		MZzUcdNyyd1Dx9rqzIKS1eCVZOU=
-		</data>
-		<key>Headers/ZDCHttpRequest.h</key>
-		<data>
-		tc8D6O+eLl56+E3Mxb3OS8/NWCk=
-		</data>
-		<key>Headers/ZDCHttpUploadRequest.h</key>
-		<data>
-		9av31kkyKAql+BdAq2VGh0mdlyk=
-		</data>
-		<key>Headers/ZDCImageViewer.h</key>
-		<data>
-		8+/7fly9qIRcvirPYsRgf0QyvL4=
-		</data>
-		<key>Headers/ZDCJSONEncoder.h</key>
-		<data>
-		bt/vP9U0fqyOL/T7QWei56KoO8M=
-		</data>
-		<key>Headers/ZDCJSWidgetIO.h</key>
-		<data>
-		c5oTy89K3PPydAc0qGw1JWqyEx0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			SEgASkCyv/Xs32xNyUn7cU0IZfI=
+			</data>
+			<key>hash2</key>
+			<data>
+			LNgRaATF+SkJGtXmpm8MLDSoGaDFygSMAG6BYx/JfSE=
+			</data>
+		</dict>
 		<key>Headers/ZDCJoinLeaveCell.h</key>
-		<data>
-		tdS+aieTObMYprszbAGNnCi6mtc=
-		</data>
-		<key>Headers/ZDCKeychainWrapper.h</key>
-		<data>
-		ftZ0XM05VfmRydbLGAZfvoFYuDY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			dSNuPT9r/Ff7bLbbRs7rWSpmJv4=
+			</data>
+			<key>hash2</key>
+			<data>
+			1Vn68bG9Bqdq2CnZWybfOQI/a3Ymkjd7rc4P0X1E21U=
+			</data>
+		</dict>
 		<key>Headers/ZDCLoadingErrorView.h</key>
-		<data>
-		J5hDQvEjCBzb3BkjAGEYO/w4OEc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			CNsAO0Tp040pGm8g96jqAmikBhk=
+			</data>
+			<key>hash2</key>
+			<data>
+			hqqLkSho5I2oyxVpQB+s92pH20uV7wWKsL8lrzwsSOk=
+			</data>
+		</dict>
 		<key>Headers/ZDCLoadingView.h</key>
-		<data>
-		Y9j66HFUpL95HfbhyCwQ68kgFhg=
-		</data>
-		<key>Headers/ZDCLog.h</key>
-		<data>
-		2hqfLrywKLaF328kSVbidAFekwg=
-		</data>
-		<key>Headers/ZDCMessageMonitor.h</key>
-		<data>
-		Nlu16IR1KciRa9PwLuGDMvUeRDA=
-		</data>
-		<key>Headers/ZDCMobileProvisionAnalyzer.h</key>
-		<data>
-		FZ1Yjix65JEW4GWlxhAc67/x3yE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			UPO0jZst/fyeR83xdFWlQhXnniQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			uCbuk5wZ1vxWCLoW1yiEXknbOPjXLvs+tn9k6ae2i34=
+			</data>
+		</dict>
 		<key>Headers/ZDCOfflineMessageHandler.h</key>
-		<data>
-		NkMi+IZrtGMcoAwwxeeH3YD8YBU=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			MHabU310QVjclVQ3kyyCN2K5Pqs=
+			</data>
+			<key>hash2</key>
+			<data>
+			vC3RuTv3sp65tjByhBILU05spdwRN99qL2CYR2a/2Yk=
+			</data>
+		</dict>
 		<key>Headers/ZDCOfflineMessageView.h</key>
-		<data>
-		Bt9Jw5fd+ZNf5ERwDdiy1fcZ1EM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			NTGiarWyLk9aiQVBa28/ClIKSyg=
+			</data>
+			<key>hash2</key>
+			<data>
+			qXiqZqF76vcKy+JcGa2kLE7fCoQPzMWsDYR80kn0nE8=
+			</data>
+		</dict>
 		<key>Headers/ZDCPreChatData.h</key>
-		<data>
-		VbHVY8Qu8bFP1BFi0raq5HgrPFI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			X14Ro+tmZWX8rkTB1tD0Qfq7yLY=
+			</data>
+			<key>hash2</key>
+			<data>
+			YsW5i+BGJCBMw9wFQFX2wYmewiM8R1Z3jsJBVBN+nHc=
+			</data>
+		</dict>
 		<key>Headers/ZDCPreChatFormView.h</key>
-		<data>
-		kpcNp4iT9uQMGw3OrCtlQ5uVpf4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			SLY6I7NrZoEBQSXR6etOmWKWUNk=
+			</data>
+			<key>hash2</key>
+			<data>
+			urGQq0NI5uh5/CziwXmxyT7Mlrk1Zt2sMbIcE0/7N8A=
+			</data>
+		</dict>
 		<key>Headers/ZDCRatingCell.h</key>
-		<data>
-		CIMeva628mNXL5Rd06dUuccMnVw=
-		</data>
-		<key>Headers/ZDCRatingCommentEditor.h</key>
-		<data>
-		V/8V3cYnr8rx6uuIdCTE8oM19hE=
-		</data>
-		<key>Headers/ZDCReachability.h</key>
-		<data>
-		+qtGpXM50+dDx5TPLTFGWyVdcfk=
-		</data>
-		<key>Headers/ZDCSessionConfig.h</key>
-		<data>
-		HNAKAr78U6VS1se40gdV0Rfo8fM=
-		</data>
-		<key>Headers/ZDCSessionStateManager.h</key>
-		<data>
-		V0sb6jcxK9r4hUAR85qqGg44sv0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			m5lnbEwLovXi3Mi2nfPIWimZbg4=
+			</data>
+			<key>hash2</key>
+			<data>
+			CYsh47ZsKlbbY4Un52Xa7uHwVEt3lVA8B0IfjTpl194=
+			</data>
+		</dict>
 		<key>Headers/ZDCSystemTriggerCell.h</key>
-		<data>
-		B2u82k/hFB4au95Y4Mbyj2NNBzg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			mVt+Qrg+IDtmuUYOBArLsuhMON4=
+			</data>
+			<key>hash2</key>
+			<data>
+			QqlxG6JDQIlR3oomIayYiIVE/PlNf3zXZQ7lMZ1cYm0=
+			</data>
+		</dict>
 		<key>Headers/ZDCTextEntryView.h</key>
-		<data>
-		7zYHOJZK1H5bDQT+aDe2SlSXnNs=
-		</data>
-		<key>Headers/ZDCVisitorActionDelegate.h</key>
-		<data>
-		rMGzDRyUD13gIUtNcxuVFMwL07c=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			LgeecA9UTWFBhlzJypAYkwIY6RI=
+			</data>
+			<key>hash2</key>
+			<data>
+			TyyzkTCyR8K0+58tCnOD/lTg6uV3ikyS4bBaUEhXZsQ=
+			</data>
+		</dict>
 		<key>Headers/ZDCVisitorAttachmentCell.h</key>
-		<data>
-		Rbb643SnNTztVM5UNwSMJhFSEfg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			eaAbZg400yllJASs9VIVlsK0rRE=
+			</data>
+			<key>hash2</key>
+			<data>
+			J8j92vp+a6dkCHo+SX1k52W1D7Gj152NOgpWt+3yoVo=
+			</data>
+		</dict>
 		<key>Headers/ZDCVisitorChatCell.h</key>
-		<data>
-		DHmeuzzjDWk2K0AFQ+utOiHrcpo=
-		</data>
-		<key>Headers/ZDCVisitorInfo.h</key>
-		<data>
-		8+EkkYTcbJq+Eqv7mGP488xuktU=
-		</data>
-		<key>Headers/ZDCWebViewer.h</key>
-		<data>
-		OXmh3dUFfUOSByi3h12whTnyMh0=
-		</data>
-		<key>Headers/ZDUActivityViewDelegate.h</key>
-		<data>
-		qoOt771KBYyFX/aIf5ZV4MiMWfg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			9KSVMpy3+1+Xiwg2nbtYGAA8mKI=
+			</data>
+			<key>hash2</key>
+			<data>
+			l7Og2+i6HawatK8W5vFp901kd1kExDc/R898dHSZh0A=
+			</data>
+		</dict>
 		<key>Headers/ZDUExternalImage.h</key>
-		<data>
-		FWLuxg9LbeGjj6WASND8X7Cxyos=
-		</data>
-		<key>Headers/ZDUImageLoader.h</key>
-		<data>
-		8PR1EI9rI95x/td0C5KypYAH6ls=
-		</data>
-		<key>Headers/ZDUTextView.h</key>
-		<data>
-		O8b57tmSlXlR4S+/yUtp6rpnGXs=
-		</data>
-		<key>Headers/ZDUToastStyle.h</key>
-		<data>
-		MCpwhez5jMksJjeD2Jbqi3/8+YI=
-		</data>
-		<key>Headers/ZDUToastView.h</key>
-		<data>
-		UWDWvhSiDSobv2Iv5TS2qyUTFow=
-		</data>
-		<key>Headers/ZDUUtil.h</key>
-		<data>
-		9U5b9WaHg+4fxa2DSdZui81Mk08=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			R9EfBJhbdZSppzv7YmtFw6zyB4w=
+			</data>
+			<key>hash2</key>
+			<data>
+			49qcTLHQVm0OhwDzyJ5wEY/jcFW2gWu6F6l13/oYkA8=
+			</data>
+		</dict>
+		<key>Headers/ZDUImageRequestDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4gkmM1G7dx9+DJN1GsHTE+FzpWc=
+			</data>
+			<key>hash2</key>
+			<data>
+			SZjElTaS5Nu/1IaIhfLoULTqZ5GpubbHE7yw+GxIMLU=
+			</data>
+		</dict>
 		<key>Headers/ZDUViewController.h</key>
-		<data>
-		QDHLzBCa6dkHhF5Puvmf38ZwSM8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			JQkh9f7JKyXwvjesXfhdOlddPhA=
+			</data>
+			<key>hash2</key>
+			<data>
+			BHgoFi+T0C4PUKVyzizGsQJKT2f0LcuAj/HYUIw2bk4=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		TXiQrq3NabSLE0eWVaqAZYp+mUc=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			TXiQrq3NabSLE0eWVaqAZYp+mUc=
+			</data>
+			<key>hash2</key>
+			<data>
+			JMz7PRdKh88U2yvsM/bygFu26fuOWRYKL1JNzMub9Gw=
+			</data>
+		</dict>
 		<key>PrivateHeaders/ZDCChatAlertHelper.h</key>
-		<data>
-		fPyoeMIWGfeJVgBibV3ueDYFjpM=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			+YfVmBdel9WwEnHYFnpcb5yyZQU=
+			</data>
+			<key>hash2</key>
+			<data>
+			zuxz671Ht9fEd2f++Go0RyUlxFP2/0E+IiDMNXhOZ6Y=
+			</data>
+		</dict>
 		<key>PrivateHeaders/ZDCConfig+Timeout.h</key>
-		<data>
-		QmVsSlF/+5MyJJ9mvvbS8cvVGS4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			l6w9bPTRldC5TqUsnueUYPwJ0Lo=
+			</data>
+			<key>hash2</key>
+			<data>
+			wKv90clpsJd0EcxaXASCztaXA9Prc2p6KGDRCNCKjtg=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>

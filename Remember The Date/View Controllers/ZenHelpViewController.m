@@ -117,14 +117,16 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         
+        ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
+        
         if([ZDKUIUtil isPad]) {
             
-            [ZDKHelpCenter presentHelpCenterWithViewController:self];
+            [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
             
         } else {
             
             [tabbarController hideTabbar];
-            [ZDKHelpCenter pushHelpCenterWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+            [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
         }
 
         
