@@ -46,7 +46,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     
-    if ([ZDKUIUtil isNewerVersion:@6]){
+    if ([ZDKUIUtil isNewerVersion:@"6.0"]){
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
     } else {
