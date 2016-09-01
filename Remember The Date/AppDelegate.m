@@ -45,14 +45,9 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     NSDictionary *navbarAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
     
-    if ([ZDKUIUtil isNewerVersion:@6]){
-        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-        [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
-    } else {
-        [[UINavigationBar appearance] setTintColor:RED_COLOR];
-    }
-
     [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
 
     // chat SDK

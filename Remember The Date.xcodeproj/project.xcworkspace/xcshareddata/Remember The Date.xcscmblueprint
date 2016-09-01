@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "57A4B738-E427-4423-A6AC-97C84AE863D1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "7179E6179408C973CAA30B4DEBBD118BF1A661AE" : "sdk_demo_app_ios",
+    "7179E6179408C973CAA30B4DEBBD118BF1A661AE" : "sdk_demo_app_ios\/",
     "FBF62C4429F8A98CACD6F4A4F237B7C626D8AF74" : "Remember%20The%20Date"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Remember The Date",
