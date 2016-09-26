@@ -202,6 +202,7 @@
 		4D24705419E8111100A46373 /* SaveTheDateTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveTheDateTabBarController.h; sourceTree = "<group>"; };
 		4D24705519E8111100A46373 /* SaveTheDateTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTheDateTabBarController.m; sourceTree = "<group>"; };
 		4D294BED19EDED970070A30E /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		8333DBAE1D992D4800F0F36C /* Remember The Date.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Remember The Date.entitlements"; sourceTree = "<group>"; };
 		83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZDCChatAPI.framework; path = "Remember The Date/Framework/ZDCChatAPI.framework"; sourceTree = "<group>"; };
 		83E06FE01ACEEED400A91D1F /* NSData+RememberTheDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+RememberTheDate.h"; path = "Categories/NSData+RememberTheDate.h"; sourceTree = "<group>"; };
 		83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RememberTheDate.m"; path = "Categories/NSData+RememberTheDate.m"; sourceTree = "<group>"; };
@@ -283,6 +284,7 @@
 		4D246FA519E7499600A46373 /* Remember The Date */ = {
 			isa = PBXGroup;
 			children = (
+				8333DBAE1D992D4800F0F36C /* Remember The Date.entitlements */,
 				83E06FE31ACEEEDC00A91D1F /* Categories */,
 				4D294BEC19EDED800070A30E /* Views */,
 				4D246FD619E74EDF00A46373 /* Images */,
@@ -494,8 +496,8 @@
 				TargetAttributes = {
 					4D246FA219E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 7529UAQB93;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 689VA4CD22;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -773,9 +775,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7529UAQB93;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 689VA4CD22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -801,7 +804,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f8eb30ae-53f1-46a1-82ed-b295e5041e9b";
+				PROVISIONING_PROFILE_SPECIFIER = "RememberTheDate AppStore";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -811,9 +815,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7529UAQB93;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 689VA4CD22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -839,7 +844,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f8eb30ae-53f1-46a1-82ed-b295e5041e9b";
+				PROVISIONING_PROFILE_SPECIFIER = "RememberTheDate AppStore";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
