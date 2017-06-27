@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "NSData+RememberTheDate.h"
 #import <ZendeskSDK/ZendeskSDK.h>
-#import <ZendeskSDK/ZDKSupportView.h>
 #import <ZDCChat/ZDCChat.h>
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
@@ -62,8 +61,10 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [defaults synchronize];
 
     // Visual setup
-    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[UITabBar appearance] setSelectedImageTintColor: [UIColor colorWithRed:0.38 green:0.85 blue:0.82 alpha:1.0]];
+#pragma clang diagnostic pop
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -83,10 +84,12 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [application registerForRemoteNotifications];
         
     } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
         
         [application registerForRemoteNotificationTypes:types];
+#pragma clang diagnostic pop
     }
     //
     // Enable logging for debug builds

@@ -3,9 +3,9 @@
  *  ZendeskSDK.h
  *  ZendeskSDK
  *
- *  Created by Zendesk on 11/10/2016
+ *  Created by Zendesk on 06/30/2017
  *
- *  Copyright (c) 2016 Zendesk. All rights reserved.
+ *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
  *  By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
  *  Subscription Agreement https://www.zendesk.com/company/customers-partners/#master-subscription-agreement and Application Developer and API License
@@ -35,18 +35,12 @@
 #import "ZDKCreateRequestView.h"
 #import "ZDKCreateRequestViewController.h"
 #import "ZDKHelpCenter.h"
-#import "ZDKHelpCenterArticlesByLabelDataSource.h"
-#import "ZDKHelpCenterArticlesDataSource.h"
 #import "ZDKHelpCenterAttachmentsDataSource.h"
-#import "ZDKHelpCenterCategoriesDataSource.h"
 #import "ZDKHelpCenterConversationsUIDelegate.h"
 #import "ZDKHelpCenterDataSource.h"
 #import "ZDKHelpCenterErrorCodes.h"
 #import "ZDKHelpCenterOverviewContentModel.h"
 #import "ZDKHelpCenterOverviewController.h"
-#import "ZDKHelpCenterSearchDataSource.h"
-#import "ZDKHelpCenterSectionsDataSource.h"
-#import "ZDKHelpCenterTableDelegate.h"
 #import "ZDKImageViewerViewController.h"
 #import "ZDKPushUtil.h"
 #import "ZDKRMA.h"
@@ -63,11 +57,7 @@
 #import "ZDKRequests.h"
 #import "ZDKRotationForwarding.h"
 #import "ZDKSpinnerDelegate.h"
-#import "ZDKSupportArticleTableViewCell.h"
 #import "ZDKSupportAttachmentCell.h"
-#import "ZDKSupportTableViewCell.h"
-#import "ZDKSupportView.h"
-#import "ZDKSupportViewController.h"
 #import "ZDKTheme.h"
 #import "ZDKToast.h"
 #import "ZDKToastStyle.h"
@@ -78,6 +68,7 @@
 #import "ZDKUITextViewDelegate.h"
 #import "ZDKUIUtil.h"
 #import "ZDKUIViewController.h"
+#import "Zendesk.h"
 
 #if MODULES_DISABLED
 #import <ZendeskProviderSDK/ZendeskProviderSDK.h>
