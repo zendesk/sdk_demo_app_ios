@@ -782,22 +782,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
+					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -822,22 +807,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
-					"$(PROJECT_DIR)/Remember",
-					The,
-					Date/Framework,
+					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
