@@ -3,7 +3,7 @@
  *  ZendeskProviderSDK.h
  *  ZendeskProviderSDK
  *
- *  Created by Zendesk on 06/30/2017
+ *  Created by Zendesk on 09/11/2017
  *
  *  Copyright (c) 2017 Zendesk. All rights reserved.
  *
@@ -52,9 +52,11 @@
 #import "ZDKHelpCenterAttachment.h"
 #import "ZDKHelpCenterCategory.h"
 #import "ZDKHelpCenterCategoryViewModel.h"
+#import "ZDKHelpCenterConversationsUIDelegate.h"
 #import "ZDKHelpCenterDeflection.h"
 #import "ZDKHelpCenterFlatArticle.h"
 #import "ZDKHelpCenterLastSearch.h"
+#import "ZDKHelpCenterOverviewContentModel.h"
 #import "ZDKHelpCenterParser.h"
 #import "ZDKHelpCenterProvider.h"
 #import "ZDKHelpCenterSearch.h"
@@ -77,7 +79,6 @@
 #import "ZDKPushRegistrationProvider.h"
 #import "ZDKPushRegistrationRequest.h"
 #import "ZDKPushRegistrationResponse.h"
-#import "ZDKRateMyAppSettings.h"
 #import "ZDKReachability.h"
 #import "ZDKRequest.h"
 #import "ZDKRequestProvider.h"
