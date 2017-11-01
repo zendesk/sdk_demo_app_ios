@@ -786,7 +786,7 @@
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -812,7 +812,7 @@
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
