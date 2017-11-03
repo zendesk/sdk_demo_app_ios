@@ -38,6 +38,7 @@ extern NSString *APNS_ID_KEY;
         self.nameTextField.text         = [defaults stringForKey:@"userName"];
         self.emailTextField.text        = [defaults stringForKey:@"email"];
         self.passwordTextField.text     = [defaults stringForKey:@"password"];
+        [self.passwordTextField setSecureTextEntry:YES];
         
         [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];
         

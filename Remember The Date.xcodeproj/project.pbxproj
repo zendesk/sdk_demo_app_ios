@@ -499,6 +499,9 @@
 						DevelopmentTeam = 689VA4CD22;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
