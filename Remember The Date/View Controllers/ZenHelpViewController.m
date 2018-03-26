@@ -7,6 +7,8 @@
 //
 
 #import <ZendeskSDK/ZendeskSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
+
 #import <ZDCChat/ZDCChat.h>
 
 #import "ZenHelpViewController.h"
@@ -31,7 +33,10 @@
         
         if ( email.length > 0) {
             
-            [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc] initWithJwtUserIdentifier:email];
+            id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:email];
+            [[ZDKZendesk instance] setIdentity:userIdentity];
+
+
             return YES;
         }
     }
@@ -117,16 +122,15 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         
-        ZDKHelpCenterOverviewContentModel *contentModel = [ZDKHelpCenterOverviewContentModel defaultContent];
         
         if([ZDKUIUtil isPad]) {
             
-            [ZDKHelpCenter presentHelpCenterOverview:self withContentModel:contentModel];
-            
+            [ZDKHelpCenterUi buildHelpCenterOverview];
+            [self.navigationController presentViewController:[ZDKHelpCenterUi buildHelpCenterOverview] animated:YES completion:nil];
         } else {
             
-            [tabbarController hideTabbar];
-            [ZDKHelpCenter pushHelpCenterOverview:self.navigationController withContentModel:contentModel];
+//            [tabbarController hideTabbar];
+            [self.navigationController pushViewController:[ZDKHelpCenterUi buildHelpCenterOverview] animated:YES];
         }
 
         
@@ -156,7 +160,8 @@
             
         }
         
-        [ZDKRequests presentRequestCreationWithViewController:(UIViewController*)self.tabBarController];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKSupportUi buildRequestUi]];
+        [self.navigationController presentViewController:navController animated:YES completion:nil];
         
     }
     else {
@@ -176,12 +181,12 @@
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [ZDKRequests presentRequestListWithViewController:self];
+            [self.navigationController presentViewController:[ZDKSupportUi buildRequsetList] animated:YES completion:nil];
             
         } else {
             
             [tabbarController hideTabbar];
-            [ZDKRequests pushRequestListWithNavigationController:self.navigationController layoutGuide:ZDKLayoutRespectTop];
+            [self.navigationController pushViewController:[ZDKSupportUi buildRequsetList] animated:YES];
         }
 
         

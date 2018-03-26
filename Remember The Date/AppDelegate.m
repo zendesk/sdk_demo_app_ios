@@ -105,7 +105,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Initialize the Zendesk SDK
     //
-    [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"https://rememberthedate.zendesk.com" zendeskUrl:@"client_for_rtd_jwt_endpoint"];
+    [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
     [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
 
     
