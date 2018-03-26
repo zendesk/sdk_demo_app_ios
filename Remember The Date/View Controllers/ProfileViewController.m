@@ -7,6 +7,7 @@
 //
 
 #import <ZendeskSDK/ZendeskSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import "ProfileViewController.h"
 
 
@@ -58,7 +59,8 @@ extern NSString *APNS_ID_KEY;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [ZDKConfig instance].userIdentity = [ZDKJwtIdentity new];
+    id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
+    [[ZDKZendesk instance] setIdentity:userIdentity];
     
     NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
     
