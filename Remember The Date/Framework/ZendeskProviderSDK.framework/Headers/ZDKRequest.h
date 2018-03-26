@@ -15,7 +15,7 @@
  */
 
 
-@class ZDKComment, ZDKUser;
+@class ZDKComment, ZDKSupportUser;
 
 
 NS_ASSUME_NONNULL_BEGIN

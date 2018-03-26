@@ -109,7 +109,6 @@
 		B857427619F060450043B3F6 /* rma_tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B857427219F060450043B3F6 /* rma_tick@2x.png */; };
 		B869C9EB1A06DB55006CDC5C /* ZendeskSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B869C9EA1A06DB55006CDC5C /* ZendeskSDKStrings.bundle */; };
 		B8814D3019EECC3D0030D10B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8814D2F19EECC3D0030D10B /* Localizable.strings */; };
-		B8ED8D6C1A03E7E90070259D /* ZendeskSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8ED8D6B1A03E7E90070259D /* ZendeskSDK.bundle */; };
 		B8F46E3E19EEC94000E6D8EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F46E3D19EEC94000E6D8EF /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
@@ -647,7 +646,6 @@
 				4D24702B19E74EED00A46373 /* icoAdd@2x.png in Resources */,
 				B857427519F060450043B3F6 /* rma_tick.png in Resources */,
 				4D24700E19E74EED00A46373 /* Launchimage5s.png in Resources */,
-				B8ED8D6C1A03E7E90070259D /* ZendeskSDK.bundle in Resources */,
 				4D24703119E74EED00A46373 /* bgTab@2x.png in Resources */,
 				4D24703319E74EED00A46373 /* icon58.png in Resources */,
 				4D24703419E74EED00A46373 /* icon29.png in Resources */,

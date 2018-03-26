@@ -223,6 +223,7 @@ SWIFT_CLASS("_TtC10ZendeskSDK30HelpCenterArticleVotingHandler")
 @end
 
 
+/// Configuration for a screen of the SDK
 SWIFT_PROTOCOL_NAMED("UiConfiguration")
 @protocol ZDKUiConfiguration <NSObject>
 - (nonnull instancetype)init;
@@ -230,20 +231,33 @@ SWIFT_PROTOCOL_NAMED("UiConfiguration")
 
 @class ZDKHelpCenterOverviewContentModel;
 
+/// Data class used to configure Help Center
+/// version:
+/// 2.0.0
 SWIFT_CLASS_NAMED("HelpCenterUiConfiguration")
 @interface ZDKHelpCenterUiConfiguration : NSObject <ZDKUiConfiguration>
-/// A list of lables to which must be present for an article to show up in the list.
+/// A list of labels to which must be present for an article to show up in the list.
+/// The labels combined with AND
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull labels;
 /// The type of ids being used.
+/// version:
+/// 2.0.0
 @property (nonatomic) ZDKHelpCenterOverviewGroupType groupType;
 /// Hide the <code>Contact Support</code> button that is displayed upon an empty search in Help Center
+/// version:
+/// 2.0.0
 @property (nonatomic) BOOL hideContactSupport;
-/// A list of ids. Only show articles contained in the categorys/sections.
+/// A list of ids. Only show articles contained in the categories/sections.
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull groupIds;
 @property (nonatomic, readonly, strong) ZDKHelpCenterOverviewContentModel * _Nonnull overviewContentModel;
-/// Returns a default model which will fetch all Help Center content for the current locale.
-/// To customise the content, update propertys on a default model.
+/// Returns a default model. To customize the content, update properties on a default model.
 /// @return A default content model.
+/// version:
+/// 2.0.0
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -253,15 +267,25 @@ SWIFT_CLASS_NAMED("HelpCenterUiConfiguration")
 
 
 /// Creates an attachment to be uploaded when a request is created
+/// version:
+/// 2.0.0
 SWIFT_CLASS_NAMED("RequestAttachment")
 @interface ZDKRequestAttachment : NSObject
 /// Name of the file to be uploaded
+/// version:
+/// 2.0.0
 @property (nonatomic, readonly, copy) NSString * _Nonnull filename;
 /// Data of the file contents to be uploaded
+/// version:
+/// 2.0.0
 @property (nonatomic, readonly, copy) NSData * _Nonnull data;
 /// Type of the file to be uploaded
+/// version:
+/// 2.0.0
 @property (nonatomic, readonly) enum ZDKFileType fileType;
 /// Generates a new state from the old state and an action
+/// version:
+/// 2.0.0
 /// \param filename the name of the file to be uploaded, without the file extension
 ///
 /// \param data the data of the contents of the file to be uploaded
@@ -275,57 +299,123 @@ SWIFT_CLASS_NAMED("RequestAttachment")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class UIViewController;
+
+/// Used to build view controller for ticketing. The returned objects must be presented inside a UINavigationController. The containing navigation controller can be presented any way you see fit.
+/// version:
+/// 2.0.0
+SWIFT_CLASS_NAMED("RequestUi")
+@interface ZDKRequestUi : NSObject
+/// Build the Request List. This is a list of a users tickets.
+/// Conversations must be enabled in your Zendesk SDK admin settings. Conversations are not available on Essential.
+/// version:
+/// 2.0.0
++ (UIViewController * _Nonnull)buildRequestList SWIFT_WARN_UNUSED_RESULT;
+/// Build the Request List with a list of UiConfigurations.
+/// Conversations must be enabled in your Zendesk SDK admin settings. Conversations are not available on Essential.
+/// version:
+/// 2.0.0
+/// \param configurations A list of UiConfiguration objects. You do not need to configure the controller being presented.
+///
++ (UIViewController * _Nonnull)buildRequestListWith:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
+/// Build the Request Ui. This allows users to create and respond to individual tickets.
+/// version:
+/// 2.0.0
++ (UIViewController * _Nonnull)buildRequestUi SWIFT_WARN_UNUSED_RESULT;
+/// Build the Request Ui with a list of UiConfigurations.
+/// version:
+/// 2.0.0
+/// \param configurations A list of UiConfiguration objects. You do not need to configure the controller being presented.
+///
++ (UIViewController * _Nonnull)buildRequestUiWith:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
+/// Build the Request Ui. This allows users to create and respond to individual tickets.
+/// version:
+/// 2.0.0
+/// \param requestId The ID of the ticket to display.
+///
++ (UIViewController * _Nonnull)buildRequestUiWithRequestId:(NSString * _Nonnull)requestId SWIFT_WARN_UNUSED_RESULT;
+/// Build the Request Ui with a list of UiConfigurations.
+/// version:
+/// 2.0.0
+/// \param requestId The ID of the ticket to display.
+///
+/// \param configurations A list of UiConfiguration objects. You do not need to configure the controller being presented.
+///
++ (UIViewController * _Nonnull)buildRequestUiWithRequestId:(NSString * _Nonnull)requestId configurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class ZDKCustomField;
 @class NSNumber;
 
+/// Data class used to configure Ticketing
+/// version:
+/// 2.0.0
 SWIFT_CLASS_NAMED("RequestUiConfiguration")
 @interface ZDKRequestUiConfiguration : NSObject <ZDKUiConfiguration>
 /// The Subject of any tickets created
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSString * _Nonnull subject;
 /// Tags set in any created tickets
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull tags;
 /// Custom Fields set in any created tickets
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSArray<ZDKCustomField *> * _Nonnull fields;
-/// The ticket form of any created tickets
+/// The ticket form of any created tickets.
+/// If this property is set <code>fields</code> must also be set. Any ticket fields set will be associated with <code>tickerFormID</code>.
+/// version:
+/// 2.0.0
 @property (nonatomic, strong) NSNumber * _Nullable ticketFormID;
 /// A list of RequestAttachments sent with any created tickets.
 /// Note: These files are treated as any other. They will be displayed in the UI
 /// and the user will be able to remove them.
+/// version:
+/// 2.0.0
 @property (nonatomic, copy) NSArray<ZDKRequestAttachment *> * _Nonnull fileAttachments;
+/// Returns a default model. To customisze the content, update properties on a default model.
+/// version:
+/// 2.0.0
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+/// Used to enable <a href="https://github.com/zendesk/Suas-iOS">Suas</a> logging.
+/// Suas drives most of the Ticketing UI so the Suas logs can be useful for debugging it.
+/// Enabling the Suas logger produces a lot of information and will slow down the SDK.
+/// version:
+/// 2.0.0
 SWIFT_CLASS_NAMED("SuasDebugLogger")
 @interface ZDKSuasDebugLogger : NSObject
+/// Toggle the Suas debug logging
+/// version:
+/// 2.0.0
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enabled;)
 + (BOOL)enabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnabled:(BOOL)newValue;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIViewController;
-
-SWIFT_CLASS_NAMED("SupportUi")
-@interface ZDKSupportUi : NSObject
-+ (UIViewController * _Nonnull)buildRequsetList SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)buildRequestListWith:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)buildRequestUi SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)buildRequestUiWith:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)buildRequestUiWithRequestId:(NSString * _Nonnull)requestId SWIFT_WARN_UNUSED_RESULT;
-+ (UIViewController * _Nonnull)buildRequestUiWithRequestId:(NSString * _Nonnull)requestId configurations:(NSArray<id <ZDKUiConfiguration>> * _Nonnull)configurations SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UIColor;
 
+/// Used to style the SDK.
+/// Set the currentTheme.primaryColor to style the UI.
+/// version:
+/// 2.0.0
 SWIFT_CLASS_NAMED("Theme")
 @interface ZDKTheme : NSObject
 /// The theme currently applied to the SDK.
+/// version:
+/// 2.0.0
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ZDKTheme * _Nonnull currentTheme;)
 + (ZDKTheme * _Nonnull)currentTheme SWIFT_WARN_UNUSED_RESULT;
 /// The primary color of the SDK.
 /// This is applied as a tint to various UI components
+/// version:
+/// 2.0.0
 @property (nonatomic, strong) UIColor * _Nonnull primaryColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end

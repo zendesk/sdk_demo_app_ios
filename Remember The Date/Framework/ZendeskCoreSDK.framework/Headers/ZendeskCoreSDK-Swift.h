@@ -231,6 +231,84 @@ typedef SWIFT_ENUM_NAMED(NSInteger, ZDKLogLevel, "LogLevel") {
 
 
 
+/// A user in Zendesk.
+SWIFT_CLASS_NAMED("User")
+@interface ZDKUser : NSObject
+/// The user’s id
+@property (nonatomic, readonly) NSInteger id;
+/// The user’s name
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// The users content url
+@property (nonatomic, readonly, copy) NSString * _Nonnull content_url;
+/// Bool to indicate whether the user is an agent or not
+@property (nonatomic, readonly) BOOL agent;
+/// Tags associated with the user.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// User fields for this user as a dictionary with the key being the name of the user field
+/// and the corresponding value being the value of the user field set for this user.
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull user_fields;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class ZDKUserFieldOption;
+
+/// User Field in Zendesk
+SWIFT_CLASS_NAMED("UserField")
+@interface ZDKUserField : NSObject
+/// User Field id
+@property (nonatomic, readonly) NSInteger id;
+/// Url of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull url;
+/// key of the user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull key;
+/// type of the user field as a string
+@property (nonatomic, readonly, copy) NSString * _Nonnull fieldType;
+/// title of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull title;
+/// raw title of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull raw_title;
+/// Description of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull fieldDescription;
+/// Raw description of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull raw_description;
+/// Position of user field
+@property (nonatomic, readonly) NSInteger position;
+/// bool indicating if user field is active
+@property (nonatomic, readonly) BOOL active;
+/// bool indicating if it is a system user fild or not
+@property (nonatomic, readonly) BOOL system;
+/// regex of user field
+@property (nonatomic, readonly, copy) NSString * _Nonnull regexp_for_validation;
+/// The timestamp of when the field was created
+@property (nonatomic, readonly, copy) NSDate * _Nonnull created_at;
+/// The timestamp of when the field was last updated
+@property (nonatomic, readonly, copy) NSDate * _Nonnull updated_at;
+/// Options for the custom userfield. An array of ZDKCustomField objects
+@property (nonatomic, readonly, copy) NSArray<ZDKUserFieldOption *> * _Nullable custom_field_options;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+/// Dropdown userfields can contain User fields options which describe an option in the
+/// dropdown
+SWIFT_CLASS_NAMED("UserFieldOption")
+@interface ZDKUserFieldOption : NSObject
+/// id of option
+@property (nonatomic, readonly) NSInteger id;
+/// name of option
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// position of option
+@property (nonatomic, readonly) NSInteger position;
+/// raw_name of option
+@property (nonatomic, readonly, copy) NSString * _Nonnull raw_name;
+/// url of option
+@property (nonatomic, readonly, copy) NSString * _Nonnull url;
+/// value of option
+@property (nonatomic, readonly, copy) NSString * _Nonnull value;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_PROTOCOL("_TtP14ZendeskCoreSDK15ZDKObjCIdentity_")
 @protocol ZDKObjCIdentity
 @end
@@ -250,6 +328,131 @@ SWIFT_CLASS("_TtC14ZendeskCoreSDK10ZDKObjCJwt")
 @interface ZDKObjCJwt : NSObject <ZDKObjCIdentity>
 @property (nonatomic, readonly, copy) NSString * _Nonnull token;
 - (nonnull instancetype)initWithToken:(NSString * _Nonnull)token OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+@class ZDKZendesk;
+
+/// An objective-c visible class for the Push Registration Provider
+/// Provider to register and unregister a device for push notifications.
+SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKPushProvider")
+@interface ZDKPushProvider : NSObject
+/// Initialize the provider
+/// \param zendesk An instance of the zendesk singleton
+///
+- (nonnull instancetype)initWithZendesk:(ZDKZendesk * _Nonnull)zendesk OBJC_DESIGNATED_INITIALIZER;
+/// Calls a push registration end point to register the given APNS device id.
+/// This method stores the response on successful registration.
+/// Subsequent calls to this method with the same <code>identifier</code> bypass calls to the
+/// network and return the stored response in the completion handler.
+/// Calling this method with a different <code>identifier</code> will remove any stored
+/// response from storage.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     deviceIdentifier: The device identifier
+///   </li>
+///   <li>
+///     locale: The preferred device locale
+///   </li>
+///   <li>
+///     completion: Returns a push response if successful with a nil for the error
+///   </li>
+/// </ul>
+- (void)registerWithDeviceIdentifier:(NSString * _Nonnull)deviceIdentifier locale:(NSString * _Nonnull)locale completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+/// Calls a push registration end point to register the given Urban Airship channel id.
+/// This method stores the response on successful registration.
+/// Subsequent calls to this method with the same <code>identifier</code> bypass calls to the
+/// network and return the stored response in the completion handler.
+/// Calling this method with a different <code>identifier</code> will remove any stored
+/// response from storage.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     UAIdentifier: The channel identifier
+///   </li>
+///   <li>
+///     locale: The preferred device locale
+///   </li>
+///   <li>
+///     completion: Returns a push response if successful with a nil for the error
+///   </li>
+/// </ul>
+- (void)registerWithUAIdentifier:(NSString * _Nonnull)UAIdentifier locale:(NSString * _Nonnull)locale completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+/// Calls a push unregister endpoint with the stored device identifier
+- (void)unregisterForPush;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+/// An objective-c visible class for the User Provider
+SWIFT_CLASS("_TtC14ZendeskCoreSDK15ZDKUserProvider")
+@interface ZDKUserProvider : NSObject
+/// Initialize the provider
+/// \param zendesk An instance of the zendesk singleton
+///
+- (nonnull instancetype)initWithZendesk:(ZDKZendesk * _Nonnull)zendesk OBJC_DESIGNATED_INITIALIZER;
+/// Gets a user object for the current user with only tags and user fields populated
+/// \param completion Returns a user object if successful with a nil for the error
+///
+- (void)getUserWithCompletion:(void (^ _Nonnull)(ZDKUser * _Nullable, NSError * _Nullable))completion;
+/// Set one or more user field values on the current user.
+/// To see the fields available for setting use the get
+/// User method and inspect the user fields dictionary.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     userfields: The user field to set.  It expects a dictionary(not a ZDKUserField).
+///     The key of this dictionary being the name of the user field and the corresponding value
+///     being the user field value to be set for the current user.
+///   </li>
+///   <li>
+///     completion: Returns a user object if successful with a nil for the error
+///   </li>
+/// </ul>
+- (void)setUserFields:(NSDictionary<NSString *, id> * _Nonnull)userFields completion:(void (^ _Nonnull)(ZDKUser * _Nullable, NSError * _Nullable))completion;
+/// Gets all user fields available for an account instance.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     completion: Returns an array of userfield objects if successful with a nil error.
+///   </li>
+/// </ul>
+- (void)getUserFieldsWithCompletion:(void (^ _Nonnull)(NSArray<ZDKUserField *> * _Nonnull, NSError * _Nullable))completion;
+/// Add tags to the current user.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     tags: The tags to be added
+///   </li>
+///   <li>
+///     completion: Returns an array of tags set on the current user if successful with nil error
+///   </li>
+/// </ul>
+- (void)addTags:(NSArray<NSString *> * _Nonnull)tags completion:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSError * _Nullable))completion;
+/// Delete tags from the current user.
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     tags: The tags to be deleted
+///   </li>
+///   <li>
+///     completion: Returns an array of tags set on the current user if successful with nil error
+///   </li>
+/// </ul>
+- (void)deleteTags:(NSArray<NSString *> * _Nonnull)tags completion:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, NSError * _Nullable))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 

@@ -17,60 +17,22 @@
 
 #import <Foundation/Foundation.h>
 
+@interface ZDKSupportUser : NSObject
 
-/**
- * A user in Zendesk.
- */
-@interface ZDKUser : NSObject
-
-/**
- * The users id in Zendesk.
- */
 @property (nonatomic, strong) NSNumber *userId;
 
-/**
- * The users name.
- */
 @property (nonatomic, copy) NSString *name;
 
-/**
- * URL of the users avatar.
- */
 @property (nonatomic, copy) NSString *avatarURL;
 
-/**
- * YES if the user is an agent.
- */
 @property (nonatomic, assign) BOOL isAgent;
 
-/**
- *  Tags associated with the user.
- *
- *  @since 1.4.0.1
- */
 @property (nonatomic, copy) NSArray *tags;
 
-/**
- *  User fields for this user as a dictionary with the key being the name of the user field
- *  and the corresponding value being the value of the user field set for this user.
- *
- *  @since 1.4.0.1
- */
 @property (nonatomic, copy) NSDictionary *userFields;
 
-
-/**
- * Initialize with dictionary generated from API json.
- *
- * @param dictionary the user details
- */
 - (instancetype) initWithDictionary:(NSDictionary*)dictionary;
 
-/**
- *  Returns a dictionary containing User details. Used for storage
- *
- *  @since 2.0.0.1
- */
 - (NSDictionary *)toJson;
 
 @end

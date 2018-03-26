@@ -4,54 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Frameworks/libswiftCore.dylib</key>
-		<data>
-		7cl42aUC5BGgKoZ+nQ3sNgK88nE=
-		</data>
-		<key>Frameworks/libswiftCoreFoundation.dylib</key>
-		<data>
-		Not6COzvfdf7ZFxrWKFOhtfT2To=
-		</data>
-		<key>Frameworks/libswiftCoreGraphics.dylib</key>
-		<data>
-		Ah8l7MrCSWJoHR2fONYGms2f/9A=
-		</data>
-		<key>Frameworks/libswiftCoreImage.dylib</key>
-		<data>
-		g/K+htdRGjJMxlv2PRGI6YjbH/k=
-		</data>
-		<key>Frameworks/libswiftDarwin.dylib</key>
-		<data>
-		W9U6lKkXOXSXw64fehR4+htlnnk=
-		</data>
-		<key>Frameworks/libswiftDispatch.dylib</key>
-		<data>
-		o45TG2rQjEbojk6GMumB4hK5QqA=
-		</data>
-		<key>Frameworks/libswiftFoundation.dylib</key>
-		<data>
-		ULeWx5HMg4ZpZA7BnDz0xetJMP4=
-		</data>
-		<key>Frameworks/libswiftMetal.dylib</key>
-		<data>
-		a/0VXB1+k1nAMKRhHMFW0IGoR0o=
-		</data>
-		<key>Frameworks/libswiftObjectiveC.dylib</key>
-		<data>
-		iW+3WhbLVgfF1f7COk1CjUH4Fis=
-		</data>
-		<key>Frameworks/libswiftQuartzCore.dylib</key>
-		<data>
-		43fgRcBwuND8G241FmMBUB8Zyds=
-		</data>
-		<key>Frameworks/libswiftUIKit.dylib</key>
-		<data>
-		UxH2cjmse3XYjls1b6KoqhdWoMY=
-		</data>
-		<key>Frameworks/libswiftos.dylib</key>
-		<data>
-		dyKltMCMbq+pYDVJBtY78y7BuP0=
-		</data>
 		<key>Headers/ZDKAttachment.h</key>
 		<data>
 		hWaj5VcPanwTa46bdaJLkdPjhH8=
@@ -78,7 +30,7 @@
 		</data>
 		<key>Headers/ZDKCommentWithUser.h</key>
 		<data>
-		ifomhahgCdNmfr5WL1MyB2nwJks=
+		RWOFA54GCiEBuVTpMQdo1ZvE9HQ=
 		</data>
 		<key>Headers/ZDKCommentsResponse.h</key>
 		<data>
@@ -206,7 +158,7 @@
 		</data>
 		<key>Headers/ZDKRequest.h</key>
 		<data>
-		ktHsSPNT3hFPvAAYL4h2x5v41qw=
+		TGj7LezobCGg9RZK6ZvUMVk+iSc=
 		</data>
 		<key>Headers/ZDKRequestProvider.h</key>
 		<data>
@@ -218,15 +170,19 @@
 		</data>
 		<key>Headers/ZDKRequestsResponse.h</key>
 		<data>
-		ULbaCYtJgN4P2YglM5jDPF8d6nY=
+		7JSIe5Qp4fZ+T1VvgW2X6Eaj1zc=
 		</data>
 		<key>Headers/ZDKRequestsWithCommentingAgents.h</key>
 		<data>
-		+5tu0p30AFiePpOMt+G5GTgQ5hk=
+		smivM/8FtrYuJvD8MLeuyXlKsfU=
 		</data>
 		<key>Headers/ZDKStringUtil.h</key>
 		<data>
 		TCCD88NPngTthUqbKVZDJbUckck=
+		</data>
+		<key>Headers/ZDKSupportUser.h</key>
+		<data>
+		Hr4J9DOLBk7OUebV+73wnakOpx0=
 		</data>
 		<key>Headers/ZDKTicketField.h</key>
 		<data>
@@ -252,14 +208,6 @@
 		<data>
 		ZOgj1y1DozLgAL3ZtCP5al+2CZs=
 		</data>
-		<key>Headers/ZDKUser.h</key>
-		<data>
-		P7Rets+KMCrloi9E6bsGIH8p5Qg=
-		</data>
-		<key>Headers/ZDKUserField.h</key>
-		<data>
-		WK8/3M+octPboH+iBrL2ep+CD0I=
-		</data>
 		<key>Headers/ZDKValidator.h</key>
 		<data>
 		cgAKigw6nZKp5T4XyRZczbicWEI=
@@ -270,7 +218,7 @@
 		</data>
 		<key>Headers/ZendeskProviderSDK.h</key>
 		<data>
-		sKmxrVMCB+f35Y0/ULgvOoc+mk4=
+		+SAqIb71tSCRntPTUcHGwoSkUGk=
 		</data>
 		<key>Headers/ZendeskSDKConstants.h</key>
 		<data>
@@ -278,7 +226,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		myRGBHYT3ZW6c1qcfRBk1EaG5as=
+		Ur797i5WuEM+9HuM9KAKyAnnNCY=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -286,7 +234,7 @@
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		y3WRp1bZG19S+2EO1AitGlNVrI0=
+		Lky0VSXDS7jqWjFHEwy3k2O9Lis=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -294,7 +242,7 @@
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		vCxsW+fwyW8DvbA/XS492iwK0Fo=
+		2OBow2Pwa7tg9KsgvCrEPJt6DCs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -625,145 +573,9 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>libswiftRemoteMirror.dylib</key>
-		<data>
-		RcicIP0lKALIvOAuOlDdMvzAUTU=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Frameworks/libswiftCore.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7cl42aUC5BGgKoZ+nQ3sNgK88nE=
-			</data>
-			<key>hash2</key>
-			<data>
-			IA5abO7iIJKKV851p4I4PFLlTfZgVRx9bv8AUrOH7So=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreFoundation.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Not6COzvfdf7ZFxrWKFOhtfT2To=
-			</data>
-			<key>hash2</key>
-			<data>
-			rv6HEjY3ru/JGz0x0dHivXUwMyM2VXTTXmLhdOyJuxE=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreGraphics.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Ah8l7MrCSWJoHR2fONYGms2f/9A=
-			</data>
-			<key>hash2</key>
-			<data>
-			rss42HUxTMoWAlOR+fgGDHduGCE1RA2fFlwBbQ7gL1A=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftCoreImage.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			g/K+htdRGjJMxlv2PRGI6YjbH/k=
-			</data>
-			<key>hash2</key>
-			<data>
-			+Yyh+QRg/7lGl7VAU4wYECCLnwuNG8LiojPFpVaQwxE=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftDarwin.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			W9U6lKkXOXSXw64fehR4+htlnnk=
-			</data>
-			<key>hash2</key>
-			<data>
-			g2HD8Cte8tQ3M87u678nWtxmzFmKicctnW6PJ+zbLyY=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftDispatch.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			o45TG2rQjEbojk6GMumB4hK5QqA=
-			</data>
-			<key>hash2</key>
-			<data>
-			yOKkt20DZ14FSOy0KFprhR/cRfPuqnBv6xxrKt1NcIg=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftFoundation.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ULeWx5HMg4ZpZA7BnDz0xetJMP4=
-			</data>
-			<key>hash2</key>
-			<data>
-			8n3sTPAXJBX51kSXh+CKW+FNIRSkIoB3lEuuiRfJS8Y=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftMetal.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			a/0VXB1+k1nAMKRhHMFW0IGoR0o=
-			</data>
-			<key>hash2</key>
-			<data>
-			AJfxubm6Am4bVUAa6i7OodSpBGc3dPFqTH2RYiQy3G4=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftObjectiveC.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			iW+3WhbLVgfF1f7COk1CjUH4Fis=
-			</data>
-			<key>hash2</key>
-			<data>
-			tdP0mTlb4s+IxNpjHRfdIlVQe1CmhzLrC5PEJI7+dyA=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftQuartzCore.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			43fgRcBwuND8G241FmMBUB8Zyds=
-			</data>
-			<key>hash2</key>
-			<data>
-			4nCHplBmF/ldrQ+J1ilqSpKEWkf115Al6I+9S73jyeQ=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftUIKit.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UxH2cjmse3XYjls1b6KoqhdWoMY=
-			</data>
-			<key>hash2</key>
-			<data>
-			SJ98vI3x3oIUREmSmn06K8haIJltZ7MnVhqbhnljM/g=
-			</data>
-		</dict>
-		<key>Frameworks/libswiftos.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			dyKltMCMbq+pYDVJBtY78y7BuP0=
-			</data>
-			<key>hash2</key>
-			<data>
-			6DxNIVZgqWfOeWfedGQ1+wOnIuA7vQlU+gVA0WhCiRw=
-			</data>
-		</dict>
 		<key>Headers/ZDKAttachment.h</key>
 		<dict>
 			<key>hash</key>
@@ -834,11 +646,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ifomhahgCdNmfr5WL1MyB2nwJks=
+			RWOFA54GCiEBuVTpMQdo1ZvE9HQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kx7AAnkPAoDs3fNRckEVV1IkgmLOJWyOo5q06Yi2/vs=
+			/yDjvqTjSdNykhEtVzizSAVHWit68xQEvakfdLG/HcA=
 			</data>
 		</dict>
 		<key>Headers/ZDKCommentsResponse.h</key>
@@ -1186,11 +998,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ktHsSPNT3hFPvAAYL4h2x5v41qw=
+			TGj7LezobCGg9RZK6ZvUMVk+iSc=
 			</data>
 			<key>hash2</key>
 			<data>
-			w155MEvPa43L4bDEWwxGuL/iA9QguOMwqpBOqvLa5aE=
+			s9W6/BcjC9h5TFD2p8ypQbtbcoXD/6RhOjVgQoTjtsU=
 			</data>
 		</dict>
 		<key>Headers/ZDKRequestProvider.h</key>
@@ -1219,22 +1031,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ULbaCYtJgN4P2YglM5jDPF8d6nY=
+			7JSIe5Qp4fZ+T1VvgW2X6Eaj1zc=
 			</data>
 			<key>hash2</key>
 			<data>
-			lDSWSjsaFZlpGjfkPzcbmqM5LX1Tut3oYQOC3XwspL8=
+			4Xmj1rHDUTderErlKRISvJPdhxzOv8e/ZizA4Nyvw7Y=
 			</data>
 		</dict>
 		<key>Headers/ZDKRequestsWithCommentingAgents.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+5tu0p30AFiePpOMt+G5GTgQ5hk=
+			smivM/8FtrYuJvD8MLeuyXlKsfU=
 			</data>
 			<key>hash2</key>
 			<data>
-			2xuHaPJCjQtpx6E1bApZP5Wg0eBcU/hYv0UM0Ebg6j0=
+			sUFlEKKLjF9Z3bpO5+zT45jQsgFMASZY/pmaN0Sx0t0=
 			</data>
 		</dict>
 		<key>Headers/ZDKStringUtil.h</key>
@@ -1246,6 +1058,17 @@
 			<key>hash2</key>
 			<data>
 			fayYfoxsa6iiDzNiICWxg/G7yXvqVxS+3eL8RB2rESQ=
+			</data>
+		</dict>
+		<key>Headers/ZDKSupportUser.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Hr4J9DOLBk7OUebV+73wnakOpx0=
+			</data>
+			<key>hash2</key>
+			<data>
+			LV7Bgs233z/ZGoght7p/VsSxQAOAq1e2bjaNjRKwDZs=
 			</data>
 		</dict>
 		<key>Headers/ZDKTicketField.h</key>
@@ -1314,28 +1137,6 @@
 			V2xT6lt3VtH8ejX0sPeK3nYQYhWfpUjapE+HDQz2Q8I=
 			</data>
 		</dict>
-		<key>Headers/ZDKUser.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			P7Rets+KMCrloi9E6bsGIH8p5Qg=
-			</data>
-			<key>hash2</key>
-			<data>
-			P8nG7I4hJiuxe53tKe3VcSFw6w6fy4BSy+nI7Su4yGg=
-			</data>
-		</dict>
-		<key>Headers/ZDKUserField.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			WK8/3M+octPboH+iBrL2ep+CD0I=
-			</data>
-			<key>hash2</key>
-			<data>
-			wIZB7la8twWulqBi9es+BzWlqRjZJTYpqGpQlRofgs4=
-			</data>
-		</dict>
 		<key>Headers/ZDKValidator.h</key>
 		<dict>
 			<key>hash</key>
@@ -1362,11 +1163,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sKmxrVMCB+f35Y0/ULgvOoc+mk4=
+			+SAqIb71tSCRntPTUcHGwoSkUGk=
 			</data>
 			<key>hash2</key>
 			<data>
-			rYSDl5/vY9cwm95SVZ1yPYusTxLaTwwFNCtfmbjU8Cc=
+			Jqt/C2JWNChfvnU5eFhtkt6mYaPIYZI/nlhH9oCaidI=
 			</data>
 		</dict>
 		<key>Headers/ZendeskSDKConstants.h</key>
@@ -1395,11 +1196,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y3WRp1bZG19S+2EO1AitGlNVrI0=
+			Lky0VSXDS7jqWjFHEwy3k2O9Lis=
 			</data>
 			<key>hash2</key>
 			<data>
-			f24Uo6Ok14cbLoW7mijvthrCrn7pdigUpHZQa5M5970=
+			sbQUuglWh/SgXsX6nuj/d37w3Vh+/WYt4ou0I5llQgM=
 			</data>
 		</dict>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -1417,11 +1218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vCxsW+fwyW8DvbA/XS492iwK0Fo=
+			2OBow2Pwa7tg9KsgvCrEPJt6DCs=
 			</data>
 			<key>hash2</key>
 			<data>
-			SWHpnsjWlje2sga8dNL/H5h6KD+Vqb2Cc+Ypbx2cHBs=
+			YRp9LGC6v1EjLoUzyLGJFZOqUGJqJt9aTQ+Uo/Jk59o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1940,17 +1741,6 @@
 			</data>
 			<key>optional</key>
 			<true/>
-		</dict>
-		<key>libswiftRemoteMirror.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RcicIP0lKALIvOAuOlDdMvzAUTU=
-			</data>
-			<key>hash2</key>
-			<data>
-			pNGoc8Omi1Q7fyo3tX9f9QQD+3bPNkeRj0/N1hb+Cmw=
-			</data>
 		</dict>
 	</dict>
 	<key>rules</key>

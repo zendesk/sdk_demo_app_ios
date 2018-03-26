@@ -70,8 +70,7 @@
 #import "ZDKTicketForm.h"
 #import "ZDKUploadProvider.h"
 #import "ZDKUploadResponse.h"
-#import "ZDKUser.h"
-#import "ZDKUserField.h"
+#import "ZDKSupportUser.h"
 #import "ZDKValidator.h"
 #import "ZendeskSDKConstants.h"
 

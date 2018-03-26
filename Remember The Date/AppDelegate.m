@@ -48,7 +48,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
 
-    [[ZDKRequestListTableCell appearance] setUnreadColor:RED_COLOR];
+    ZDKTheme.currentTheme.primaryColor = RED_COLOR;
 
     // chat SDK
     [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
@@ -97,9 +97,9 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     
 #ifdef DEBUG
-    [ZDKLogger enable:YES];
+    [ZDKCoreLogger setEnabled:YES];
 #else
-    [ZDKLogger enable:NO];
+    [ZDKCoreLogger setEnabled:NO];
 #endif
 
     //

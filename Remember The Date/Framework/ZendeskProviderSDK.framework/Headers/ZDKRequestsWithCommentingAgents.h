@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class ZDKUser, ZDKRequest;
+@class ZDKSupportUser, ZDKRequest;
 
 @interface ZDKRequestsWithCommentingAgents : NSObject
 
 @property (nonatomic, strong) NSArray<ZDKRequest *> *requests;
-@property (nonatomic, strong) NSArray<ZDKUser *> *commentingAgents;
+@property (nonatomic, strong) NSArray<ZDKSupportUser *> *commentingAgents;
 
 
-- (instancetype)initWithRequests:(NSArray <ZDKRequest*>*)requests andCommentingAgents:(NSArray <ZDKUser*>*)commentingAgents;
+- (instancetype)initWithRequests:(NSArray <ZDKRequest*>*)requests andCommentingAgents:(NSArray <ZDKSupportUser*>*)commentingAgents;
 
 @end
