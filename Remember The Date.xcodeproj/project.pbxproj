@@ -79,10 +79,15 @@
 		4D24705319E80B7300A46373 /* ZenHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24705219E80B7300A46373 /* ZenHelpViewController.m */; };
 		4D24705619E8111100A46373 /* SaveTheDateTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24705519E8111100A46373 /* SaveTheDateTabBarController.m */; };
 		4D294BEE19EDED970070A30E /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D294BED19EDED970070A30E /* EmptyView.xib */; };
-		839C7AF51C070B4E007738AB /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8ED8D691A03E7DF0070259D /* ZendeskSDK.framework */; };
+		8345C2B220690775008208A4 /* ZendeskProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2AE20690774008208A4 /* ZendeskProviderSDK.framework */; };
+		8345C2B320690775008208A4 /* ZendeskProviderSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2AE20690774008208A4 /* ZendeskProviderSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8345C2B420690775008208A4 /* ZendeskSDKStrings.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 8345C2AF20690774008208A4 /* ZendeskSDKStrings.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8345C2B520690775008208A4 /* ZendeskCoreSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2B020690775008208A4 /* ZendeskCoreSDK.framework */; };
+		8345C2B620690775008208A4 /* ZendeskCoreSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2B020690775008208A4 /* ZendeskCoreSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8345C2B720690775008208A4 /* ZendeskSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2B120690775008208A4 /* ZendeskSDK.framework */; };
+		8345C2B820690775008208A4 /* ZendeskSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2B120690775008208A4 /* ZendeskSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */; };
 		83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */; };
-		83ECC7BD1BFC9BF000963E82 /* ZendeskProviderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E233E71BFB931700B032B1 /* ZendeskProviderSDK.framework */; };
 		B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CB19EFDD0A00075019 /* btnContactSupport.png */; };
 		B837E5DB19EFDD0A00075019 /* btnContactSupport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */; };
 		B837E5DC19EFDD0A00075019 /* btnContactSupport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */; };
@@ -117,6 +122,33 @@
 			remoteInfo = "Remember The Date";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8345C2B920690775008208A4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8345C2B820690775008208A4 /* ZendeskSDK.framework in Embed Frameworks */,
+				8345C2B320690775008208A4 /* ZendeskProviderSDK.framework in Embed Frameworks */,
+				8345C2B620690775008208A4 /* ZendeskCoreSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8345C2BA20690775008208A4 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8345C2B420690775008208A4 /* ZendeskSDKStrings.bundle in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21B920A71B3D3F8B00DF2F0B /* ZDCChat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZDCChat.bundle; path = Framework/ZDCChat.bundle; sourceTree = "<group>"; };
@@ -203,6 +235,10 @@
 		4D24705519E8111100A46373 /* SaveTheDateTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveTheDateTabBarController.m; sourceTree = "<group>"; };
 		4D294BED19EDED970070A30E /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		8333DBAE1D992D4800F0F36C /* Remember The Date.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Remember The Date.entitlements"; sourceTree = "<group>"; };
+		8345C2AE20690774008208A4 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = "Remember The Date/Framework/ZendeskProviderSDK.framework"; sourceTree = "<group>"; };
+		8345C2AF20690774008208A4 /* ZendeskSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZendeskSDKStrings.bundle; path = "Remember The Date/Framework/ZendeskSDKStrings.bundle"; sourceTree = "<group>"; };
+		8345C2B020690775008208A4 /* ZendeskCoreSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskCoreSDK.framework; path = "Remember The Date/Framework/ZendeskCoreSDK.framework"; sourceTree = "<group>"; };
+		8345C2B120690775008208A4 /* ZendeskSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskSDK.framework; path = "Remember The Date/Framework/ZendeskSDK.framework"; sourceTree = "<group>"; };
 		83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZDCChatAPI.framework; path = "Remember The Date/Framework/ZDCChatAPI.framework"; sourceTree = "<group>"; };
 		83E06FE01ACEEED400A91D1F /* NSData+RememberTheDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+RememberTheDate.h"; path = "Categories/NSData+RememberTheDate.h"; sourceTree = "<group>"; };
 		83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RememberTheDate.m"; path = "Categories/NSData+RememberTheDate.m"; sourceTree = "<group>"; };
@@ -239,11 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */,
+				8345C2B520690775008208A4 /* ZendeskCoreSDK.framework in Frameworks */,
 				21B920AC1B3D3F9700DF2F0B /* ZDCChat.framework in Frameworks */,
-				839C7AF51C070B4E007738AB /* ZendeskSDK.framework in Frameworks */,
-				83ECC7BD1BFC9BF000963E82 /* ZendeskProviderSDK.framework in Frameworks */,
+				8345C2B220690775008208A4 /* ZendeskProviderSDK.framework in Frameworks */,
 				21B920AE1B3D3FBA00DF2F0B /* MobileCoreServices.framework in Frameworks */,
 				B8F46E3E19EEC94000E6D8EF /* SystemConfiguration.framework in Frameworks */,
+				8345C2B720690775008208A4 /* ZendeskSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +297,10 @@
 		4D246F9A19E7499600A46373 = {
 			isa = PBXGroup;
 			children = (
+				8345C2B020690775008208A4 /* ZendeskCoreSDK.framework */,
+				8345C2AE20690774008208A4 /* ZendeskProviderSDK.framework */,
+				8345C2B120690775008208A4 /* ZendeskSDK.framework */,
+				8345C2AF20690774008208A4 /* ZendeskSDKStrings.bundle */,
 				83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */,
 				83E233E71BFB931700B032B1 /* ZendeskProviderSDK.framework */,
 				21B920AB1B3D3F9700DF2F0B /* ZDCChat.framework */,
@@ -457,6 +498,9 @@
 				4D246F9F19E7499600A46373 /* Sources */,
 				4D246FA019E7499600A46373 /* Frameworks */,
 				4D246FA119E7499600A46373 /* Resources */,
+				8345C2B920690775008208A4 /* Embed Frameworks */,
+				8345C2BA20690775008208A4 /* Embed PlugIns */,
+				8345C2BB206908B2008208A4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -633,6 +677,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8345C2BB206908B2008208A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D246F9F19E7499600A46373 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -776,6 +836,7 @@
 		4D246FCA19E7499600A46373 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
@@ -787,6 +848,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -802,6 +866,7 @@
 		4D246FCB19E7499600A46373 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
@@ -813,6 +878,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

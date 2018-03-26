@@ -16,8 +16,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZDKRequest, ZDKUser;
+
 @interface ZDKRequestsResponse : NSObject
 
-+ (NSArray *) parseRequestListWithDictionary:(NSDictionary*)dictionary;
++ (NSArray<ZDKRequest *> *) parseRequestListWithDictionary:(NSDictionary*)dictionary;
+
++ (NSArray <ZDKUser *>*) parseRequestListAgentsWithDictionary:(NSDictionary*)dictionary;
 
 @end

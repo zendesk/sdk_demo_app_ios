@@ -66,6 +66,12 @@
  */
 - (instancetype) initWithDictionary:(NSDictionary*)dictionary;
 
+/**
+ *  Returns a dictionary containing User details. Used for storage
+ *
+ *  @since 2.0.0.1
+ */
+- (NSDictionary *)toJson;
 
 @end
 
