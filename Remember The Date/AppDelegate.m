@@ -138,19 +138,17 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     NSString *identifier = [deviceToken deviceIdentifier];
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APNS_ID_KEY];
     
-    if([[ZDKConfig instance] userIdentity] != nil) {
+    if ([[ZDKZendesk instance] objCIdentity] != nil ) {
         
-    [[ZDKConfig instance] enablePushWithDeviceID:identifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
-
-        if (error) {
-
-            NSLog(@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class);
-
-        } else if (registrationResponse) {
-
-            NSLog(@"Successfully registered device: %@ in %@", identifier, self.class);
-        }
-    }];
+        NSString * locale = [[NSLocale preferredLanguages] firstObject];
+        [[ZDKPushProvider new] registerWithDeviceIdentifier:identifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class);
+            } else if (registrationResponse) {
+                
+                NSLog(@"Successfully registered device: %@ in %@", identifier, self.class);
+            }
+        }];
         
     }
 

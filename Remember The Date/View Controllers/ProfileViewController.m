@@ -62,19 +62,9 @@ extern NSString *APNS_ID_KEY;
     id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
     [[ZDKZendesk instance] setIdentity:userIdentity];
     
-    NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
     
+    [[ZDKPushProvider new] unregisterForPush];
     
-    [[ZDKConfig instance] disablePush:pushIdentifier callback:^(NSNumber *responseCode, NSError *error) {
-        if (error) {
-            
-            NSLog(@"Couldn't unregister device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
-            
-        } else if (responseCode) {
-            
-            NSLog(@"Successfully unregistered device: %@ in %@", pushIdentifier, self.class);
-        }
-    }];
     
     [self dismissViewControllerAnimated:YES completion:^{
         

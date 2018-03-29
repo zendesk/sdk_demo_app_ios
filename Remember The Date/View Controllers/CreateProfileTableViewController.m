@@ -92,8 +92,8 @@ extern NSString *APNS_ID_KEY;
         
         //Push is en
         if(pushIdentifier) {
-            [[ZDKConfig instance] enablePushWithDeviceID:pushIdentifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
-                
+            NSString * locale = [[NSLocale preferredLanguages] firstObject];
+            [[ZDKPushProvider new] registerWithDeviceIdentifier:pushIdentifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
                 if (error) {
                     
                     NSLog(@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
@@ -103,6 +103,7 @@ extern NSString *APNS_ID_KEY;
                     NSLog(@"Successfully registered device: %@ in %@", pushIdentifier, self.class);
                 }
             }];
+            
         }
         
         [self dismissViewControllerAnimated:YES completion:^{
