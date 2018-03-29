@@ -160,7 +160,7 @@
             
         }
         
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKSupportUi buildRequestUi]];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKRequestUi buildRequestUi]];
         [self.navigationController presentViewController:navController animated:YES completion:nil];
         
     }
@@ -181,12 +181,12 @@
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            [self.navigationController presentViewController:[ZDKSupportUi buildRequsetList] animated:YES completion:nil];
+            [self.navigationController presentViewController:[ZDKRequestUi buildRequestList] animated:YES completion:nil];
             
         } else {
             
             [tabbarController hideTabbar];
-            [self.navigationController pushViewController:[ZDKSupportUi buildRequsetList] animated:YES];
+            [self.navigationController pushViewController:[ZDKRequestUi buildRequestList] animated:YES];
         }
 
         
