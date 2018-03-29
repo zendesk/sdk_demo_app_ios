@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "NSData+RememberTheDate.h"
-#import <ZendeskSDK/ZendeskSDK.h>
-#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
+@import ZendeskSDK;
+@import ZendeskCoreSDK;
 #import <ZDCChat/ZDCChat.h>
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
@@ -151,33 +151,17 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         }];
         
     }
-
-}
-
-//iOS 7 and 8
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    [ZDKPushUtil handlePush:userInfo
-             forApplication:application
-          presentationStyle:UIModalPresentationFormSheet
-                layoutGuide:ZDKLayoutRespectTop
-                  withAppId:APP_ID
-                 zendeskUrl:ZENDESK_URL
-                   clientId:CLIENT_ID
-     fetchCompletionHandler:completionHandler];
     
 }
 
-//iOS 6
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    [ZDKPushUtil handlePush:userInfo
-             forApplication:application
-          presentationStyle:UIModalPresentationFormSheet
-                layoutGuide:ZDKLayoutRespectTop
-                  withAppId:APP_ID
-                 zendeskUrl:ZENDESK_URL
-                   clientId:CLIENT_ID];
+- (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSString * requestID = userInfo[@"zendesk_sdk_request_id"];
+    if ([[ZDKSupport instance] refreshRequestWithRequestId:requestID]) {
+        return;
+    } else {
+        // Handle push
+    }
     
 }
+
 @end
