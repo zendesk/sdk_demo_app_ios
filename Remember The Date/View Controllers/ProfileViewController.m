@@ -7,6 +7,7 @@
 //
 
 #import <ZendeskSDK/ZendeskSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import "ProfileViewController.h"
 
 
@@ -58,21 +59,12 @@ extern NSString *APNS_ID_KEY;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [ZDKConfig instance].userIdentity = [ZDKJwtIdentity new];
+//    id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
+//    [[ZDKZendesk instance] setIdentity:userIdentity];
     
-    NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
     
+    [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] unregisterForPush];
     
-    [[ZDKConfig instance] disablePush:pushIdentifier callback:^(NSNumber *responseCode, NSError *error) {
-        if (error) {
-            
-            NSLog(@"Couldn't unregister device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
-            
-        } else if (responseCode) {
-            
-            NSLog(@"Successfully unregistered device: %@ in %@", pushIdentifier, self.class);
-        }
-    }];
     
     [self dismissViewControllerAnimated:YES completion:^{
         

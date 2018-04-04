@@ -7,6 +7,7 @@
 //
 
 #import <ZendeskSDK/ZendeskSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import "CreateProfileTableViewController.h"
 
 extern NSString *APNS_ID_KEY;
@@ -84,15 +85,16 @@ extern NSString *APNS_ID_KEY;
         [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         
-        [ZDKConfig instance].userIdentity = [[ZDKJwtIdentity alloc]
-                                             initWithJwtUserIdentifier:self.emailTextField.text];
+        id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:self.emailTextField.text];
+        [[ZDKZendesk instance] setIdentity:userIdentity];
         
         NSString *pushIdentifier = [[NSUserDefaults standardUserDefaults] objectForKey:APNS_ID_KEY];
         
         //Push is en
         if(pushIdentifier) {
-            [[ZDKConfig instance] enablePushWithDeviceID:pushIdentifier callback:^(ZDKPushRegistrationResponse *registrationResponse, NSError *error) {
-                
+            NSString * locale = [[NSLocale preferredLanguages] firstObject];
+            
+            [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] registerWithDeviceIdentifier:pushIdentifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
                 if (error) {
                     
                     NSLog(@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class);
@@ -102,6 +104,7 @@ extern NSString *APNS_ID_KEY;
                     NSLog(@"Successfully registered device: %@ in %@", pushIdentifier, self.class);
                 }
             }];
+            
         }
         
         [self dismissViewControllerAnimated:YES completion:^{
