@@ -93,7 +93,8 @@ extern NSString *APNS_ID_KEY;
         //Push is en
         if(pushIdentifier) {
             NSString * locale = [[NSLocale preferredLanguages] firstObject];
-            [[ZDKPushProvider new] registerWithDeviceIdentifier:pushIdentifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
+            
+            [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] registerWithDeviceIdentifier:pushIdentifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
                 if (error) {
                     
                     NSLog(@"Couldn't register device: %@. Error: %@ in %@", pushIdentifier, error, self.class);

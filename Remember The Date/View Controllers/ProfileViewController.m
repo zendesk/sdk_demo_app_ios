@@ -59,11 +59,11 @@ extern NSString *APNS_ID_KEY;
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
-    [[ZDKZendesk instance] setIdentity:userIdentity];
+//    id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
+//    [[ZDKZendesk instance] setIdentity:userIdentity];
     
     
-    [[ZDKPushProvider new] unregisterForPush];
+    [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] unregisterForPush];
     
     
     [self dismissViewControllerAnimated:YES completion:^{
