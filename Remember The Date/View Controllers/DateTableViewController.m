@@ -24,12 +24,12 @@
     self.formatter  = [[NSDateFormatter alloc] init];
     [self.formatter setTimeStyle:NSDateFormatterNoStyle];
     [self.formatter setDateStyle:NSDateFormatterShortStyle];
-    [self.formatter setDateFormat:@"MMM dd"];
+    [self.formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
     
     self.emptyView  = [[[NSBundle mainBundle] loadNibNamed:@"EmptyView" owner:nil options:nil] firstObject];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tableView.backgroundColor  = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+    self.tableView.backgroundColor  = [UIColor colorWithRed:(250.0/255.0) green:(250.0/255.0) blue:(250.0/255.0) alpha:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,6 +39,7 @@
     {
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.emptyView.frame    = self.view.frame;
+        self.emptyView.center = self.view.center;
         [self.view bringSubviewToFront:self.emptyView];
     }
 }
@@ -93,7 +94,6 @@
     
     return cell;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger   number  = [self.notificationsArray count];
@@ -107,7 +107,7 @@
         if ([self.emptyView superview] == nil)
         {
             [self.view addSubview:self.emptyView];
-            self.emptyView.frame    = self.view.frame;
+            [self.emptyView setFrame:CGRectMake(0, 0, self.emptyView.frame.size.height, self.emptyView.frame.size.width)];
         }
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
@@ -149,7 +149,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 64;
+    return 70;
 }
 
 #pragma mark - AlertView

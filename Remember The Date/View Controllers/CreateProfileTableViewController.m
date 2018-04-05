@@ -39,6 +39,9 @@ extern NSString *APNS_ID_KEY;
         self.nameTextField.text         = [defaults stringForKey:@"userName"];
         self.emailTextField.text        = [defaults stringForKey:@"email"];
         self.passwordTextField.text     = [defaults stringForKey:@"password"];
+        [self.nameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
+        [self.emailTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
+        [self.passwordTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
         [self.passwordTextField setSecureTextEntry:YES];
         
         [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];

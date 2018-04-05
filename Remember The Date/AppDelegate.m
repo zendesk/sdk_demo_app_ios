@@ -46,7 +46,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
                                       [UIColor whiteColor] ,NSForegroundColorAttributeName, nil];
     [[UINavigationBar appearance] setTitleTextAttributes:navbarAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:RED_COLOR];
+    [[UINavigationBar appearance] setBarTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
 
     ZDKTheme.currentTheme.primaryColor = RED_COLOR;
 
@@ -65,7 +65,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    [[UITabBar appearance] setSelectedImageTintColor: [UIColor colorWithRed:0.38 green:0.85 blue:0.82 alpha:1.0]];
+    [[UITextView appearance] setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
+    [[UITabBar appearance] setSelectedImageTintColor: [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
