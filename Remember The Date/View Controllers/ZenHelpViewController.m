@@ -93,6 +93,11 @@
         _scrollView.scrollEnabled = NO;
     }
     
+    self.helpCenterButton.layer.cornerRadius = 20.0;
+    self.contactUsButton.layer.cornerRadius = 20.0;
+    self.myTicketsButton.layer.cornerRadius = 20.0;
+    self.startChatButton.layer.cornerRadius = 20.0;
+    
     
 }
 

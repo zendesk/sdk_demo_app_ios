@@ -15,6 +15,8 @@
 @interface NewDateViewController ()<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *dateNameTextField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+@property (weak, nonatomic) IBOutlet UITextField *dateText;
 
 @end
 
@@ -23,8 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.datePicker.minimumDate = [NSDate date];
+    [self.datePicker setDate:[NSDate date]];
     [self.dateNameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     // Do any additional setup after loading the view.
+    if (self.notification == nil) {
+        [self.deleteButton setTintColor:[UIColor clearColor]];
+        [self.deleteButton setEnabled:NO];
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
+    [self.dateText setText:[formatter stringFromDate: self.datePicker.date]];
+    
+}
+- (IBAction)setDate:(id)sender {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
+    
+    [self.dateText setText:[formatter stringFromDate: self.datePicker.date]];
+    [self.datePicker setHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,6 +69,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)deleteTapped:(id)sender {
+        [[UIApplication sharedApplication] cancelLocalNotification:self.notification];
+        [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (IBAction)onAddTapped:(id)sender {

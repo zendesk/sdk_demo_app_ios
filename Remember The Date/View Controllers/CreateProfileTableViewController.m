@@ -16,7 +16,6 @@ extern NSString *APNS_ID_KEY;
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -38,11 +37,8 @@ extern NSString *APNS_ID_KEY;
         
         self.nameTextField.text         = [defaults stringForKey:@"userName"];
         self.emailTextField.text        = [defaults stringForKey:@"email"];
-        self.passwordTextField.text     = [defaults stringForKey:@"password"];
         [self.nameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
         [self.emailTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
-        [self.passwordTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
-        [self.passwordTextField setSecureTextEntry:YES];
         
         [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];
         
@@ -53,12 +49,10 @@ extern NSString *APNS_ID_KEY;
         
         if (img != nil)
             [self.pictureButton setImage:img forState:UIControlStateNormal];
+            self.pictureButton.layer.cornerRadius   = CGRectGetWidth(self.pictureButton.frame)/2;
+            self.pictureButton.layer.masksToBounds  = YES;
+
     }
-    
-    
-    self.pictureButton.layer.cornerRadius   = CGRectGetWidth(self.pictureButton.frame)/2;
-    self.pictureButton.layer.masksToBounds  = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +79,6 @@ extern NSString *APNS_ID_KEY;
         NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
         [defaults setObject:self.nameTextField.text forKey:@"userName"];
         [defaults setObject:self.emailTextField.text forKey:@"email"];
-        [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         
         id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:self.emailTextField.text];
@@ -198,6 +191,8 @@ extern NSString *APNS_ID_KEY;
     NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:@"savedImage.png"];
     NSData *imageData = UIImagePNGRepresentation(img);
     [imageData writeToFile:savedImagePath atomically:NO];
+    self.pictureButton.layer.cornerRadius   = CGRectGetWidth(self.pictureButton.frame)/2;
+    self.pictureButton.layer.masksToBounds  = YES;
     
     // And dismiss
     [picker dismissViewControllerAnimated:YES completion:^{
