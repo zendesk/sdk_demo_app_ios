@@ -645,12 +645,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa1-Ib-qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.8" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1601" y="-3"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Nav View Controller-->
         <scene sceneID="RD3-U4-nah">
             <objects>
-                <navigationController storyboardIdentifier="createProfile" id="Cxi-sI-d98" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="createProfile" id="Cxi-sI-d98" customClass="ProfileNavViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="addUser" id="8SR-TU-WXB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ad3-DP-3LF">
@@ -659,7 +659,7 @@
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rlp-cE-Oy8" kind="relationship" relationship="rootViewController" id="gkt-yM-yxy"/>
+                        <segue destination="rlp-cE-Oy8" kind="relationship" relationship="rootViewController" id="sE7-Rw-VU0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ0-Yf-7N7" userLabel="First Responder" sceneMemberID="firstResponder"/>

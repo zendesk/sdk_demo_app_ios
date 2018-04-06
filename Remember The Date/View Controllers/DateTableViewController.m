@@ -40,6 +40,7 @@
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.emptyView.frame    = self.view.frame;
         self.emptyView.center = self.view.center;
+        self.edgesForExtendedLayout = UIRectEdgeBottom;
         [self.view bringSubviewToFront:self.emptyView];
     }
 }

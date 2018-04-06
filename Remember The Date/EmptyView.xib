@@ -49,7 +49,7 @@
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="9ZQ-j2-e5X" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="23V-7N-9BU"/>
+                <constraint firstItem="9ZQ-j2-e5X" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="e63-rc-AZG"/>
                 <constraint firstItem="9ZQ-j2-e5X" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nB1-jt-CQe"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="53.5"/>

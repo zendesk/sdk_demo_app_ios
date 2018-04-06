@@ -89,8 +89,8 @@ extern NSString *APNS_ID_KEY;
     [super viewDidLayoutSubviews];
     
     //Modify the radius with autolayout constraints
-//    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
-//    self.userImageView.layer.masksToBounds  = YES;
+    self.userImageView.layer.cornerRadius   = CGRectGetWidth(self.userImageView.frame)/2;
+    self.userImageView.layer.masksToBounds  = YES;
 }
 
 @end

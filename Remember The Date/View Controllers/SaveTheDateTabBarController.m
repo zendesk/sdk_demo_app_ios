@@ -21,12 +21,8 @@
     [super viewDidLoad];
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *vc, NSUInteger idx, BOOL *stop) {
         vc.title = nil;
-//        vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     }];
-    
-    
     [self.tabBar setClipsToBounds:YES];
-//    [self.tabBar setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     
 }
 

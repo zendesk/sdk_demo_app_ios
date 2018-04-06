@@ -15,7 +15,6 @@
 		4D246FAC19E7499600A46373 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D246FAB19E7499600A46373 /* AppDelegate.m */; };
 		4D246FB519E7499600A46373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FB319E7499600A46373 /* Main.storyboard */; };
 		4D246FB719E7499600A46373 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FB619E7499600A46373 /* Images.xcassets */; };
-		4D246FBA19E7499600A46373 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FB819E7499600A46373 /* LaunchScreen.xib */; };
 		4D246FC619E7499600A46373 /* Remember_The_DateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D246FC519E7499600A46373 /* Remember_The_DateTests.m */; };
 		4D24700E19E74EED00A46373 /* Launchimage5s.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FD719E74EED00A46373 /* Launchimage5s.png */; };
 		4D24700F19E74EED00A46373 /* Launchimage4s.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D246FD819E74EED00A46373 /* Launchimage4s.png */; };
@@ -88,6 +87,8 @@
 		8345C2B820690775008208A4 /* ZendeskSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8345C2B120690775008208A4 /* ZendeskSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */; };
 		83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */; };
+		974DE8CC207680A4002DBD56 /* ProfileNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974DE8CB207680A4002DBD56 /* ProfileNavViewController.m */; };
+		974DE8D0207684FC002DBD56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */; };
 		B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CB19EFDD0A00075019 /* btnContactSupport.png */; };
 		B837E5DB19EFDD0A00075019 /* btnContactSupport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */; };
 		B837E5DC19EFDD0A00075019 /* btnContactSupport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */; };
@@ -161,7 +162,6 @@
 		4D246FAB19E7499600A46373 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4D246FB419E7499600A46373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D246FB619E7499600A46373 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4D246FB919E7499600A46373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4D246FBF19E7499600A46373 /* Remember The DateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Remember The DateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D246FC419E7499600A46373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D246FC519E7499600A46373 /* Remember_The_DateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Remember_The_DateTests.m; sourceTree = "<group>"; };
@@ -242,6 +242,9 @@
 		83E06FE01ACEEED400A91D1F /* NSData+RememberTheDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+RememberTheDate.h"; path = "Categories/NSData+RememberTheDate.h"; sourceTree = "<group>"; };
 		83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RememberTheDate.m"; path = "Categories/NSData+RememberTheDate.m"; sourceTree = "<group>"; };
 		83E233E71BFB931700B032B1 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = "Remember The Date/Framework/ZendeskProviderSDK.framework"; sourceTree = "<group>"; };
+		974DE8CA207680A4002DBD56 /* ProfileNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileNavViewController.h; sourceTree = "<group>"; };
+		974DE8CB207680A4002DBD56 /* ProfileNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileNavViewController.m; sourceTree = "<group>"; };
+		974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B837E5CB19EFDD0A00075019 /* btnContactSupport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnContactSupport.png; sourceTree = "<group>"; };
 		B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@2x.png"; sourceTree = "<group>"; };
 		B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@3x.png"; sourceTree = "<group>"; };
@@ -332,8 +335,8 @@
 				4D246FAA19E7499600A46373 /* AppDelegate.h */,
 				4D246FAB19E7499600A46373 /* AppDelegate.m */,
 				4D246FB319E7499600A46373 /* Main.storyboard */,
+				974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */,
 				4D246FB619E7499600A46373 /* Images.xcassets */,
-				4D246FB819E7499600A46373 /* LaunchScreen.xib */,
 				4D246FA619E7499600A46373 /* Supporting Files */,
 			);
 			path = "Remember The Date";
@@ -385,6 +388,8 @@
 				4D24705219E80B7300A46373 /* ZenHelpViewController.m */,
 				4D24705419E8111100A46373 /* SaveTheDateTabBarController.h */,
 				4D24705519E8111100A46373 /* SaveTheDateTabBarController.m */,
+				974DE8CA207680A4002DBD56 /* ProfileNavViewController.h */,
+				974DE8CB207680A4002DBD56 /* ProfileNavViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -539,7 +544,7 @@
 				TargetAttributes = {
 					4D246FA219E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 689VA4CD22;
+						DevelopmentTeam = 7529UAQB93;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
@@ -609,8 +614,8 @@
 				B837E5E219EFDD0A00075019 /* btnHelpCenter@3x.png in Resources */,
 				4D246FB519E7499600A46373 /* Main.storyboard in Resources */,
 				B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */,
+				974DE8D0207684FC002DBD56 /* Launch Screen.storyboard in Resources */,
 				4D24702C19E74EED00A46373 /* icoAdd.png in Resources */,
-				4D246FBA19E7499600A46373 /* LaunchScreen.xib in Resources */,
 				B857427319F060450043B3F6 /* rma_error.png in Resources */,
 				B837E5E619EFDD0A00075019 /* helplanding.png in Resources */,
 				21B920AA1B3D3F8B00DF2F0B /* ZDCChatStrings.bundle in Resources */,
@@ -702,6 +707,7 @@
 				4D24704719E8099300A46373 /* DateTableViewController.m in Sources */,
 				4D24705319E80B7300A46373 /* ZenHelpViewController.m in Sources */,
 				83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */,
+				974DE8CC207680A4002DBD56 /* ProfileNavViewController.m in Sources */,
 				4D24704D19E80A5E00A46373 /* ProfileViewController.m in Sources */,
 				4D24705619E8111100A46373 /* SaveTheDateTabBarController.m in Sources */,
 				4D24705019E80ACF00A46373 /* NewDateViewController.m in Sources */,
@@ -733,14 +739,6 @@
 				4D246FB419E7499600A46373 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4D246FB819E7499600A46373 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D246FB919E7499600A46373 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -848,12 +846,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 689VA4CD22;
+				DEVELOPMENT_TEAM = 7529UAQB93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -865,7 +862,7 @@
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendeskbc.mobilesdk.rememberthedate-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -878,12 +875,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 689VA4CD22;
+				DEVELOPMENT_TEAM = 7529UAQB93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -895,7 +891,7 @@
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zendeskbc.mobilesdk.rememberthedate-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
