@@ -26,6 +26,7 @@
     [super viewDidLoad];
     NSDate *now = [NSDate date];
     self.datePicker.minimumDate = now;
+    self.datePicker.date = [NSDate dateWithTimeIntervalSinceNow:300.0];
     self.datePicker.backgroundColor = [UIColor whiteColor];
     [self.dateNameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     // Do any additional setup after loading the view.
@@ -73,6 +74,7 @@
 - (IBAction)onAddTapped:(id)sender {
     if ([self.dateNameTextField.text isEqualToString:@""] == NO)
     {
+        [self.dateNameTextField  resignFirstResponder];
         BOOL isAfter = [self.datePicker.date compare:[NSDate date]] == NSOrderedDescending;
         
         if (isAfter)
@@ -115,6 +117,7 @@
 }
 
 - (IBAction)onCancelTapped:(id)sender {
+    [self.dateNameTextField resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:^{}];   
 }
 
