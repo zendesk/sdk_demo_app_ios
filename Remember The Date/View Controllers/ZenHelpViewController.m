@@ -92,10 +92,10 @@
     if(selfHeight > contentViewHeight) {
         _scrollView.scrollEnabled = NO;
     }
-    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Semibold" size:15.0];
-    self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Semibold" size:15.0];
-    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Semibold" size:15.0];
-    self.startChatButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Semibold" size:15.0];
+    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
+    self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
+    self.myTicketsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
+    self.startChatButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.topLabel.font = [UIFont fontWithName:@"SFProText" size:13.0];
     
     self.helpCenterButton.layer.cornerRadius = 20.0;

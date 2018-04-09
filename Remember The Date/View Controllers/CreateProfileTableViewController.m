@@ -67,10 +67,13 @@ extern NSString *APNS_ID_KEY;
         [self.nameTextField setEnabled:YES];
         [self.emailTextField setEnabled:YES];
         [self.barButton setTitle:@"Done"];
-        if (self.nameTextField.text != nil || ![self.nameTextField.text isEqualToString: @""]) {
-            [self.emailTextField becomeFirstResponder];
-        } else {
+        [self.barButton setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17 weight:UIFontWeightSemibold]} forState:UIControlStateNormal];
+        if (self.nameTextField.text == nil || [self.nameTextField.text isEqualToString: @""]) {
             [self.nameTextField becomeFirstResponder];
+        } else if ([self.nameTextField hasText] && [self.emailTextField hasText]) {
+            [self.nameTextField becomeFirstResponder];
+        } else {
+            [self.emailTextField becomeFirstResponder];
         }
         self.isSignedIn = NO;
     } else {
@@ -104,6 +107,7 @@ extern NSString *APNS_ID_KEY;
         [self.nameTextField setEnabled:NO];
         [self.emailTextField setEnabled:NO];
         [self.barButton setTitle:@"Edit"];
+        [self.barButton setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17 weight:UIFontWeightRegular]} forState:UIControlStateNormal];
     }
 }
 

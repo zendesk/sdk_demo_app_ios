@@ -517,9 +517,9 @@
                                                 <constraint firstItem="qBw-lW-H50" firstAttribute="top" secondItem="aPE-cc-z5t" secondAttribute="top" constant="13" id="kiq-7L-mhs"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="64" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="100" indentationWidth="200" shouldIndentWhileEditing="NO" id="9Bw-7Y-1jm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" id="9Bw-7Y-1jm">
                                         <rect key="frame" x="0.0" y="228" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Bw-7Y-1jm" id="OaR-A4-BNL">
