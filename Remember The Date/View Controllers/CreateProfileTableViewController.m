@@ -67,10 +67,10 @@ extern NSString *APNS_ID_KEY;
         [self.nameTextField setEnabled:YES];
         [self.emailTextField setEnabled:YES];
         [self.barButton setTitle:@"Done"];
-        if (self.nameTextField.text == nil || [self.nameTextField.text isEqualToString: @""]) {
-            [self.nameTextField becomeFirstResponder];
-        } else {
+        if (self.nameTextField.text != nil || ![self.nameTextField.text isEqualToString: @""]) {
             [self.emailTextField becomeFirstResponder];
+        } else {
+            [self.nameTextField becomeFirstResponder];
         }
         self.isSignedIn = NO;
     } else {
