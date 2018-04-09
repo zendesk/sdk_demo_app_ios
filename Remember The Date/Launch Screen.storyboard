@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="CLI-i4-r4a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-icon-ios" translatesAutoresizingMaskIntoConstraints="NO" id="CLI-i4-r4a">
                                 <rect key="frame" x="133" y="289.5" width="108" height="108"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -34,13 +34,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
+                    <connections>
+                        <outlet property="rtdImageView" destination="CLI-i4-r4a" id="ESc-XY-8ob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="-431" y="378"/>
         </scene>
     </scenes>
     <resources>
-        <image name="emptyBackground" width="82" height="90"/>
+        <image name="launch-icon-ios" width="82" height="90"/>
     </resources>
 </document>

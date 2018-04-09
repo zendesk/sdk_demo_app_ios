@@ -56,11 +56,7 @@ extern NSString *APNS_ID_KEY;
 - (IBAction)onTappedSignOutButton:(id)sender {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userName"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-//    id<ZDKObjCIdentity> userIdentity = [ZDKObjCJwt new];
-//    [[ZDKZendesk instance] setIdentity:userIdentity];
     
     
     [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] unregisterForPush];
