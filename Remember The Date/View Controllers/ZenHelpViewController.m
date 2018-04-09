@@ -92,6 +92,10 @@
     if(selfHeight > contentViewHeight) {
         _scrollView.scrollEnabled = NO;
     }
+    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Medium" size:15.0];
+    self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Medium" size:15.0];
+    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Medium" size:15.0];
+    self.helpCenterButton.titleLabel.font = [UIFont fontWithName:@"SFProText-Medium" size:15.0];
     
     self.helpCenterButton.layer.cornerRadius = 20.0;
     self.contactUsButton.layer.cornerRadius = 20.0;

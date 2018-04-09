@@ -18,6 +18,7 @@ extern NSString *APNS_ID_KEY;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *profileCell;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (assign, nonatomic) BOOL isSignedIn;
 @end
@@ -26,6 +27,7 @@ extern NSString *APNS_ID_KEY;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,6 +67,11 @@ extern NSString *APNS_ID_KEY;
         [self.nameTextField setEnabled:YES];
         [self.emailTextField setEnabled:YES];
         [self.barButton setTitle:@"Done"];
+        if (self.nameTextField.text == nil || [self.nameTextField.text isEqualToString: @""]) {
+            [self.nameTextField becomeFirstResponder];
+        } else {
+            [self.emailTextField becomeFirstResponder];
+        }
         self.isSignedIn = NO;
     } else {
         NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
@@ -106,6 +113,8 @@ extern NSString *APNS_ID_KEY;
 }
 
 - (IBAction)onPictureButtonTapped:(id)sender {
+    [self.nameTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
     UIActionSheet   *actionSheet    = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a photo source", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") destructiveButtonTitle:nil otherButtonTitles:nil];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -116,19 +125,6 @@ extern NSString *APNS_ID_KEY;
     [actionSheet addButtonWithTitle:NSLocalizedString(@"Photo Library", @"")];
     [actionSheet showInView:self.view];
 
-}
-
-- (IBAction)onCreateTapped:(id)sender {
-    if ([self.nameTextField.text isEqualToString:@""] == NO)
-    {
-    }
-    else
-    {
-        // Alert user
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please fill out all fields.", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-        
-        [alert show];
-    }
 }
 
 #pragma mark - UIActionSheet
