@@ -87,7 +87,7 @@
 		83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */; };
 		83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */; };
 		974DE8CC207680A4002DBD56 /* ProfileNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974DE8CB207680A4002DBD56 /* ProfileNavViewController.m */; };
-		974DE8D0207684FC002DBD56 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */; };
+		974E680A207B77C400110153 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974E6809207B77C400110153 /* Launch Screen.storyboard */; };
 		B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CB19EFDD0A00075019 /* btnContactSupport.png */; };
 		B837E5DB19EFDD0A00075019 /* btnContactSupport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */; };
 		B837E5DC19EFDD0A00075019 /* btnContactSupport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */; };
@@ -241,7 +241,7 @@
 		83E233E71BFB931700B032B1 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = "Remember The Date/Framework/ZendeskProviderSDK.framework"; sourceTree = "<group>"; };
 		974DE8CA207680A4002DBD56 /* ProfileNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileNavViewController.h; sourceTree = "<group>"; };
 		974DE8CB207680A4002DBD56 /* ProfileNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileNavViewController.m; sourceTree = "<group>"; };
-		974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		974E6809207B77C400110153 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B837E5CB19EFDD0A00075019 /* btnContactSupport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnContactSupport.png; sourceTree = "<group>"; };
 		B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@2x.png"; sourceTree = "<group>"; };
 		B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@3x.png"; sourceTree = "<group>"; };
@@ -330,9 +330,9 @@
 				4D246FD619E74EDF00A46373 /* Images */,
 				4D246FCF19E74E7500A46373 /* View Controllers */,
 				4D246FAA19E7499600A46373 /* AppDelegate.h */,
+				974E6809207B77C400110153 /* Launch Screen.storyboard */,
 				4D246FAB19E7499600A46373 /* AppDelegate.m */,
 				4D246FB319E7499600A46373 /* Main.storyboard */,
-				974DE8CF207684FC002DBD56 /* Launch Screen.storyboard */,
 				4D246FB619E7499600A46373 /* Images.xcassets */,
 				4D246FA619E7499600A46373 /* Supporting Files */,
 			);
@@ -609,7 +609,7 @@
 				B837E5E219EFDD0A00075019 /* btnHelpCenter@3x.png in Resources */,
 				4D246FB519E7499600A46373 /* Main.storyboard in Resources */,
 				B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */,
-				974DE8D0207684FC002DBD56 /* Launch Screen.storyboard in Resources */,
+				974E680A207B77C400110153 /* Launch Screen.storyboard in Resources */,
 				4D24702C19E74EED00A46373 /* icoAdd.png in Resources */,
 				B857427319F060450043B3F6 /* rma_error.png in Resources */,
 				B837E5E619EFDD0A00075019 /* helplanding.png in Resources */,

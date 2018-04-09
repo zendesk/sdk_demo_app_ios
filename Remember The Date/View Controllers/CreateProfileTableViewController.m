@@ -31,29 +31,29 @@ extern NSString *APNS_ID_KEY;
 {
     [super viewWillAppear:animated];
     NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
+    [self.nameTextField setEnabled:NO];
+    [self.emailTextField setEnabled:NO];
+    
+    self.isSignedIn = YES;
     
     if ([defaults stringForKey:@"userName"] != nil)
     {
         // We have a profile!
-        self.isSignedIn = YES;
         self.nameTextField.text         = [defaults stringForKey:@"userName"];
         self.emailTextField.text        = [defaults stringForKey:@"email"];
         [self.nameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
         [self.emailTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
-        
-//        [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];
-        [self.nameTextField setEnabled:NO];
-        [self.emailTextField setEnabled:NO];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths firstObject];
         NSString *getImagePath = [documentsDirectory stringByAppendingPathComponent:@"savedImage.png"];
         UIImage *img = [UIImage imageWithContentsOfFile:getImagePath];
         
-        if (img != nil)
+        if (img != nil) {
             [self.pictureButton setImage:img forState:UIControlStateNormal];
             self.pictureButton.layer.cornerRadius   = CGRectGetWidth(self.pictureButton.frame)/2;
             self.pictureButton.layer.masksToBounds  = YES;
+        }
 
     }
     

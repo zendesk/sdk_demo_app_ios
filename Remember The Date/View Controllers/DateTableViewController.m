@@ -27,22 +27,19 @@
     [self.formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
     
     self.emptyView  = [[[NSBundle mainBundle] loadNibNamed:@"EmptyView" owner:nil options:nil] firstObject];
-    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.backgroundColor  = [UIColor colorWithRed:(250.0/255.0) green:(250.0/255.0) blue:(250.0/255.0) alpha:1];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.emptyView.frame    = self.view.frame;
+    self.emptyView.center = self.view.center;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    [self.view addSubview:self.emptyView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self reloadTableView];
-    if ([self.notificationsArray count] == 0)
-    {
-        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        self.emptyView.frame    = self.view.frame;
-        self.emptyView.center = self.view.center;
-        self.edgesForExtendedLayout = UIRectEdgeBottom;
-        [self.view bringSubviewToFront:self.emptyView];
-    }
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,22 +52,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onProfileTapped:(id)sender {
-    UINavigationController  *destinationController  = nil;
-    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"userName"] != nil)
-    {
-        destinationController   = [self.storyboard instantiateViewControllerWithIdentifier:@"viewProfile"];
-    }
-    else
-    {
-        destinationController   = [self.storyboard instantiateViewControllerWithIdentifier:@"createProfile"];
-    }
-    
-    [self presentViewController:destinationController animated:YES completion:^{
-        
-    }];
-}
-
 #pragma mark - UITableView
 
 - (void)reloadTableView
@@ -78,7 +59,6 @@
     UIApplication   *application    = [UIApplication sharedApplication];
     self.notificationsArray = [application scheduledLocalNotifications];
     [self.tableView reloadData];
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,7 +88,6 @@
         if ([self.emptyView superview] == nil)
         {
             [self.view addSubview:self.emptyView];
-            [self.emptyView setFrame:CGRectMake(0, 0, self.emptyView.frame.size.height, self.emptyView.frame.size.width)];
         }
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
