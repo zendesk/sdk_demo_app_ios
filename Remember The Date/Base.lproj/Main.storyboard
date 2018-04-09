@@ -312,7 +312,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZYd-mQ-LgQ">
-                                        <rect key="frame" x="15" y="55" width="345" height="20"/>
+                                        <rect key="frame" x="15" y="65" width="345" height="20"/>
                                         <color key="tintColor" red="0.86139655110000002" green="0.081180036070000003" blue="0.1506838351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="xfa-Q4-A2W"/>
@@ -329,13 +329,13 @@
                                     <constraint firstAttribute="trailing" secondItem="ZYd-mQ-LgQ" secondAttribute="trailing" constant="15" id="Vds-VK-4hH"/>
                                     <constraint firstAttribute="height" constant="100" id="kib-qN-Lgg"/>
                                     <constraint firstAttribute="trailing" secondItem="uQk-fX-LPN" secondAttribute="trailing" constant="15" id="r0n-ZV-B2G"/>
-                                    <constraint firstItem="ZYd-mQ-LgQ" firstAttribute="top" secondItem="uQk-fX-LPN" secondAttribute="bottom" constant="20" id="wXM-6H-2WR"/>
+                                    <constraint firstItem="ZYd-mQ-LgQ" firstAttribute="top" secondItem="uQk-fX-LPN" secondAttribute="bottom" constant="30" id="wXM-6H-2WR"/>
                                     <constraint firstItem="uQk-fX-LPN" firstAttribute="leading" secondItem="MuR-fC-WVB" secondAttribute="leading" constant="15" id="zWW-5p-KuJ"/>
                                 </constraints>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYj-YO-43V">
                                 <rect key="frame" x="0.0" y="118" width="375" height="216"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <date key="date" timeIntervalSinceReferenceDate="434635530.55629498">
                                     <!--2014-10-10 12:05:30 +0000-->
                                 </date>
