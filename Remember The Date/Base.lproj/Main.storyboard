@@ -333,7 +333,7 @@
                                     <constraint firstItem="uQk-fX-LPN" firstAttribute="leading" secondItem="MuR-fC-WVB" secondAttribute="leading" constant="15" id="zWW-5p-KuJ"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="gYj-YO-43V">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYj-YO-43V">
                                 <rect key="frame" x="0.0" y="118" width="375" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="434635530.55629498">
@@ -543,6 +543,7 @@
                         <outlet property="emailTextField" destination="WaO-4c-Zw3" id="cBT-5g-hxq"/>
                         <outlet property="nameTextField" destination="eD7-gK-yGV" id="t5j-GS-p7d"/>
                         <outlet property="pictureButton" destination="TeA-70-nf2" id="ED5-Ye-oLA"/>
+                        <outlet property="profileCell" destination="LUf-tP-yXj" id="YsO-NF-Mjc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa1-Ib-qny" userLabel="First Responder" sceneMemberID="firstResponder"/>

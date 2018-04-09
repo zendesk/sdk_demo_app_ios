@@ -24,8 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.datePicker.minimumDate = [NSDate date];
-    [self.datePicker setDate:[NSDate date]];
+    NSDate *now = [NSDate date];
+    self.datePicker.minimumDate = now;
     [self.dateNameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     // Do any additional setup after loading the view.
     if (self.notification == nil) {
@@ -35,6 +35,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
     [self.dateText setText:[formatter stringFromDate: self.datePicker.date]];
+    [self.dateText setEnabled:NO];
     
 }
 - (IBAction)setDate:(id)sender {
@@ -42,7 +43,6 @@
     [formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
     
     [self.dateText setText:[formatter stringFromDate: self.datePicker.date]];
-    [self.datePicker setHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,12 +51,6 @@
     {
         self.datePicker.date        = self.notification.fireDate;
         self.dateNameTextField.text = self.notification.alertBody;
-        
-        self.navigationItem.rightBarButtonItem.title    = NSLocalizedString(@"Save", @"");
-    }
-    else
-    {
-        self.datePicker.date        = [NSDate dateWithTimeIntervalSinceNow:DAY];
     }
 }
 

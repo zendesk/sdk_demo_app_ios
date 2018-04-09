@@ -17,6 +17,7 @@ extern NSString *APNS_ID_KEY;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
+@property (weak, nonatomic) IBOutlet UITableViewCell *profileCell;
 
 @property (assign, nonatomic) BOOL isSignedIn;
 @end
