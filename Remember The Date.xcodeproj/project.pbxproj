@@ -73,7 +73,6 @@
 		4D24704419E74EED00A46373 /* icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D24700D19E74EED00A46373 /* icon1024.png */; };
 		4D24704719E8099300A46373 /* DateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24704619E8099300A46373 /* DateTableViewController.m */; };
 		4D24704A19E809CE00A46373 /* CreateProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24704919E809CE00A46373 /* CreateProfileTableViewController.m */; };
-		4D24704D19E80A5E00A46373 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24704C19E80A5E00A46373 /* ProfileViewController.m */; };
 		4D24705019E80ACF00A46373 /* NewDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24704F19E80ACF00A46373 /* NewDateViewController.m */; };
 		4D24705319E80B7300A46373 /* ZenHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24705219E80B7300A46373 /* ZenHelpViewController.m */; };
 		4D24705619E8111100A46373 /* SaveTheDateTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D24705519E8111100A46373 /* SaveTheDateTabBarController.m */; };
@@ -224,8 +223,6 @@
 		4D24704619E8099300A46373 /* DateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewController.m; sourceTree = "<group>"; };
 		4D24704819E809CE00A46373 /* CreateProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateProfileTableViewController.h; sourceTree = "<group>"; };
 		4D24704919E809CE00A46373 /* CreateProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateProfileTableViewController.m; sourceTree = "<group>"; };
-		4D24704B19E80A5E00A46373 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		4D24704C19E80A5E00A46373 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4D24704E19E80ACF00A46373 /* NewDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDateViewController.h; sourceTree = "<group>"; };
 		4D24704F19E80ACF00A46373 /* NewDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDateViewController.m; sourceTree = "<group>"; };
 		4D24705119E80B7300A46373 /* ZenHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZenHelpViewController.h; sourceTree = "<group>"; };
@@ -380,8 +377,6 @@
 				4D24704619E8099300A46373 /* DateTableViewController.m */,
 				4D24704819E809CE00A46373 /* CreateProfileTableViewController.h */,
 				4D24704919E809CE00A46373 /* CreateProfileTableViewController.m */,
-				4D24704B19E80A5E00A46373 /* ProfileViewController.h */,
-				4D24704C19E80A5E00A46373 /* ProfileViewController.m */,
 				4D24704E19E80ACF00A46373 /* NewDateViewController.h */,
 				4D24704F19E80ACF00A46373 /* NewDateViewController.m */,
 				4D24705119E80B7300A46373 /* ZenHelpViewController.h */,
@@ -708,7 +703,6 @@
 				4D24705319E80B7300A46373 /* ZenHelpViewController.m in Sources */,
 				83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */,
 				974DE8CC207680A4002DBD56 /* ProfileNavViewController.m in Sources */,
-				4D24704D19E80A5E00A46373 /* ProfileViewController.m in Sources */,
 				4D24705619E8111100A46373 /* SaveTheDateTabBarController.m in Sources */,
 				4D24705019E80ACF00A46373 /* NewDateViewController.m in Sources */,
 			);

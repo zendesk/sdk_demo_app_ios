@@ -16,14 +16,15 @@ extern NSString *APNS_ID_KEY;
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButton;
 
+@property (assign, nonatomic) BOOL isSignedIn;
 @end
 
 @implementation CreateProfileTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -34,13 +35,15 @@ extern NSString *APNS_ID_KEY;
     if ([defaults stringForKey:@"userName"] != nil)
     {
         // We have a profile!
-        
+        self.isSignedIn = YES;
         self.nameTextField.text         = [defaults stringForKey:@"userName"];
         self.emailTextField.text        = [defaults stringForKey:@"email"];
         [self.nameTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
         [self.emailTextField setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
         
-        [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];
+//        [self.navigationItem.rightBarButtonItem setTitle:NSLocalizedString(@"Save", @"")];
+        [self.nameTextField setEnabled:NO];
+        [self.emailTextField setEnabled:NO];
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths firstObject];
@@ -53,29 +56,16 @@ extern NSString *APNS_ID_KEY;
             self.pictureButton.layer.masksToBounds  = YES;
 
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)onPictureButtonTapped:(id)sender {
-    UIActionSheet   *actionSheet    = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a photo source", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") destructiveButtonTitle:nil otherButtonTitles:nil];
     
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        [actionSheet addButtonWithTitle:NSLocalizedString(@"Camera", @"")];
-    }
-    
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Photo Library", @"")];
-    [actionSheet showInView:self.view];
-
 }
-
-- (IBAction)onCreateTapped:(id)sender {
-    if ([self.nameTextField.text isEqualToString:@""] == NO)
-    {
+- (IBAction)editButtonTapped:(id)sender {
+    
+    if (self.isSignedIn) {
+        [self.nameTextField setEnabled:YES];
+        [self.emailTextField setEnabled:YES];
+        [self.barButton setTitle:@"Done"];
+        self.isSignedIn = NO;
+    } else {
         NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
         [defaults setObject:self.nameTextField.text forKey:@"userName"];
         [defaults setObject:self.emailTextField.text forKey:@"email"];
@@ -102,10 +92,34 @@ extern NSString *APNS_ID_KEY;
             }];
             
         }
-        
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
+        self.isSignedIn = YES;
+        [self.nameTextField setEnabled:NO];
+        [self.emailTextField setEnabled:NO];
+        [self.barButton setTitle:@"Edit"];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onPictureButtonTapped:(id)sender {
+    UIActionSheet   *actionSheet    = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a photo source", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") destructiveButtonTitle:nil otherButtonTitles:nil];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [actionSheet addButtonWithTitle:NSLocalizedString(@"Camera", @"")];
+    }
+    
+    [actionSheet addButtonWithTitle:NSLocalizedString(@"Photo Library", @"")];
+    [actionSheet showInView:self.view];
+
+}
+
+- (IBAction)onCreateTapped:(id)sender {
+    if ([self.nameTextField.text isEqualToString:@""] == NO)
+    {
     }
     else
     {
@@ -114,12 +128,6 @@ extern NSString *APNS_ID_KEY;
         
         [alert show];
     }
-}
-
-- (IBAction)onCloseTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
 }
 
 #pragma mark - UIActionSheet
