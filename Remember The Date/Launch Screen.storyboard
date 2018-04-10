@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-icon-ios" width="82" height="90"/>
+        <image name="launch-icon-ios" width="108" height="108"/>
     </resources>
 </document>

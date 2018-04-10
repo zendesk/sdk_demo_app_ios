@@ -326,14 +326,14 @@
                                         <rect key="frame" x="15" y="49.5" width="360" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="Fky-Ir-KdX"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="j4K-SK-xcs" userLabel="height = 0.3"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hI-su-w1O">
                                         <rect key="frame" x="15" y="98" width="360" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="oxz-Nn-OSx"/>
+                                            <constraint firstAttribute="height" constant="0.5" id="oxz-Nn-OSx" userLabel="height = 0.3"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -368,7 +368,7 @@
                                 <rect key="frame" x="0.0" y="325" width="375" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="gQG-5m-Xpk"/>
+                                    <constraint firstAttribute="height" constant="0.29999999999999999" id="tYz-Fo-lDO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -490,7 +490,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eD7-gK-yGV">
-                                                    <rect key="frame" x="74" y="10" width="256" height="30"/>
+                                                    <rect key="frame" x="70" y="10" width="260" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.73333333333333328" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="aig-XN-FAp"/>
@@ -512,7 +512,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="eD7-gK-yGV" secondAttribute="centerY" constant="-0.25" id="DBa-oz-jfs">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                                 </constraint>
-                                                <constraint firstItem="eD7-gK-yGV" firstAttribute="leading" secondItem="qBw-lW-H50" secondAttribute="trailing" constant="32" id="HPR-jl-Rsc"/>
+                                                <constraint firstItem="eD7-gK-yGV" firstAttribute="leading" secondItem="qBw-lW-H50" secondAttribute="trailing" constant="28" id="HPR-jl-Rsc"/>
                                                 <constraint firstAttribute="trailing" secondItem="eD7-gK-yGV" secondAttribute="trailing" constant="45" id="cpJ-1W-tkB"/>
                                                 <constraint firstItem="qBw-lW-H50" firstAttribute="top" secondItem="aPE-cc-z5t" secondAttribute="top" constant="13" id="kiq-7L-mhs"/>
                                             </constraints>
@@ -527,7 +527,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaO-4c-Zw3">
-                                                    <rect key="frame" x="74" y="10" width="256" height="30"/>
+                                                    <rect key="frame" x="70" y="10" width="260" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.73333333333333328" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="liu-gb-6Kn"/>
@@ -545,7 +545,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="WaO-4c-Zw3" firstAttribute="leading" secondItem="mvM-6d-JZ6" secondAttribute="trailing" constant="32" id="IVg-Rz-oeP"/>
+                                                <constraint firstItem="WaO-4c-Zw3" firstAttribute="leading" secondItem="mvM-6d-JZ6" secondAttribute="trailing" constant="28" id="IVg-Rz-oeP"/>
                                                 <constraint firstAttribute="trailing" secondItem="WaO-4c-Zw3" secondAttribute="trailing" constant="45" id="Njl-mN-HjN"/>
                                                 <constraint firstItem="mvM-6d-JZ6" firstAttribute="top" secondItem="OaR-A4-BNL" secondAttribute="top" constant="13" id="c3d-DY-gue"/>
                                                 <constraint firstItem="mvM-6d-JZ6" firstAttribute="leading" secondItem="OaR-A4-BNL" secondAttribute="leading" constant="18" id="h9K-u1-XoZ"/>

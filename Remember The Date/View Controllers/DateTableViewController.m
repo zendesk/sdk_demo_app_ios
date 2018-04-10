@@ -38,12 +38,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self reloadTableView];
+//    [self reloadTableView];
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [self reloadTableView];
     [super viewDidAppear:animated];
 }
 
@@ -72,6 +73,11 @@
     
     dateName.text           = currentNotification.alertBody;
     date.text               = [self.formatter stringFromDate:currentNotification.fireDate];
+    if (indexPath.row == self.notificationsArray.count -1) {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    } else {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
+    }
     
     return cell;
 }
