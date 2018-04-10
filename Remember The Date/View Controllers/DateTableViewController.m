@@ -73,6 +73,12 @@
     dateName.text           = currentNotification.alertBody;
     date.text               = [self.formatter stringFromDate:currentNotification.fireDate];
     
+    if (indexPath.row == self.notificationsArray.count -1) {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    } else {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
+    }
+    
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
