@@ -24,23 +24,22 @@
     self.formatter  = [[NSDateFormatter alloc] init];
     [self.formatter setTimeStyle:NSDateFormatterNoStyle];
     [self.formatter setDateStyle:NSDateFormatterShortStyle];
-    [self.formatter setDateFormat:@"MMM dd"];
+    [self.formatter setDateFormat:@"EEE, dd MMM, HH:mm"];
     
     self.emptyView  = [[[NSBundle mainBundle] loadNibNamed:@"EmptyView" owner:nil options:nil] firstObject];
-    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tableView.backgroundColor  = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+    self.tableView.backgroundColor  = [UIColor colorWithRed:(250.0/255.0) green:(250.0/255.0) blue:(250.0/255.0) alpha:1];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.emptyView.frame    = self.view.frame;
+    self.emptyView.center = self.view.center;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
+    [self.view addSubview:self.emptyView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self reloadTableView];
-    if ([self.notificationsArray count] == 0)
-    {
-        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        self.emptyView.frame    = self.view.frame;
-        [self.view bringSubviewToFront:self.emptyView];
-    }
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,22 +52,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onProfileTapped:(id)sender {
-    UINavigationController  *destinationController  = nil;
-    if ([[NSUserDefaults standardUserDefaults] stringForKey:@"userName"] != nil)
-    {
-        destinationController   = [self.storyboard instantiateViewControllerWithIdentifier:@"viewProfile"];
-    }
-    else
-    {
-        destinationController   = [self.storyboard instantiateViewControllerWithIdentifier:@"createProfile"];
-    }
-    
-    [self presentViewController:destinationController animated:YES completion:^{
-        
-    }];
-}
-
 #pragma mark - UITableView
 
 - (void)reloadTableView
@@ -76,7 +59,6 @@
     UIApplication   *application    = [UIApplication sharedApplication];
     self.notificationsArray = [application scheduledLocalNotifications];
     [self.tableView reloadData];
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,9 +73,14 @@
     dateName.text           = currentNotification.alertBody;
     date.text               = [self.formatter stringFromDate:currentNotification.fireDate];
     
+    if (indexPath.row == self.notificationsArray.count -1) {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    } else {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 0)];
+    }
+    
     return cell;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger   number  = [self.notificationsArray count];
@@ -107,7 +94,6 @@
         if ([self.emptyView superview] == nil)
         {
             [self.view addSubview:self.emptyView];
-            self.emptyView.frame    = self.view.frame;
         }
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     }
@@ -118,18 +104,6 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        self.indexPathToBeDeleted   = indexPath;
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Are you sure?", @"") message:NSLocalizedString(@"You can't undo this.", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") otherButtonTitles:NSLocalizedString(@"OK", @""), nil];
-        
-        [alert show];
-        
-    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -149,7 +123,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 64;
+    return 70;
 }
 
 #pragma mark - AlertView

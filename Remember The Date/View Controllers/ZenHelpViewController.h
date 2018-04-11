@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ZenHelpViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *helpCenterButton;
+@property (weak, nonatomic) IBOutlet UIButton *contactUsButton;
+@property (weak, nonatomic) IBOutlet UIButton *myTicketsButton;
+@property (weak, nonatomic) IBOutlet UIButton *startChatButton;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
 
 @end

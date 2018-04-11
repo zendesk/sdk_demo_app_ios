@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,39 +15,47 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="coz-1B-5JJ"/>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's lonely in here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNT-hv-SnX">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                    </variation>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap + to add some dates and create your list" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2z-XA-QIe">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                    </variation>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZQ-j2-e5X">
+                    <rect key="frame" x="78" y="231.5" width="220" height="204"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap + to add some dates and create your list" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8N-8K-2Rv">
+                            <rect key="frame" x="20" y="148" width="180" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="180" id="3af-4U-2DN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-rn-GPX">
+                            <rect key="frame" x="56" y="20" width="108" height="108"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="108" id="0CG-ZJ-emh"/>
+                                <constraint firstAttribute="width" constant="108" id="TZl-Ma-xVc"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="g8N-8K-2Rv" secondAttribute="bottom" constant="20" id="KjU-Cu-vSd"/>
+                        <constraint firstAttribute="height" constant="204" id="NnC-43-Zhi"/>
+                        <constraint firstItem="g8N-8K-2Rv" firstAttribute="centerX" secondItem="9ZQ-j2-e5X" secondAttribute="centerX" id="UGy-mm-ExZ"/>
+                        <constraint firstAttribute="width" constant="220" id="dMg-SW-z3P"/>
+                        <constraint firstItem="g8N-8K-2Rv" firstAttribute="top" secondItem="GTo-rn-GPX" secondAttribute="bottom" constant="20" id="fyt-ul-dvV"/>
+                        <constraint firstItem="GTo-rn-GPX" firstAttribute="top" secondItem="9ZQ-j2-e5X" secondAttribute="top" constant="20" id="g8d-Jh-OeZ"/>
+                        <constraint firstItem="GTo-rn-GPX" firstAttribute="centerX" secondItem="9ZQ-j2-e5X" secondAttribute="centerX" id="zoz-1S-sei"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TNT-hv-SnX" firstAttribute="top" secondItem="coz-1B-5JJ" secondAttribute="bottom" constant="8" id="34L-cp-Hdv"/>
-                <constraint firstAttribute="centerY" secondItem="coz-1B-5JJ" secondAttribute="centerY" constant="120" id="7JD-GB-NEF"/>
-                <constraint firstItem="X2z-XA-QIe" firstAttribute="top" secondItem="TNT-hv-SnX" secondAttribute="bottom" constant="8" id="OR7-ma-8PN"/>
-                <constraint firstItem="TNT-hv-SnX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="XL2-6I-d1X"/>
-                <constraint firstAttribute="trailing" secondItem="X2z-XA-QIe" secondAttribute="trailing" constant="41" id="aJg-7q-1Qb"/>
-                <constraint firstAttribute="trailing" secondItem="TNT-hv-SnX" secondAttribute="trailing" constant="8" id="bKW-76-UXg"/>
-                <constraint firstAttribute="centerX" secondItem="TNT-hv-SnX" secondAttribute="centerX" id="fwy-Jl-uvy"/>
-                <constraint firstItem="X2z-XA-QIe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="41" id="mJw-OJ-j8l"/>
-                <constraint firstAttribute="centerX" secondItem="coz-1B-5JJ" secondAttribute="centerX" id="nZV-oe-TB0"/>
+                <constraint firstItem="9ZQ-j2-e5X" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="e63-rc-AZG"/>
+                <constraint firstItem="9ZQ-j2-e5X" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nB1-jt-CQe"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="empty" width="64" height="64"/>
+        <image name="emptyBackground" width="82" height="90"/>
     </resources>
 </document>
