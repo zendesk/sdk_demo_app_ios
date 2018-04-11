@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="195-wk-6GL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="359"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-sr-Mg0" userLabel="KnowledgeBaseButton">
                                         <rect key="frame" x="33" y="78" width="254" height="40"/>
@@ -233,11 +233,11 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="195-wk-6GL" firstAttribute="trailing" secondItem="h3U-Bz-jjS" secondAttribute="trailing" id="2p2-9P-OaN"/>
                             <constraint firstItem="195-wk-6GL" firstAttribute="top" secondItem="amA-Tb-YsP" secondAttribute="bottom" id="EZ6-ox-xFa"/>
-                            <constraint firstItem="eow-F3-FY9" firstAttribute="top" secondItem="195-wk-6GL" secondAttribute="bottom" constant="8" id="a4o-fk-g1C"/>
+                            <constraint firstItem="eow-F3-FY9" firstAttribute="top" secondItem="195-wk-6GL" secondAttribute="bottom" id="a4o-fk-g1C"/>
                             <constraint firstItem="195-wk-6GL" firstAttribute="leading" secondItem="h3U-Bz-jjS" secondAttribute="leading" id="vFk-gb-B2B"/>
                         </constraints>
                     </view>
