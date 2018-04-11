@@ -158,9 +158,17 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     NSString * requestID = userInfo[@"zendesk_sdk_request_id"];
     if ([[ZDKSupport instance] refreshRequestWithRequestId:requestID]) {
+        completionHandler;
         return;
     } else {
-        // Handle push
+        UIWindow *window = [UIApplication sharedApplication].delegate.window;
+        UIViewController * controller = window.rootViewController;
+        
+        UIViewController * sdkController = [ZDKRequestUi buildRequestUiWithRequestId:requestID];
+        UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:sdkController];
+        
+        [controller presentViewController:navController animated:true completion:nil];
+        completionHandler;
     }
     
 }
