@@ -83,7 +83,6 @@
     return config;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -96,15 +95,19 @@
     self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.myTicketsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.startChatButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
-    self.topLabel.font = [UIFont fontWithName:@"SFProText" size:13.0];
     
     self.helpCenterButton.layer.cornerRadius = 20.0;
     self.contactUsButton.layer.cornerRadius = 20.0;
     self.myTicketsButton.layer.cornerRadius = 20.0;
     self.startChatButton.layer.cornerRadius = 20.0;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    
+    if ((self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
+        && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular)) {
+        self.topLabel.font = [UIFont fontWithName:@"SFProText" size:17.0];
+        self.topLabel.textAlignment = NSTextAlignmentCenter;
+    } else {
+        self.topLabel.font = [UIFont fontWithName:@"SFProText" size:13.0];
+    }
 }
 
 //
@@ -116,16 +119,16 @@
     
     if ([self setupIdentity]) {
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
-        
-        
-        self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+
         
         
         if([ZDKUIUtil isPad]) {
             
             [ZDKHelpCenterUi buildHelpCenterOverview];
             ZDKRequestUiConfiguration * config = [self setupSupportInformation];
-            [self.navigationController presentViewController:[ZDKHelpCenterUi buildHelpCenterOverviewWithConfigs:@[config]] animated:YES completion:nil];
+            UIViewController *hcVc = [ZDKHelpCenterUi buildHelpCenterOverviewWithConfigs:@[config]];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKHelpCenterUi buildHelpCenterOverviewWithConfigs:@[config]]];
+            [self.navigationController presentViewController:navController animated:YES completion:nil];
         } else {
             
 //            [tabbarController hideTabbar];
@@ -152,16 +155,18 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
+        ZDKRequestUiConfiguration * config = [self setupSupportInformation];
+        UIViewController * requestController = [ZDKRequestUi buildRequestUiWith:@[config]];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:requestController];
+        
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             self.tabBarController.modalPresentationStyle = UIModalPresentationFormSheet;
+            navController.modalPresentationStyle = UIModalPresentationFormSheet;
             
         }
-        
-        ZDKRequestUiConfiguration * config = [self setupSupportInformation];
-        UIViewController * requestController = [ZDKRequestUi buildRequestUiWith:@[config]];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:requestController];
+    
         [self.navigationController presentViewController:navController animated:YES completion:nil];
         
     }
@@ -177,18 +182,20 @@
     if ([self setupIdentity]) {
         
         SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
-        
+        ZDKRequestUiConfiguration * config = [self setupSupportInformation];
+        UIViewController * requestListController = [ZDKRequestUi buildRequestListWith:@[config]];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:requestListController];
         
         if([ZDKUIUtil isPad]) {
             
             self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            ZDKRequestUiConfiguration * config = [self setupSupportInformation];
-            UIViewController * requestController = [ZDKRequestUi buildRequestUiWith:@[config]];
-            [self.navigationController presentViewController:requestController animated:YES completion:nil];
+            navController.modalPresentationStyle = UIModalPresentationFormSheet;
+           
+            [self.navigationController presentViewController:navController animated:YES completion:nil];
             
         } else {
             self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-            [self.navigationController pushViewController:[ZDKRequestUi buildRequestList] animated:YES];
+            [self.navigationController pushViewController:requestListController animated:YES];
         }
 
         
