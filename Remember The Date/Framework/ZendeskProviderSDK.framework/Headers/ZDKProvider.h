@@ -25,9 +25,7 @@
  */
 @interface ZDKProvider : NSObject
 
-@property (nonatomic, strong, readonly) ZDKZendesk *zendesk;
-
-- (instancetype)initWithZendesk:(ZDKZendesk*)zendesk;
+- (_Nonnull instancetype)init;
 
 
 @end

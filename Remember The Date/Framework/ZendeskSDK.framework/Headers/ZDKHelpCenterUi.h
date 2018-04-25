@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @since 2.0.0
  */
-+ (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticleWithArticleId:(NSInteger)articleId;
++ (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticleWithArticleId:(NSString *)articleId;
 
 /**
  * Build the Help Center Article view controller. Displays a single article.
@@ -80,7 +80,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @since 2.0.0
  */
-+ (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticleWithArticleId:(NSInteger)articleId
++ (UIViewController<ZDKHelpCenterDelegate>*) buildHelpCenterArticleWithArticleId:(NSString *)articleId
                                                                       andConfigs:(NSArray<ZDKUiConfiguration> *)configs;
 
 
