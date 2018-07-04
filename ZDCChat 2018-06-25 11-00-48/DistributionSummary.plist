@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ZDCChat.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>AC6C627669DACDB1ED0321009A92262AA2B84F29</string>
+				<key>dateExpires</key>
+				<string>04/04/2019</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>689VA4CD22.com.zendesk.mobilesdk.rememberthedate</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>689VA4CD22</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>Chat Sample.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>14e8ee27-44f0-42f8-86cc-50da8a7ffac0</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: com.zendesk.mobilesdk.rememberthedate</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>689VA4CD22</string>
+				<key>name</key>
+				<string>ZD Sub Holdings Inc</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
