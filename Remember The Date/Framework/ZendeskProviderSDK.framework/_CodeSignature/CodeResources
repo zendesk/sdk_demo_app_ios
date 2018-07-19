@@ -226,7 +226,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AB6vxhkQy01pzc8WREXEYg8ukLI=
+		qHyDonMhAlZGlBxs7vWSy/2d4b0=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -234,7 +234,7 @@
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		Ka/QfBu+rD3GkoAFVQ1Jayx5g5s=
+		rMygnNCuwBEdh9eABH2vhG6CQMk=
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -242,7 +242,7 @@
 		</data>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		7GdjFUkYQrd7JPCj07BNZl1y7fI=
+		lPHJ0Z/h8DyR8KpnIhMra3zUdDw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1196,11 +1196,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ka/QfBu+rD3GkoAFVQ1Jayx5g5s=
+			rMygnNCuwBEdh9eABH2vhG6CQMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			psvfYPiJzPvEyaCpbFonyO3UwOIvGwPAr6N0iuJfqX8=
+			4WOvmioJ7yPD/SO4IJ4gahwjY3nwkc9TNnbNcrhQQnY=
 			</data>
 		</dict>
 		<key>Modules/ZendeskProviderSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -1218,11 +1218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7GdjFUkYQrd7JPCj07BNZl1y7fI=
+			lPHJ0Z/h8DyR8KpnIhMra3zUdDw=
 			</data>
 			<key>hash2</key>
 			<data>
-			9VRG3QIK6Oi3IWiVL1wPrVbZ0qXmcazkHtIiB8SYil4=
+			hj4MU2k0cBtCElN+lpIDdYPsfG8tKGOJLFwDQefZS0o=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
