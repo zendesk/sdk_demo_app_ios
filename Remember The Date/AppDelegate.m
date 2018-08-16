@@ -133,7 +133,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
     //
-    // Register SDK for push notifications
+    // Register the Support SDK for push notifications
     //
 
     NSString *identifier = [deviceToken deviceIdentifier];
@@ -153,12 +153,28 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         
     }
     
+    //
+    // Register the Chat SDK for push notifications
+    //
+    [ZDCChat setPushToken:deviceToken];
 }
 
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"Recieved push payload:\n%@", userInfo);
     NSString * requestID = userInfo[@"zendesk_sdk_request_id"];
-    if ([[ZDKSupport instance] refreshRequestWithRequestId:requestID]) {
+    if (requestID != nil) {
+        [self handleSupportPush:requestID];
         completionHandler;
+
+    } else {
+        [self handleChatPush:userInfo];
+        completionHandler;
+    }
+    
+}
+
+- (void) handleSupportPush:(NSString *)requestID {
+    if ([[ZDKSupport instance] refreshRequestWithRequestId:requestID]) {
         return;
     } else {
         UIWindow *window = [UIApplication sharedApplication].delegate.window;
@@ -168,9 +184,11 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:sdkController];
         
         [controller presentViewController:navController animated:true completion:nil];
-        completionHandler;
     }
-    
+}
+
+- (void) handleChatPush:(NSDictionary *)userInfo {
+    [ZDCChat didReceiveRemoteNotification:userInfo];
 }
 
 @end
