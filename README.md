@@ -1,6 +1,8 @@
 :warning: *Use of this software is subject to important terms and conditions as set forth in the License file* :warning:
 
 # Zendesk Mobile SDK iOS Demo app
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzendesk%2Fsdk_demo_app_ios.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzendesk%2Fsdk_demo_app_ios?ref=badge_shield)
+
 
 The "Remember the Date" demo app demonstrates how to use the Zendesk Mobile SDK to build native support into your mobile application.
 
@@ -19,3 +21,6 @@ By downloading or using the Zendesk Mobile SDK, You agree to the Zendesk Master
 Subscription Agreement https://www.zendesk.com/company/customers-partners/#master-subscription-agreement and Application Developer and API License
 Agreement https://www.zendesk.com/company/customers-partners/#application-developer-api-license-agreement and
 acknowledge that such terms govern Your use of and access to the Mobile SDK.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzendesk%2Fsdk_demo_app_ios.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzendesk%2Fsdk_demo_app_ios?ref=badge_large)
