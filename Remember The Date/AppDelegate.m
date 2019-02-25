@@ -11,6 +11,7 @@
 @import ZendeskSDK;
 @import ZendeskCoreSDK;
 #import <ZDCChat/ZDCChat.h>
+#import <AnswerBotProvidersSDK/AnswerBotProvidersSDK-Swift.h>
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -108,6 +109,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
     [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
+    [ZDKAnswerBot initializeWithZendesk:[ZDKZendesk instance] support:[ZDKSupport instance]];
 
     
     //
