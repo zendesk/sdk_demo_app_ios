@@ -58,9 +58,9 @@ for file in $(find . -type f -perm +111); do
     continue
   fi
   # Skip non Zendesk libraries
-  if ! [[ "$(basename $file)" == *"Zendesk"* ]]; then
-    continue
-  fi
+if ! [[ "$(basename $file)" == *"Zendesk"* ]] || ! [[ "$(basename $file)" == *"AnswerBot"* ]] || ! [[ "$(basename $file)" == *"CommonUI"* ]]; then
+continue
+fi
   # Get architectures for current file
   archs="$(lipo -info "${file}" | rev | cut -d ':' -f1 | rev)"
   stripped=""

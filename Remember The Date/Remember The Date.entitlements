@@ -4,7 +4,5 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
-	<key>com.apple.developer.default-data-protection</key>
-	<string>NSFileProtectionComplete</string>
 </dict>
 </plist>
