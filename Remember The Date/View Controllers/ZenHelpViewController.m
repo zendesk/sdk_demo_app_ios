@@ -13,6 +13,7 @@
 
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
+#import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 
 
 @interface ZenHelpViewController ()
@@ -209,24 +210,34 @@
 
 - (IBAction)showChat:(id)sender {
 
-    // update the visitor info before starting the chat
+//    // update the visitor info before starting the chat
+//
+//    NSString *visitorEmail = [self userEmail];
+//
+//    if (visitorEmail) {
+//
+//        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
+//
+//            visitor.name = [self userName];
+//            visitor.email = [self userEmail];
+//        }];
+//    }
+//
+//    // present as new modal using global pre-chat config and whatever visitor info has been persisted
+//    [ZDCChat startChat:^(ZDCConfig *config) {
+//        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
+//        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
+//    }];
 
-    NSString *visitorEmail = [self userEmail];
-
-    if (visitorEmail) {
-
-        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
-
-            visitor.name = [self userName];
-            visitor.email = [self userEmail];
-        }];
-    }
-
-    // present as new modal using global pre-chat config and whatever visitor info has been persisted
-    [ZDCChat startChat:^(ZDCConfig *config) {
-        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
-        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
-    }];
+    //Create a configuration object
+    ZDKRequestUiConfiguration *config = [[ZDKRequestUiConfiguration alloc] init];
+    config.subject = @"Test the SDK";
+    config.tags = @[@"iOS", @"testing"];
+    //Present the SDK
+    UIViewController *answerBotViewController = [ZDKAnswerBotUI buildAnswerBotUIWith:@[config]];
+    //    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:answerBotViewController];
+    self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self.navigationController pushViewController:answerBotViewController animated:YES];
 }
 
 -(NSString *) userEmail {

@@ -87,6 +87,15 @@
 		83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A5FA391D5CD49900C0F500 /* ZDCChatAPI.framework */; };
 		83E06FE21ACEEED400A91D1F /* NSData+RememberTheDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */; };
 		974E680A207B77C400110153 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 974E6809207B77C400110153 /* Launch Screen.storyboard */; };
+		97AC8CE822255AAC00944E61 /* CommonUISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE522255AAC00944E61 /* CommonUISDK.framework */; };
+		97AC8CE922255AAC00944E61 /* AnswerBotProvidersSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE622255AAC00944E61 /* AnswerBotProvidersSDK.framework */; };
+		97AC8CEA22255AAC00944E61 /* AnswerBotSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE722255AAC00944E61 /* AnswerBotSDK.framework */; };
+		97AC8CEE22255AE200944E61 /* AnswerBotProvidersStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97AC8CEB22255AE100944E61 /* AnswerBotProvidersStrings.bundle */; };
+		97AC8CEF22255AE200944E61 /* AnswerBotStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97AC8CEC22255AE100944E61 /* AnswerBotStrings.bundle */; };
+		97AC8CF022255AE200944E61 /* CommonUIStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97AC8CED22255AE100944E61 /* CommonUIStrings.bundle */; };
+		97AC8CF122255C6700944E61 /* AnswerBotProvidersSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE622255AAC00944E61 /* AnswerBotProvidersSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97AC8CF222255C6700944E61 /* AnswerBotSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE722255AAC00944E61 /* AnswerBotSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97AC8CF322255C6700944E61 /* CommonUISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 97AC8CE522255AAC00944E61 /* CommonUISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B837E5DA19EFDD0A00075019 /* btnContactSupport.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CB19EFDD0A00075019 /* btnContactSupport.png */; };
 		B837E5DB19EFDD0A00075019 /* btnContactSupport@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */; };
 		B837E5DC19EFDD0A00075019 /* btnContactSupport@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */; };
@@ -128,6 +137,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				97AC8CF122255C6700944E61 /* AnswerBotProvidersSDK.framework in Embed Frameworks */,
+				97AC8CF222255C6700944E61 /* AnswerBotSDK.framework in Embed Frameworks */,
+				97AC8CF322255C6700944E61 /* CommonUISDK.framework in Embed Frameworks */,
 				8345C2B820690775008208A4 /* ZendeskSDK.framework in Embed Frameworks */,
 				8345C2B320690775008208A4 /* ZendeskProviderSDK.framework in Embed Frameworks */,
 				8345C2B620690775008208A4 /* ZendeskCoreSDK.framework in Embed Frameworks */,
@@ -239,6 +251,12 @@
 		83E06FE11ACEEED400A91D1F /* NSData+RememberTheDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RememberTheDate.m"; path = "Categories/NSData+RememberTheDate.m"; sourceTree = "<group>"; };
 		83E233E71BFB931700B032B1 /* ZendeskProviderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZendeskProviderSDK.framework; path = "Remember The Date/Framework/ZendeskProviderSDK.framework"; sourceTree = "<group>"; };
 		974E6809207B77C400110153 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		97AC8CE522255AAC00944E61 /* CommonUISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonUISDK.framework; path = "Remember The Date/Framework/CommonUISDK.framework"; sourceTree = "<group>"; };
+		97AC8CE622255AAC00944E61 /* AnswerBotProvidersSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnswerBotProvidersSDK.framework; path = "Remember The Date/Framework/AnswerBotProvidersSDK.framework"; sourceTree = "<group>"; };
+		97AC8CE722255AAC00944E61 /* AnswerBotSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AnswerBotSDK.framework; path = "Remember The Date/Framework/AnswerBotSDK.framework"; sourceTree = "<group>"; };
+		97AC8CEB22255AE100944E61 /* AnswerBotProvidersStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnswerBotProvidersStrings.bundle; path = "Remember The Date/Framework/AnswerBotProvidersStrings.bundle"; sourceTree = "<group>"; };
+		97AC8CEC22255AE100944E61 /* AnswerBotStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AnswerBotStrings.bundle; path = "Remember The Date/Framework/AnswerBotStrings.bundle"; sourceTree = "<group>"; };
+		97AC8CED22255AE100944E61 /* CommonUIStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CommonUIStrings.bundle; path = "Remember The Date/Framework/CommonUIStrings.bundle"; sourceTree = "<group>"; };
 		B837E5CB19EFDD0A00075019 /* btnContactSupport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnContactSupport.png; sourceTree = "<group>"; };
 		B837E5CC19EFDD0A00075019 /* btnContactSupport@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@2x.png"; sourceTree = "<group>"; };
 		B837E5CD19EFDD0A00075019 /* btnContactSupport@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnContactSupport@3x.png"; sourceTree = "<group>"; };
@@ -272,10 +290,13 @@
 			files = (
 				83A5FA3A1D5CD49900C0F500 /* ZDCChatAPI.framework in Frameworks */,
 				8345C2B520690775008208A4 /* ZendeskCoreSDK.framework in Frameworks */,
+				97AC8CE822255AAC00944E61 /* CommonUISDK.framework in Frameworks */,
 				21B920AC1B3D3F9700DF2F0B /* ZDCChat.framework in Frameworks */,
 				8345C2B220690775008208A4 /* ZendeskProviderSDK.framework in Frameworks */,
+				97AC8CEA22255AAC00944E61 /* AnswerBotSDK.framework in Frameworks */,
 				21B920AE1B3D3FBA00DF2F0B /* MobileCoreServices.framework in Frameworks */,
 				B8F46E3E19EEC94000E6D8EF /* SystemConfiguration.framework in Frameworks */,
+				97AC8CE922255AAC00944E61 /* AnswerBotProvidersSDK.framework in Frameworks */,
 				8345C2B720690775008208A4 /* ZendeskSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +314,12 @@
 		4D246F9A19E7499600A46373 = {
 			isa = PBXGroup;
 			children = (
+				97AC8CEB22255AE100944E61 /* AnswerBotProvidersStrings.bundle */,
+				97AC8CEC22255AE100944E61 /* AnswerBotStrings.bundle */,
+				97AC8CED22255AE100944E61 /* CommonUIStrings.bundle */,
+				97AC8CE622255AAC00944E61 /* AnswerBotProvidersSDK.framework */,
+				97AC8CE722255AAC00944E61 /* AnswerBotSDK.framework */,
+				97AC8CE522255AAC00944E61 /* CommonUISDK.framework */,
 				8345C2B020690775008208A4 /* ZendeskCoreSDK.framework */,
 				8345C2AE20690774008208A4 /* ZendeskProviderSDK.framework */,
 				8345C2B120690775008208A4 /* ZendeskSDK.framework */,
@@ -535,7 +562,7 @@
 					4D246FA219E7499600A46373 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 689VA4CD22;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
 								enabled = 1;
@@ -576,6 +603,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97AC8CEE22255AE200944E61 /* AnswerBotProvidersStrings.bundle in Resources */,
+				97AC8CEF22255AE200944E61 /* AnswerBotStrings.bundle in Resources */,
+				97AC8CF022255AE200944E61 /* CommonUIStrings.bundle in Resources */,
 				4D24703B19E74EED00A46373 /* icon80.png in Resources */,
 				4D24702619E74EED00A46373 /* icoClose.png in Resources */,
 				4D24702019E74EED00A46373 /* icoHelpActive.png in Resources */,
@@ -682,7 +712,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZendeskCoreSDK.framework/strip-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -839,14 +869,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 689VA4CD22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
@@ -857,7 +890,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "RememberTheDate AppStore";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -868,14 +901,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Remember The Date/Remember The Date.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 689VA4CD22;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 					"\"$(PROJECT_DIR)/Remember The Date/Framework\"",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
+					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
 					"$(PROJECT_DIR)/Remember\\ The\\ Date/Framework",
@@ -886,7 +922,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "RememberTheDate AppStore";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
