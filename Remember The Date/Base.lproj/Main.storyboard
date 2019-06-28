@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Remember the Date-->
         <scene sceneID="GiF-Iu-dSJ">
@@ -94,6 +87,7 @@
                 <navigationController id="Wbc-lk-DqU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="addDate" id="m2v-Ma-WpA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SlP-7I-rAe">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -115,6 +109,7 @@
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" id="Lq2-oJ-08g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="help" id="rJL-W1-gcn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YPN-bK-Nsh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -209,10 +204,25 @@
                                             <action selector="showMyRequests:" destination="OPN-yg-tRA" eventType="touchUpInside" id="dbG-M4-yBQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opW-Ng-ci1" userLabel="ChatButton">
+                                        <rect key="frame" x="33" y="318" width="254" height="40"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.85098039219999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="QUj-y2-sHu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Answer Bot">
+                                            <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showAnswerBot:" destination="OPN-yg-tRA" eventType="touchUpInside" id="iEY-11-e7u"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0bZ-sr-Mg0" firstAttribute="leading" secondItem="195-wk-6GL" secondAttribute="leading" constant="33" id="1Ve-q3-imX"/>
+                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="trailing" secondItem="R9h-AQ-b26" secondAttribute="trailing" id="2sZ-TP-sAh"/>
                                     <constraint firstItem="0bZ-sr-Mg0" firstAttribute="top" secondItem="tPk-BX-1fq" secondAttribute="bottom" constant="20" id="2u7-54-SYF"/>
                                     <constraint firstAttribute="trailing" secondItem="7rG-9d-8Tu" secondAttribute="trailing" constant="33" id="46S-JP-Rhg"/>
                                     <constraint firstAttribute="centerX" secondItem="Yi1-bx-F9g" secondAttribute="centerX" id="AlQ-F2-2Zt"/>
@@ -221,6 +231,7 @@
                                     <constraint firstAttribute="trailing" secondItem="tPk-BX-1fq" secondAttribute="trailing" constant="32" id="M4g-h2-qr6"/>
                                     <constraint firstItem="7rG-9d-8Tu" firstAttribute="top" secondItem="Yi1-bx-F9g" secondAttribute="bottom" constant="20" id="QeK-XJ-66u"/>
                                     <constraint firstAttribute="centerX" secondItem="R9h-AQ-b26" secondAttribute="centerX" id="TbG-FB-sFk"/>
+                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="top" secondItem="R9h-AQ-b26" secondAttribute="bottom" constant="20" id="ZDM-a3-KAf"/>
                                     <constraint firstItem="tPk-BX-1fq" firstAttribute="top" secondItem="195-wk-6GL" secondAttribute="top" constant="22" id="aou-MR-iiE"/>
                                     <constraint firstAttribute="trailing" secondItem="R9h-AQ-b26" secondAttribute="trailing" constant="33" id="dJO-kS-4Qn"/>
                                     <constraint firstAttribute="trailing" secondItem="Yi1-bx-F9g" secondAttribute="trailing" constant="33" id="dlw-7C-Bqb"/>
@@ -230,6 +241,7 @@
                                     <constraint firstAttribute="centerX" secondItem="7rG-9d-8Tu" secondAttribute="centerX" id="oH4-Dy-DTI"/>
                                     <constraint firstItem="R9h-AQ-b26" firstAttribute="top" secondItem="7rG-9d-8Tu" secondAttribute="bottom" constant="20" id="sbH-Hj-2Ws"/>
                                     <constraint firstItem="7rG-9d-8Tu" firstAttribute="leading" secondItem="195-wk-6GL" secondAttribute="leading" constant="33" id="u4s-ja-oh7"/>
+                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="leading" secondItem="R9h-AQ-b26" secondAttribute="leading" id="x5m-3R-sCq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -243,6 +255,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="nQF-7X-Guc"/>
                     <connections>
+                        <outlet property="answerBotbutton" destination="opW-Ng-ci1" id="JqW-Zd-yxb"/>
                         <outlet property="contactUsButton" destination="Yi1-bx-F9g" id="sj8-Yj-bFk"/>
                         <outlet property="contentView" destination="195-wk-6GL" id="IJd-yn-vn8"/>
                         <outlet property="helpCenterButton" destination="0bZ-sr-Mg0" id="X1z-k1-UIx"/>
@@ -309,14 +322,14 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JH-C5-3AK">
-                                        <rect key="frame" x="15" y="49.5" width="305" height="1"/>
+                                        <rect key="frame" x="15" y="50" width="305" height="0.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="Fky-Ir-KdX" userLabel="height = 0.1"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hI-su-w1O">
-                                        <rect key="frame" x="15" y="98" width="305" height="1"/>
+                                        <rect key="frame" x="15" y="98.5" width="305" height="0.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="oxz-Nn-OSx"/>
@@ -351,7 +364,7 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muP-UF-BoI">
-                                <rect key="frame" x="0.0" y="325" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="325" width="320" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="gQG-5m-Xpk" userLabel="height = 0.3"/>
