@@ -13,6 +13,7 @@
 @import ZendeskCoreSDK;
 #import <ZDCChat/ZDCChat.h>
 @import AnswerBotSDK;
+@import CommonUISDK;
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -51,7 +52,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[UINavigationBar appearance] setBarTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
 
     ZDKTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
-
+    ZDKCommonTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
     // chat SDK
     [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
 }
