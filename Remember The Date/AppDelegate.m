@@ -8,9 +8,12 @@
 
 #import "AppDelegate.h"
 #import "NSData+RememberTheDate.h"
+#import <ZendeskSDK/ZendeskSDK-Swift.h>
 @import ZendeskSDK;
 @import ZendeskCoreSDK;
 #import <ZDCChat/ZDCChat.h>
+@import AnswerBotSDK;
+@import CommonUISDK;
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -49,7 +52,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[UINavigationBar appearance] setBarTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
 
     ZDKTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
-
+    ZDKCommonTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
     // chat SDK
     [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
 }
@@ -68,7 +71,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[UITextView appearance] setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setSelectedImageTintColor: [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Request Local Notifications
@@ -107,7 +110,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     // Initialize the Zendesk SDK
     //
     [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
-    [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
+    [ZDKSupportUI initializeWithZendesk:[ZDKZendesk instance]];
+    [ZDKAnswerBotUI initializeWith:[ZDKZendesk instance] support:[ZDKSupport instance]];
 
     
     //

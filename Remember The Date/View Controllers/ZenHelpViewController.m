@@ -8,6 +8,7 @@
 
 #import <ZendeskSDK/ZendeskSDK.h>
 #import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
+#import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 
 #import <ZDCChat/ZDCChat.h>
 
@@ -95,11 +96,13 @@
     self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.myTicketsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.startChatButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
+    self.answerBotbutton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     
     self.helpCenterButton.layer.cornerRadius = 20.0;
     self.contactUsButton.layer.cornerRadius = 20.0;
     self.myTicketsButton.layer.cornerRadius = 20.0;
     self.startChatButton.layer.cornerRadius = 20.0;
+    self.answerBotbutton.layer.cornerRadius = 20.0;
     
     if ((self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
         && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular)) {
@@ -118,26 +121,16 @@
 - (IBAction)showHelpCenter:(id)sender {
     
     if ([self setupIdentity]) {
-        SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
-
-        
-        
         if([ZDKUIUtil isPad]) {
-            
-            [ZDKHelpCenterUi buildHelpCenterOverview];
             ZDKRequestUiConfiguration * config = [self setupSupportInformation];
-            UIViewController *hcVc = [ZDKHelpCenterUi buildHelpCenterOverviewWithConfigs:@[config]];
-            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKHelpCenterUi buildHelpCenterOverviewWithConfigs:@[config]]];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[ZDKHelpCenterUi buildHelpCenterOverviewUiWithConfigs:@[config]]];
             [self.navigationController presentViewController:navController animated:YES completion:nil];
         } else {
-            
-//            [tabbarController hideTabbar];
-            [self.navigationController pushViewController:[ZDKHelpCenterUi buildHelpCenterOverview] animated:YES];
+            [self.navigationController pushViewController:[ZDKHelpCenterUi buildHelpCenterOverviewUi] animated:YES];
         }
 
         
-    }
-    else {
+    } else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
         [alert show];
     }
@@ -177,11 +170,13 @@
 
 }
 
+//
+//  Show Request List component
+//
+//
 - (IBAction)showMyRequests:(id)sender {
     
     if ([self setupIdentity]) {
-        
-        SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
         ZDKRequestUiConfiguration * config = [self setupSupportInformation];
         UIViewController * requestListController = [ZDKRequestUi buildRequestListWith:@[config]];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:requestListController];
@@ -199,13 +194,17 @@
         }
 
         
-    }
-    else {
+    } else {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
         [alert show];
     }
     
 }
+
+//
+//  Show Chat component
+//
+//
 
 - (IBAction)showChat:(id)sender {
 
@@ -244,6 +243,26 @@
     return nil;
 }
 
+//
+//  Show Answer Bot Component
+//
+//
+- (IBAction)showAnswerBot:(id)sender {
+    if ([self setupIdentity]) {
+
+        self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+
+        UIViewController * answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
+        [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+        [self.navigationController pushViewController:answerBotController animated:true];
+
+    } else {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        [alert show];
+    }
+
+}
+
 
 - (NSString *) userName {
 
@@ -258,6 +277,10 @@
     // Setup the support information
     //
     [self setupSupportInformation];
+
+    // TODO: This is a workaround for a bug in Answer bot and should be removed in the next version
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBarTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     
     SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
     [tabbarController showTabbar];
