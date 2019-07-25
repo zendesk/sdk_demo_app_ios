@@ -253,7 +253,6 @@
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
 
         UIViewController * answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
-        [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
         [self.navigationController pushViewController:answerBotController animated:true];
 
     } else {
