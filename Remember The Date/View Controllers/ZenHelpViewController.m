@@ -11,7 +11,6 @@
 #import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 
 #import <ZDCChat/ZDCChat.h>
-
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
 
@@ -19,34 +18,27 @@
 @interface ZenHelpViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-
 @end
 
 @implementation ZenHelpViewController
-
 
 - (BOOL) setupIdentity {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults stringForKey:@"userName"]) {
-        
         NSString *email = [defaults stringForKey:@"email"];
         
-        if ( email.length > 0) {
-            
+        if (email.length > 0) {
             id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:email];
             [[ZDKZendesk instance] setIdentity:userIdentity];
-
 
             return YES;
         }
     }
-    
     return NO;
 }
 
 -(ZDKRequestUiConfiguration*) setupSupportInformation {
-
     ZDKRequestUiConfiguration * config = [ZDKRequestUiConfiguration new];
     
     NSString *appVersionString = [NSString stringWithFormat:@"version_%@",
@@ -113,11 +105,7 @@
     }
 }
 
-//
-//  Show support component
-//
-//
-
+///  Show support component
 - (IBAction)showHelpCenter:(id)sender {
     
     if ([self setupIdentity]) {
@@ -128,20 +116,18 @@
         } else {
             [self.navigationController pushViewController:[ZDKHelpCenterUi buildHelpCenterOverviewUi] animated:YES];
         }
-
-        
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..."
+                                                        message:@"You need to go in the profile screen and setup your email ..."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK, doing it now :)"
+                                              otherButtonTitles:nil];
         [alert show];
     }
 
 }
 
-//
-//  Request Creation component
-//
-//
-
+/// Request Creation component
 - (IBAction)contactSupport:(id)sender {
     
     if ([self setupIdentity]) {
@@ -162,18 +148,13 @@
     
         [self.navigationController presentViewController:navController animated:YES completion:nil];
         
-    }
-    else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+    } else {
+        [[self alertView] show];
     }
 
 }
 
-//
-//  Show Request List component
-//
-//
+///  Show Request List component
 - (IBAction)showMyRequests:(id)sender {
     
     if ([self setupIdentity]) {
@@ -192,30 +173,21 @@
             self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
             [self.navigationController pushViewController:requestListController animated:YES];
         }
-
-        
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [[self alertView] show];
     }
     
 }
 
-//
-//  Show Chat component
-//
-//
-
+///  Show Chat component
 - (IBAction)showChat:(id)sender {
 
     // update the visitor info before starting the chat
-
     NSString *visitorEmail = [self userEmail];
 
     if (visitorEmail) {
 
         [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
-
             visitor.name = [self userName];
             visitor.email = [self userEmail];
         }];
@@ -229,47 +201,35 @@
 }
 
 -(NSString *) userEmail {
-
-    NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
-
-    if ([defaults stringForKey:@"userName"] != nil)
-    {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults stringForKey:@"userName"] != nil) {
         NSString* email = [defaults stringForKey:@"email"];
-        if ([email length]>0) {
+        if ([email length] > 0) {
             return email;
         }
     }
-
     return nil;
 }
 
-//
-//  Show Answer Bot Component
-//
-//
+///  Show Answer Bot Component
 - (IBAction)showAnswerBot:(id)sender {
     if ([self setupIdentity]) {
-
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
 
-        UIViewController * answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
+        UIViewController *answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
         [self.navigationController pushViewController:answerBotController animated:true];
-
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Wait a second..." message:@"You need to go in the profile screen and setup your email ..." delegate:self cancelButtonTitle:@"OK, doing it now :)" otherButtonTitles:nil];
-        [alert show];
+        [[self alertView] show];
     }
 
 }
 
-
 - (NSString *) userName {
-
     NSUserDefaults  *defaults   = [NSUserDefaults standardUserDefaults];
     return [defaults stringForKey:@"userName"];
 }
 
--(void) viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     //
@@ -277,14 +237,18 @@
     //
     [self setupSupportInformation];
 
-    // TODO: This is a workaround for a bug in Answer bot and should be removed in the next version
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    [self.navigationController.navigationBar setBarTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
-    
     SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;
     [tabbarController showTabbar];
 }
 
+/// Returns an alertView to display
+-(UIAlertView*)alertView {
+    return [[UIAlertView alloc] initWithTitle:@"Wait a second..."
+                                      message:@"You need to go in the profile screen and setup your email ..."
+                                     delegate:self
+                            cancelButtonTitle:@"OK, doing it now :)"
+                            otherButtonTitles:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

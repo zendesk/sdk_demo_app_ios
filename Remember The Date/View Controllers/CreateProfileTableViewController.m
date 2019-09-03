@@ -119,7 +119,10 @@ extern NSString *APNS_ID_KEY;
 - (IBAction)onPictureButtonTapped:(id)sender {
     [self.nameTextField resignFirstResponder];
     [self.emailTextField resignFirstResponder];
-    UIActionSheet   *actionSheet    = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a photo source", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") destructiveButtonTitle:nil otherButtonTitles:nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Select a photo source", @"")
+                                                             delegate:self
+                                                    cancelButtonTitle:NSLocalizedString(@"Cancel", @"")
+                                               destructiveButtonTitle:nil otherButtonTitles:nil];
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {

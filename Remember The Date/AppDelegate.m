@@ -66,8 +66,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
     // Visual setup
     
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[UITextView appearance] setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setSelectedImageTintColor: [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
@@ -79,7 +77,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
 
-    // Register for remote notfications    
+    // Register for remote notfications
     if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
         
         UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
@@ -93,8 +91,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
         
         [application registerForRemoteNotificationTypes:types];
-        
-#pragma clang diagnostic pop
+
     }
     //
     // Enable logging for debug builds
@@ -117,7 +114,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Style the SDK
     //
-    
     [self setupSDKStyle];
 
     //
@@ -129,7 +125,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     //  The rest of the Mobile SDK code can be found in ZenHelpViewController.m
     //
-    
     return YES;
 }
 
@@ -139,7 +134,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Register the Support SDK for push notifications
     //
-
     NSString *identifier = [deviceToken deviceIdentifier];
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APNS_ID_KEY];
     
@@ -169,7 +163,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     if (requestID != nil) {
         [self handleSupportPush:requestID];
         completionHandler;
-
     } else {
         [self handleChatPush:userInfo];
         completionHandler;
@@ -182,10 +175,10 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         return;
     } else {
         UIWindow *window = [UIApplication sharedApplication].delegate.window;
-        UIViewController * controller = window.rootViewController;
-        
-        UIViewController * sdkController = [ZDKRequestUi buildRequestUiWithRequestId:requestID];
-        UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:sdkController];
+        UIViewController *controller = window.rootViewController;
+
+        UIViewController *sdkController = [ZDKRequestUi buildRequestUiWithRequestId:requestID];
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:sdkController];
         
         [controller presentViewController:navController animated:true completion:nil];
     }

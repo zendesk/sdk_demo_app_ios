@@ -1,0 +1,3 @@
+"ios.conversation.ui.member.join" = "Sumali si %@ sa chat";
+"ios.conversation.ui.member.leave" = "Umalis si %@ ng chat";
+"ios.conversation.ui.queue.position" = "Posisyon sa pila: %lu";
