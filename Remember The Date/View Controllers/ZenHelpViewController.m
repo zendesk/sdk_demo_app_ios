@@ -174,6 +174,7 @@
         }
     } else {
         [[self alertView] show];
+    }
 }
 
 ///  Show Chat component
