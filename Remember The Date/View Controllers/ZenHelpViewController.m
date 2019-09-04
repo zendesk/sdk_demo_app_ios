@@ -10,10 +10,15 @@
 #import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 
-#import <ZDCChat/ZDCChat.h>
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
 
+@import ChatSDK;
+@import ChatProvidersSDK;
+@import ChatVisitorClient;
+
+@import MessagingSDK;
+@import MessagingAPI;
 
 @interface ZenHelpViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -22,7 +27,7 @@
 
 @implementation ZenHelpViewController
 
-- (BOOL) setupIdentity {
+- (BOOL)setupIdentity {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults stringForKey:@"userName"]) {
@@ -107,7 +112,6 @@
 
 ///  Show support component
 - (IBAction)showHelpCenter:(id)sender {
-    
     if ([self setupIdentity]) {
         if([ZDKUIUtil isPad]) {
             ZDKRequestUiConfiguration * config = [self setupSupportInformation];
@@ -124,14 +128,11 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-
 }
 
 /// Request Creation component
 - (IBAction)contactSupport:(id)sender {
-    
     if ([self setupIdentity]) {
-        
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
         ZDKRequestUiConfiguration * config = [self setupSupportInformation];
@@ -151,12 +152,10 @@
     } else {
         [[self alertView] show];
     }
-
 }
 
 ///  Show Request List component
 - (IBAction)showMyRequests:(id)sender {
-    
     if ([self setupIdentity]) {
         ZDKRequestUiConfiguration * config = [self setupSupportInformation];
         UIViewController * requestListController = [ZDKRequestUi buildRequestListWith:@[config]];
@@ -175,32 +174,29 @@
         }
     } else {
         [[self alertView] show];
-    }
-    
 }
 
 ///  Show Chat component
 - (IBAction)showChat:(id)sender {
-
     // update the visitor info before starting the chat
     NSString *visitorEmail = [self userEmail];
-
     if (visitorEmail) {
-
-        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
-            visitor.name = [self userName];
-            visitor.email = [self userEmail];
-        }];
+        ZDKVisitorInfo *visitorInfo = [[ZDKVisitorInfo alloc] initWithName:[self userName]
+                                                                     email:visitorEmail
+                                                               phoneNumber:@""];
+        [ZDKChat.instance.profileProvider setVisitorInfo:visitorInfo
+                                              completion:^(ZDKVisitorInfo *info, NSError *error){ }];
     }
 
-    // present as new modal using global pre-chat config and whatever visitor info has been persisted
-    [ZDCChat startChat:^(ZDCConfig *config) {
-        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
-        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
-    }];
+    NSError *error = nil;
+    ZDKChatUI *chatEngine = [[ZDKChatUI alloc] initWith:@[] error:&error];
+    [ZDKMessaging initializeWithEngines:@[chatEngine] initialEngine:chatEngine configs:@[] error:&error];
+
+    UIViewController *vc = [ZDKMessaging.instance buildUI];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
--(NSString *) userEmail {
+-(NSString *)userEmail {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults stringForKey:@"userName"] != nil) {
         NSString* email = [defaults stringForKey:@"email"];
@@ -215,7 +211,6 @@
 - (IBAction)showAnswerBot:(id)sender {
     if ([self setupIdentity]) {
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-
         UIViewController *answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
         [self.navigationController pushViewController:answerBotController animated:true];
     } else {
@@ -231,10 +226,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    //
+
     // Setup the support information
-    //
     [self setupSupportInformation];
 
     SaveTheDateTabBarController * tabbarController = (SaveTheDateTabBarController*)self.tabBarController;

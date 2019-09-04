@@ -11,9 +11,9 @@
 #import <ZendeskSDK/ZendeskSDK-Swift.h>
 @import ZendeskSDK;
 @import ZendeskCoreSDK;
-#import <ZDCChat/ZDCChat.h>
 @import AnswerBotSDK;
 @import CommonUISDK;
+@import ChatProvidersSDK;
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -53,8 +53,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
     ZDKTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
     ZDKCommonTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
-    // chat SDK
-    [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
 }
 
 
@@ -69,7 +67,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [[UITextView appearance] setTintColor:[[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setSelectedImageTintColor: [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Request Local Notifications
@@ -79,7 +76,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
     // Register for remote notfications
     if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotifications)]) {
-        
+
         UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
         
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
@@ -87,7 +84,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [application registerForRemoteNotifications];
         
     } else if ([UIApplication instancesRespondToSelector:@selector(registerForRemoteNotificationTypes:)]) {
-        
+
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
         
         [application registerForRemoteNotificationTypes:types];
@@ -96,32 +93,29 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Enable logging for debug builds
     //
-    
 #ifdef DEBUG
     [ZDKCoreLogger setEnabled:YES];
 #else
     [ZDKCoreLogger setEnabled:NO];
 #endif
 
-    //
     // Initialize the Zendesk SDK
-    //
     [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
     [ZDKSupportUI initializeWithZendesk:[ZDKZendesk instance]];
     [ZDKAnswerBotUI initializeWith:[ZDKZendesk instance] support:[ZDKSupport instance]];
 
-    
-    //
     // Style the SDK
-    //
     [self setupSDKStyle];
 
-    //
-    // Initialise the chat SDK
-    //
-    [ZDCChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK"];
 
-    
+    // Initialize the ChatSDK V2
+    ZDKChatAPIConfig *config = [[ZDKChatAPIConfig alloc] init];
+    config.tags = [NSArray arrayWithObjects: @"iOS", @"v2", @"RTD", nil];
+    config.visitorPathTwo = @"Remember the Date iOS";
+
+    [ZDKChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK"
+                               config: config
+                                queue:dispatch_get_main_queue()];
     //
     //  The rest of the Mobile SDK code can be found in ZenHelpViewController.m
     //
@@ -154,7 +148,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Register the Chat SDK for push notifications
     //
-    [ZDCChat setPushToken:deviceToken];
+    [ZDKChat registerPushToken:deviceToken];
 }
 
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -164,7 +158,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [self handleSupportPush:requestID];
         completionHandler;
     } else {
-        [self handleChatPush:userInfo];
+        [ZDKChat didReceiveRemoteNotification:userInfo in:application];
         completionHandler;
     }
     
@@ -183,9 +177,4 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
         [controller presentViewController:navController animated:true completion:nil];
     }
 }
-
-- (void) handleChatPush:(NSDictionary *)userInfo {
-    [ZDCChat didReceiveRemoteNotification:userInfo];
-}
-
 @end
