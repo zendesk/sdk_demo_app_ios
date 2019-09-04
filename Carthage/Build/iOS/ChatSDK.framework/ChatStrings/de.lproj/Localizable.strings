@@ -1,0 +1,3 @@
+"ios.conversation.ui.member.join" = "%@ ist dem Chat beigetreten";
+"ios.conversation.ui.member.leave" = "%@ hat den Chat verlassen";
+"ios.conversation.ui.queue.position" = "Warteschlangenposition: %lu";

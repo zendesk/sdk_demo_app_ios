@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NewDateViewController : UIViewController
-@property (nonatomic, strong)   UILocalNotification *notification;
+@property (nonatomic, strong) UILocalNotification *notification;
 @end

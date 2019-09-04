@@ -72,15 +72,12 @@
 }
 
 - (IBAction)onAddTapped:(id)sender {
-    if ([self.dateNameTextField.text isEqualToString:@""] == NO)
-    {
+    if ([self.dateNameTextField.text isEqualToString:@""] == NO) {
         [self.dateNameTextField  resignFirstResponder];
         BOOL isAfter = [self.datePicker.date compare:[NSDate date]] == NSOrderedDescending;
         
-        if (isAfter)
-        {
-            if (self.notification != nil)
-            {
+        if (isAfter) {
+            if (self.notification != nil) {
                 [[UIApplication sharedApplication] cancelLocalNotification:self.notification];
             }
             
@@ -96,25 +93,25 @@
                     
                 }];
             });
-        }
-        else
-        {
+        } else {
             // Tell the user
-            UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"The date/time should be after, well, now.", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-            
-            [alert show];
+            [[self alertViewWithMessage:NSLocalizedString(@"The date/time should be after, well, now.", @"")] show];
         }
-    }
-    else
-    {
+    } else {
         // Tell the user
-        UIAlertView *alert  = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"You must fill a Title", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-        
-        [alert show];
-
+        [[self alertViewWithMessage:NSLocalizedString(@"You must fill a Title", @"")] show];
     }
-    
 }
+
+/// Returns an alertView to display
+-(UIAlertView*)alertViewWithMessage:(NSString*)string {
+    return [[UIAlertView alloc] initWithTitle:@"Wait a second..."
+                                      message:string
+                                     delegate:self
+                            cancelButtonTitle:@"OK, doing it now :)"
+                            otherButtonTitles:nil];
+}
+
 
 - (IBAction)onCancelTapped:(id)sender {
     [self.dateNameTextField resignFirstResponder];

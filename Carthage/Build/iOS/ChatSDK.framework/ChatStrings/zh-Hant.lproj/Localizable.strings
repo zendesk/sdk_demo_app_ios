@@ -1,0 +1,3 @@
+"ios.conversation.ui.member.join" = "%@ 已加入交談";
+"ios.conversation.ui.member.leave" = "%@ 已離開交談";
+"ios.conversation.ui.queue.position" = "佇列位置：%lu";
