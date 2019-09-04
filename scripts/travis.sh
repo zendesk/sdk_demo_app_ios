@@ -8,7 +8,7 @@ elif [[ "$1" == "install" ]]; then
   bundle install
   exit $?
 elif [[ "$1" == "build" ]]; then
-  # bundle exec fastlane test
+  bundle exec fastlane build_for_testing
   exit $?
 else
   exit 1
