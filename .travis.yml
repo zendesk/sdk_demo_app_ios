@@ -1,0 +1,20 @@
+os: osx
+osx_image: xcode10.3
+language: swift
+cache:
+  bundler: true
+  directories:
+  - "/home/travis/.rvm/"
+branches:
+  only:
+  - master
+matrix:
+  include:
+  - name: iOS Remember the Date App
+    before_install:
+    - sh ./scripts/travis.sh before_install
+    install:
+    - sh ./scripts/travis.sh install
+    script:
+    - sh ./scripts/travis.sh build
+
