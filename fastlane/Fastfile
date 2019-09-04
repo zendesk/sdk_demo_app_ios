@@ -1,0 +1,10 @@
+
+default_platform(:ios)
+setup_travis
+
+platform :ios do
+  desc "Build the project for running tests."
+  lane :build_for_testing do
+    scan(build_for_testing: true)
+  end
+end
