@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		21B920AE1B3D3FBA00DF2F0B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B920AD1B3D3FBA00DF2F0B /* MobileCoreServices.framework */; };
+		22256B5123268CC50022D8D9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22256B5023268CC50022D8D9 /* WebKit.framework */; };
 		22F6DAA6231EBEC800154EB9 /* AnswerBotProvidersSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F6DA68231E9D8C00154EB9 /* AnswerBotProvidersSDK.framework */; };
 		22F6DAA7231EBEC800154EB9 /* CommonUISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F6DA6F231E9D8D00154EB9 /* CommonUISDK.framework */; };
 		22F6DAA8231EBEC800154EB9 /* ZDCChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F6DA67231E9D8C00154EB9 /* ZDCChat.framework */; };
@@ -146,6 +147,8 @@
 
 /* Begin PBXFileReference section */
 		21B920AD1B3D3FBA00DF2F0B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		22256B5023268CC50022D8D9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		22256B5223268D060022D8D9 /* SDKConfigurations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDKConfigurations.framework; path = Carthage/Build/iOS/SDKConfigurations.framework; sourceTree = "<group>"; };
 		22F6D9F8231D201F00154EB9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		22F6D9F9231D202200154EB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22F6DA67231E9D8C00154EB9 /* ZDCChat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZDCChat.framework; path = Carthage/Build/iOS/ZDCChat.framework; sourceTree = "<group>"; };
@@ -266,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22256B5123268CC50022D8D9 /* WebKit.framework in Frameworks */,
 				22F6DAB1231EBEC900154EB9 /* AnswerBotSDK.framework in Frameworks */,
 				22F6DAA6231EBEC800154EB9 /* AnswerBotProvidersSDK.framework in Frameworks */,
 				22F6DAA7231EBEC800154EB9 /* CommonUISDK.framework in Frameworks */,
@@ -292,6 +296,8 @@
 		22F6D9F7231D201100154EB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22256B5223268D060022D8D9 /* SDKConfigurations.framework */,
+				22256B5023268CC50022D8D9 /* WebKit.framework */,
 				22F6DAAE231EBEC900154EB9 /* AnswerBotSDK.framework */,
 				22F6DAAF231EBEC900154EB9 /* ZDCChat.bundle */,
 				22F6DAAD231EBEC900154EB9 /* ZDCChatStrings.bundle */,
@@ -559,7 +565,7 @@
 				};
 			};
 			buildConfigurationList = 4D246F9E19E7499600A46373 /* Build configuration list for PBXProject "Remember The Date" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -856,7 +862,10 @@
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -882,7 +891,10 @@
 				);
 				INFOPLIST_FILE = "Remember The Date/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zendesk.mobilesdk.rememberthedate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -904,7 +916,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Remember The DateTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remember The Date.app/Remember The Date";
@@ -920,7 +936,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Remember The DateTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zendesk.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remember The Date.app/Remember The Date";
