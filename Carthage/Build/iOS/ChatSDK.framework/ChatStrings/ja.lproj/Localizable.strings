@@ -1,3 +1,0 @@
-"ios.conversation.ui.member.join" = "%@さんがチャットに参加しました";
-"ios.conversation.ui.member.leave" = "%@さんがチャットから退席しました";
-"ios.conversation.ui.queue.position" = "キュー内の順番: %lu";
