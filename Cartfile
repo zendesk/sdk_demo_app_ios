@@ -1,15 +1,15 @@
 ### Shared Resources
 
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/CommonUISDK/CommonUISDK.json" == 1.0.1 # AnswerBot & Zendesk & Chat
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ZendeskCoreSDK/ZendeskCoreSDK.json" == 2.1.0 # AnswerBot & Zendesk
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.1/CommonUISDK/CommonUISDK.json" == 1.0.2 # AnswerBot & Zendesk & Chat
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.1/ZendeskCoreSDK/ZendeskCoreSDK.json" == 2.1.1 # AnswerBot & Zendesk
 # binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/SDKConfigurations/SDKConfigurations.json" == 1.0.0
 
 # binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/MessagingSDK/MessagingSDK.json" == 1.0.0
 # binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/MessagingAPI/MessagingAPI.json" == 1.0.0
 
 ### AnswerBot SDK
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/AnswerBotSDK/AnswerBotSDK.json" == 1.0.1
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/AnswerBotProvidersSDK/AnswerBotProvidersSDK.json" == 1.0.0
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/AnswerBotSDK/AnswerBotSDK.json" == 1.0.2
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/AnswerBotProvidersSDK/AnswerBotProvidersSDK.json" == 1.0.1
 
 ### ChatSDK
 # binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ChatSDK/ChatSDK.json" == 2.0.0
@@ -18,5 +18,5 @@ binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/A
 # binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ChatClient/ChatClient.json" == 1.0.0
 
 ### Zendesk SDK
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ZendeskSDK/ZendeskSDK.json" == 3.0.1
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ZendeskProviderSDK/ZendeskProviderSDK.json" == 3.0.1
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ZendeskSDK/ZendeskSDK.json" == 3.0.2
+binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/5.0.1/ZendeskProviderSDK/ZendeskProviderSDK.json" == 3.0.2
