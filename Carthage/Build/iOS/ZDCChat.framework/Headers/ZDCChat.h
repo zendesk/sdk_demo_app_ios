@@ -20,7 +20,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 // Chat API SDK Version
-#define ZDC_CHAT_SDK_VERSION @"1.4.0"
+#define ZDC_CHAT_SDK_VERSION @"1.4.2"
 
 #if MODULES_DISABLED
 #import <ZDCChatAPI/ZDCChatAPI.h>
@@ -175,6 +175,10 @@ typedef void (^ZDCConfigBlock) (ZDCConfig *config);
  */
 + (void) didReceiveRemoteNotification:(NSDictionary*)userInfo;
 
+/// Identifies whether a push notification payload belongs to Zendesk
+- (BOOL) isZendeskChatNotification:(NSDictionary*)userInfo;
+
+- (void)enableAgentAvailabilityObserving:(BOOL)enable;
 
 @end
 
