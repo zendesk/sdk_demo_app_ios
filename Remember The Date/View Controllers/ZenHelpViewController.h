@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *contactUsButton;
 @property (weak, nonatomic) IBOutlet UIButton *myTicketsButton;
 @property (weak, nonatomic) IBOutlet UIButton *startChatButton;
-@property (weak, nonatomic) IBOutlet UIButton *answerBotbutton;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 RememberTheDate. All rights reserved.
 //
 
-#import <ZendeskSDK/ZendeskSDK.h>
+#import <SupportSDK/SupportSDK.h>
 #import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import "CreateProfileTableViewController.h"
 

@@ -6,9 +6,12 @@
 //  Copyright (c) 2014 RememberTheDate. All rights reserved.
 //
 
-#import <ZendeskSDK/ZendeskSDK.h>
+#import <SupportSDK/SupportSDK.h>
+#import <SupportProvidersSDK/SupportProvidersSDK.h>
 #import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
 #import <AnswerBotSDK/AnswerBotSDK-Swift.h>
+#import <MessagingAPI/MessagingAPI.h>
+#import <MessagingSDK/MessagingSDK.h>
 
 #import <ZDCChat/ZDCChat.h>
 #import "ZenHelpViewController.h"
@@ -85,13 +88,11 @@
     self.contactUsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.myTicketsButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     self.startChatButton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
-    self.answerBotbutton.titleLabel.font = [UIFont fontWithName:@"SFPro-Text-Semibold" size:15.0];
     
     self.helpCenterButton.layer.cornerRadius = 20.0;
     self.contactUsButton.layer.cornerRadius = 20.0;
     self.myTicketsButton.layer.cornerRadius = 20.0;
     self.startChatButton.layer.cornerRadius = 20.0;
-    self.answerBotbutton.layer.cornerRadius = 20.0;
     
     if ((self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
         && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular)) {
@@ -131,19 +132,13 @@
         
         self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
-        ZDKRequestUiConfiguration * config = [self setupSupportInformation];
-        UIViewController * requestController = [ZDKRequestUi buildRequestUiWith:@[config]];
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:requestController];
-        
-        if([ZDKUIUtil isPad]) {
-            
-            self.navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            self.tabBarController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navController.modalPresentationStyle = UIModalPresentationFormSheet;
-            
-        }
+        ZDKRequestUiConfiguration *config = [self setupSupportInformation];
+        ZDKAnswerBotEngine *abEngine = [ZDKAnswerBotEngine engineAndReturnError:nil];
+        ZDKSupportEngine *supportEngine = [ZDKSupportEngine engineAndReturnError:nil];
+        NSArray<id <ZDKEngine>> *engines = @[(id <ZDKEngine>)abEngine, (id <ZDKEngine>)supportEngine];
+        UIViewController *requestController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[config] error:nil];
     
-        [self.navigationController presentViewController:navController animated:YES completion:nil];
+        [self.navigationController pushViewController:requestController animated:YES];
         
     } else {
         [[self alertView] show];
@@ -206,19 +201,6 @@
         }
     }
     return nil;
-}
-
-///  Show Answer Bot Component
-- (IBAction)showAnswerBot:(id)sender {
-    if ([self setupIdentity]) {
-        self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-
-        UIViewController *answerBotController = [ZDKAnswerBotUI buildAnswerBotUI];
-        [self.navigationController pushViewController:answerBotController animated:true];
-    } else {
-        [[self alertView] show];
-    }
-
 }
 
 - (NSString *) userName {
