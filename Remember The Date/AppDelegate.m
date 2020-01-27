@@ -8,11 +8,12 @@
 
 #import "AppDelegate.h"
 #import "NSData+RememberTheDate.h"
-#import <ZendeskSDK/ZendeskSDK-Swift.h>
-@import ZendeskSDK;
+#import <SupportProvidersSDK/SupportProvidersSDK-Swift.h>
+#import <AnswerBotProvidersSDK/AnswerBotProvidersSDK-Swift.h>
+@import SupportSDK;
 @import ZendeskCoreSDK;
 #import <ZDCChat/ZDCChat.h>
-@import AnswerBotSDK;
+@import AnswerBotProvidersSDK;
 @import CommonUISDK;
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
@@ -107,8 +108,8 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     // Initialize the Zendesk SDK
     //
     [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
-    [ZDKSupportUI initializeWithZendesk:[ZDKZendesk instance]];
-    [ZDKAnswerBotUI initializeWith:[ZDKZendesk instance] support:[ZDKSupport instance]];
+    [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
+    [ZDKAnswerBot initializeWithZendesk:[ZDKZendesk instance] support:[ZDKSupport instance]];
 
     
     //

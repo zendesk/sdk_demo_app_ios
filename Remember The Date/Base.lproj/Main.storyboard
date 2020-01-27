@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,10 +17,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" rowHeight="55" id="Zbr-qI-bnl">
-                                <rect key="frame" x="0.0" y="22" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zbr-qI-bnl" id="IDr-3c-f1Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Girlfriend's birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjR-3p-wVQ">
@@ -87,7 +85,7 @@
                 <navigationController id="Wbc-lk-DqU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="addDate" id="m2v-Ma-WpA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SlP-7I-rAe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -109,7 +107,7 @@
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" id="Lq2-oJ-08g" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="help" id="rJL-W1-gcn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YPN-bK-Nsh">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -134,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="195-wk-6GL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-sr-Mg0" userLabel="KnowledgeBaseButton">
                                         <rect key="frame" x="33" y="78" width="254" height="40"/>
@@ -204,25 +202,10 @@
                                             <action selector="showMyRequests:" destination="OPN-yg-tRA" eventType="touchUpInside" id="dbG-M4-yBQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opW-Ng-ci1" userLabel="ChatButton">
-                                        <rect key="frame" x="33" y="318" width="254" height="40"/>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.85098039219999999" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="QUj-y2-sHu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Answer Bot">
-                                            <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showAnswerBot:" destination="OPN-yg-tRA" eventType="touchUpInside" id="iEY-11-e7u"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="0bZ-sr-Mg0" firstAttribute="leading" secondItem="195-wk-6GL" secondAttribute="leading" constant="33" id="1Ve-q3-imX"/>
-                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="trailing" secondItem="R9h-AQ-b26" secondAttribute="trailing" id="2sZ-TP-sAh"/>
                                     <constraint firstItem="0bZ-sr-Mg0" firstAttribute="top" secondItem="tPk-BX-1fq" secondAttribute="bottom" constant="20" id="2u7-54-SYF"/>
                                     <constraint firstAttribute="trailing" secondItem="7rG-9d-8Tu" secondAttribute="trailing" constant="33" id="46S-JP-Rhg"/>
                                     <constraint firstAttribute="centerX" secondItem="Yi1-bx-F9g" secondAttribute="centerX" id="AlQ-F2-2Zt"/>
@@ -231,7 +214,6 @@
                                     <constraint firstAttribute="trailing" secondItem="tPk-BX-1fq" secondAttribute="trailing" constant="32" id="M4g-h2-qr6"/>
                                     <constraint firstItem="7rG-9d-8Tu" firstAttribute="top" secondItem="Yi1-bx-F9g" secondAttribute="bottom" constant="20" id="QeK-XJ-66u"/>
                                     <constraint firstAttribute="centerX" secondItem="R9h-AQ-b26" secondAttribute="centerX" id="TbG-FB-sFk"/>
-                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="top" secondItem="R9h-AQ-b26" secondAttribute="bottom" constant="20" id="ZDM-a3-KAf"/>
                                     <constraint firstItem="tPk-BX-1fq" firstAttribute="top" secondItem="195-wk-6GL" secondAttribute="top" constant="22" id="aou-MR-iiE"/>
                                     <constraint firstAttribute="trailing" secondItem="R9h-AQ-b26" secondAttribute="trailing" constant="33" id="dJO-kS-4Qn"/>
                                     <constraint firstAttribute="trailing" secondItem="Yi1-bx-F9g" secondAttribute="trailing" constant="33" id="dlw-7C-Bqb"/>
@@ -241,7 +223,6 @@
                                     <constraint firstAttribute="centerX" secondItem="7rG-9d-8Tu" secondAttribute="centerX" id="oH4-Dy-DTI"/>
                                     <constraint firstItem="R9h-AQ-b26" firstAttribute="top" secondItem="7rG-9d-8Tu" secondAttribute="bottom" constant="20" id="sbH-Hj-2Ws"/>
                                     <constraint firstItem="7rG-9d-8Tu" firstAttribute="leading" secondItem="195-wk-6GL" secondAttribute="leading" constant="33" id="u4s-ja-oh7"/>
-                                    <constraint firstItem="opW-Ng-ci1" firstAttribute="leading" secondItem="R9h-AQ-b26" secondAttribute="leading" id="x5m-3R-sCq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -255,7 +236,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="nQF-7X-Guc"/>
                     <connections>
-                        <outlet property="answerBotbutton" destination="opW-Ng-ci1" id="JqW-Zd-yxb"/>
                         <outlet property="contactUsButton" destination="Yi1-bx-F9g" id="sj8-Yj-bFk"/>
                         <outlet property="contentView" destination="195-wk-6GL" id="IJd-yn-vn8"/>
                         <outlet property="helpCenterButton" destination="0bZ-sr-Mg0" id="X1z-k1-UIx"/>
@@ -274,7 +254,7 @@
                 <navigationController storyboardIdentifier="newDate" id="z4d-WS-uag" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="84o-WL-3AL">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -295,7 +275,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kcx-dF-Udt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FGM-BT-joY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuR-fC-WVB">
@@ -444,7 +424,7 @@
             <objects>
                 <tableViewController id="rlp-cE-Oy8" customClass="CreateProfileTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="gzk-Ze-ccn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -452,10 +432,10 @@
                             <tableViewSection id="d74-mc-eoh">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="178" id="LUf-tP-yXj">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUf-tP-yXj" id="2qS-vy-Orn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="177.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-70-nf2">
@@ -482,14 +462,14 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" id="BsB-qj-EVN">
-                                        <rect key="frame" x="0.0" y="178" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="206" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BsB-qj-EVN" id="aPE-cc-z5t">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eD7-gK-yGV">
-                                                    <rect key="frame" x="74" y="10" width="201" height="30"/>
+                                                    <rect key="frame" x="74" y="10.5" width="201" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.73333333333333328" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="aig-XN-FAp"/>
@@ -519,14 +499,14 @@
                                         <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" id="9Bw-7Y-1jm">
-                                        <rect key="frame" x="0.0" y="228" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="256" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Bw-7Y-1jm" id="OaR-A4-BNL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaO-4c-Zw3">
-                                                    <rect key="frame" x="74" y="10" width="201" height="30"/>
+                                                    <rect key="frame" x="74" y="10.5" width="201" height="30"/>
                                                     <color key="tintColor" red="0.0" green="0.73333333333333328" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="liu-gb-6Kn"/>
@@ -589,7 +569,7 @@
                     <tabBarItem key="tabBarItem" title="" image="addUser" id="8SR-TU-WXB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ad3-DP-3LF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.86139655113220215" green="0.081180036067962646" blue="0.15068383514881134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
