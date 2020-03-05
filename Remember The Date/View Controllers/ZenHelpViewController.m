@@ -14,6 +14,7 @@
 #import <MessagingSDK/MessagingSDK.h>
 
 #import <ZDCChat/ZDCChat.h>
+#import <ZDCChatAPI/ZDCChatAPI.h>
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
 
