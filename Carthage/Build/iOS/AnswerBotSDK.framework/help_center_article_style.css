@@ -13,17 +13,28 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /*=========================================
  Styling
  =========================================== */
+
+:root {
+  color-scheme: light dark;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --heading-color: #333;
+    --body-color: #666;
+  }
+}
+
 html {
     -webkit-text-size-adjust:none
 }
 
 body {
     font: 1em/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:#666;
+    color: var(--body-color);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
     margin: 30px;
-    background-color: #ffffff;
 }
 
 a {
@@ -42,8 +53,8 @@ strong{
     font-weight:bold;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color:#333;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
     font-weight:bold;
     margin-bottom: 20px;
     line-height: 1.25em;

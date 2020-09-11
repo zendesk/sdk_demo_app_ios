@@ -6,18 +6,19 @@
 //  Copyright (c) 2014 RememberTheDate. All rights reserved.
 //
 
-#import <SupportSDK/SupportSDK.h>
-#import <SupportProvidersSDK/SupportProvidersSDK.h>
-#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
-#import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 #import <MessagingAPI/MessagingAPI.h>
 #import <MessagingSDK/MessagingSDK.h>
 
-#import <ZDCChat/ZDCChat.h>
-#import <ZDCChatAPI/ZDCChatAPI.h>
+#import <AnswerBotSDK/AnswerBotSDK-Swift.h>
+#import <ChatSDK/ChatSDK.h>
+#import <SupportSDK/SupportSDK.h>
+
+#import <ChatProvidersSDK/ChatProvidersSDK.h>
+#import <SupportProvidersSDK/SupportProvidersSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK-Swift.h>
+
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
-
 
 @interface ZenHelpViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -128,23 +129,28 @@
 
 /// Request Creation component
 - (IBAction)contactSupport:(id)sender {
-    
+
     if ([self setupIdentity]) {
-        
-        self.navigationController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        
-        ZDKRequestUiConfiguration *config = [self setupSupportInformation];
-        ZDKAnswerBotEngine *abEngine = [ZDKAnswerBotEngine engineAndReturnError:nil];
-        ZDKSupportEngine *supportEngine = [ZDKSupportEngine engineAndReturnError:nil];
-        NSArray<id <ZDKEngine>> *engines = @[(id <ZDKEngine>)abEngine, (id <ZDKEngine>)supportEngine];
-        UIViewController *requestController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[config] error:nil];
+        ZDKRequestUiConfiguration *requestConfig = [self setupSupportInformation];
+        ZDKMessagingConfiguration *messagingConfig = [ZDKMessagingConfiguration new];
+        UIViewController *viewController = [self buildUIWithConfigs: @[requestConfig, messagingConfig]];
     
-        [self.navigationController pushViewController:requestController animated:YES];
-        
+        [self.navigationController pushViewController:viewController animated:YES];
     } else {
         [[self alertView] show];
     }
+}
 
+
+
+- (UIViewController *) buildUIWithConfigs:(NSArray<id<ZDKConfiguration>> *)configs {
+    NSError *error = nil;
+     NSArray *engines = @[
+         (id <ZDKEngine>) [ZDKAnswerBotEngine engineAndReturnError: &error],
+         (id <ZDKEngine>) [ZDKSupportEngine engineAndReturnError: &error],
+         (id <ZDKEngine>) [ZDKChatEngine engineAndReturnError: &error]
+     ];
+    return [[ZDKMessaging instance] buildUIWithEngines: engines configs: configs error: &error];
 }
 
 ///  Show Request List component
@@ -179,18 +185,25 @@
     NSString *visitorEmail = [self userEmail];
 
     if (visitorEmail) {
-
-        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
-            visitor.name = [self userName];
-            visitor.email = [self userEmail];
-        }];
+        ZDKVisitorInfo *visitorInfo = [[ZDKVisitorInfo alloc] initWithName:[self userName] email:[self userEmail] phoneNumber: @""];
+        [[[ZDKChat instance] profileProvider] setVisitorInfo:visitorInfo completion:nil];
     }
 
     // present as new modal using global pre-chat config and whatever visitor info has been persisted
-    [ZDCChat startChat:^(ZDCConfig *config) {
-        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
-        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
-    }];
+    ZDKChatConfiguration *config = [ZDKChatConfiguration new];
+    NSError *error = nil;
+     NSArray *engines = @[
+         (id <ZDKEngine>) [ZDKChatEngine engineAndReturnError: &error]
+     ];
+    
+    UIViewController *viewController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[config] error:&error];
+    viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle: @"Close"
+                                                                                       style: UIBarButtonItemStylePlain
+                                                                                      target: self
+                                                                                      action: @selector(dismiss)];
+
+    UINavigationController *chatController = [[UINavigationController alloc] initWithRootViewController: viewController];
+    [self.navigationController presentViewController:chatController animated:YES completion:nil];
 }
 
 -(NSString *) userEmail {
@@ -232,6 +245,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void) dismiss {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

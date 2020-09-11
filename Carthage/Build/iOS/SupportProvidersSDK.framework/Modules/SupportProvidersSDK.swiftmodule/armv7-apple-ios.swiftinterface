@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SupportProvidersSDK
 import Foundation
 @_exported import SupportProvidersSDK
@@ -20,7 +20,7 @@ import ZendeskCoreSDK
   @objc deinit
 }
 extension HelpCenterBlips {
-  @objc public static func blipArticleViewed(_ pageTitle: Swift.String, url: Swift.String, navigatorLanguage: Swift.String)
+  @objc public static func blipArticleViewed(_ pageTitle: Swift.String, url: Swift.String, navigatorLanguage: Swift.String, pageId: Swift.Int64, pageLocale: Swift.String)
   @objc public static func blipSearchQuery(_ query: Swift.String)
   @objc public static func blipArticleVote(_ articleId: Swift.String, vote: Swift.Int)
 }

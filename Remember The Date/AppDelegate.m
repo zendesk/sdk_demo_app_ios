@@ -10,11 +10,10 @@
 #import "NSData+RememberTheDate.h"
 #import <SupportProvidersSDK/SupportProvidersSDK-Swift.h>
 #import <AnswerBotProvidersSDK/AnswerBotProvidersSDK-Swift.h>
-@import SupportSDK;
-@import ZendeskCoreSDK;
-#import <ZDCChat/ZDCChat.h>
-@import AnswerBotProvidersSDK;
-@import CommonUISDK;
+#import <ChatProvidersSDK/ChatProvidersSDK.h>
+#import <ZendeskCoreSDK/ZendeskCoreSDK.h>
+#import <CommonUISDK/CommonUISDK.h>
+#import <SupportSDK/SupportSDK.h>
 
 #define RED_COLOR [UIColor colorWithRed:232.0f/255.f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f]
 #define ORANGE_COLOR [UIColor colorWithRed:253.0f/255.f green:144.0f/255.0f blue:38.0f/255.0f alpha:1.0f]
@@ -54,8 +53,6 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 
     ZDKTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
     ZDKCommonTheme.currentTheme.primaryColor = [[UIColor alloc] initWithRed:0 green:(188.0/255.0) blue:(212.0/255.0) alpha:1.0];
-    // chat SDK
-    [[ZDCChatOverlay appearance] setInsets:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(75.0f, 15.0f, 70.0f, 15.0f)]];
 }
 
 
@@ -111,7 +108,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
     [ZDKAnswerBot initializeWithZendesk:[ZDKZendesk instance] support:[ZDKSupport instance]];
 
-    
+
     //
     // Style the SDK
     //
@@ -120,7 +117,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Initialise the chat SDK
     //
-    [ZDCChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK"];
+    [ZDKChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK" queue: dispatch_get_main_queue()];
 
     
     //
@@ -155,7 +152,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Register the Chat SDK for push notifications
     //
-    [ZDCChat setPushToken:deviceToken];
+    [ZDKChat registerPushToken:deviceToken];
 }
 
 - (void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -186,7 +183,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
 }
 
 - (void) handleChatPush:(NSDictionary *)userInfo {
-    [ZDCChat didReceiveRemoteNotification:userInfo];
+    [ZDKChat didReceiveRemoteNotification:userInfo in:[UIApplication sharedApplication]];
 }
 
 @end
