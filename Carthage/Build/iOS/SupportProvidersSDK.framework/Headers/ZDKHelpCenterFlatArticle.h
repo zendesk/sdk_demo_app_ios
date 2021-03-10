@@ -15,9 +15,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKHelpCenterArticle.h"
-#import "ZDKHelpCenterCategory.h"
-#import "ZDKHelpCenterSection.h"
+#import <SupportProvidersSDK/ZDKHelpCenterArticle.h>
+#import <SupportProvidersSDK/ZDKHelpCenterCategory.h>
+#import <SupportProvidersSDK/ZDKHelpCenterSection.h>
 
 /**
  *  A Help Center FlatArticle.

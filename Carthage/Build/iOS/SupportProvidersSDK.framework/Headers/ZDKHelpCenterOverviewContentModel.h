@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKNavBarConversationsUIType.h"
+#import <SupportProvidersSDK/ZDKNavBarConversationsUIType.h>
 
 /**
  *  Used to specify what type of ids will be supplied.
