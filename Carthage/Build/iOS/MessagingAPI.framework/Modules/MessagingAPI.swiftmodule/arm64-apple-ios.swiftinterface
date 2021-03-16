@@ -1,10 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MessagingAPI
 import Foundation
 @_exported import MessagingAPI
 import SDKConfigurations
 import Swift
+import UIKit
 public struct SystemMessage : MessagingAPI.SeparatorItem, Swift.Hashable {
   public var status: MessagingAPI.ItemDeliveryStatus {
     get
@@ -62,7 +63,7 @@ public struct Option : Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: MessagingAPI.Option, b: MessagingAPI.Option) -> Swift.Bool
 }
-public struct TextQuery : MessagingAPI.Query, Swift.Hashable {
+public struct TextQuery : MessagingAPI.Query, MessagingAPI.TextItem, Swift.Hashable {
   public let id: Swift.String
   public let timestamp: Foundation.Date
   public let message: Swift.String
@@ -76,12 +77,20 @@ public struct TextQuery : MessagingAPI.Query, Swift.Hashable {
   public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: MessagingAPI.TextQuery, b: MessagingAPI.TextQuery) -> Swift.Bool
 }
+final public class BotMessageDispatcher {
+  final public var isInteractionInProcess: Swift.Bool
+  public init(typingDelay: Swift.Int = 1200, botDetails: @escaping () -> MessagingAPI.AgentDetails, onUpdate: @escaping (MessagingAPI.Update) -> Swift.Void, onDequeue: @escaping (MessagingAPI.MessagingItem) -> Swift.Void)
+  final public func append(_ messagingItems: [MessagingAPI.MessagingItem], onPostSend: (() -> Swift.Void)? = nil)
+  @objc deinit
+}
 @objc public protocol ZDKEngine {
 }
 public protocol Engine : MessagingAPI.ZDKEngine {
   var id: Swift.String { get }
   var transferOptionDescription: MessagingAPI.TransferOptionDescription { get }
+  @available(*, deprecated, message: "Use isConversationOngoing(_ completion: @escaping (Bool) -> Void) instead")
   func isConversationOngoing() -> Swift.Bool
+  func isConversationOngoing(_ completion: @escaping (Swift.Bool) -> Swift.Void)
   func start(messagingAPI: MessagingAPI.MessagingAPIProtocol)
   func stop()
   func onEvent(_ event: MessagingAPI.Event)
@@ -105,22 +114,6 @@ public struct Attachment : Swift.Hashable {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
-}
-public protocol Observable : AnyObject {
-  associatedtype Observable
-  var onUpdate: ([Foundation.UUID : (Self.Observable) -> Swift.Void]) { get set }
-  func addObserver<T>(_ observer: T, eagerObserver: Self.Observable?, onRemove: ((Foundation.UUID) -> Swift.Void)?, _ closure: @escaping (T?, Foundation.UUID, Self.Observable) -> Swift.Void) -> MessagingAPI.ObservationToken where T : AnyObject
-  func notifyObservers(_ observable: Self.Observable)
-}
-extension Observable {
-  public func addObserver<T>(_ observer: T, eagerObserver: Self.Observable? = nil, onRemove: ((Foundation.UUID) -> Swift.Void)? = nil, _ closure: @escaping (T?, Foundation.UUID, Self.Observable) -> Swift.Void) -> MessagingAPI.ObservationToken where T : AnyObject
-  public func notifyObservers(_ observable: Self.Observable)
-}
-@objc(ZDKObservationToken) final public class ObservationToken : ObjectiveC.NSObject {
-  @objc deinit
-  public init(id: Foundation.UUID, cancellationClosure: @escaping () -> Swift.Void)
-  @objc final public func cancel()
-  @objc override dynamic public init()
 }
 public struct TransferResponse : MessagingAPI.Response, Swift.Hashable {
   public let id: Swift.String
@@ -148,7 +141,10 @@ extension Identifier {
     get
   }
 }
-public struct TextResponse : MessagingAPI.Response, Swift.Hashable {
+public protocol TextItem {
+  var message: Swift.String { get }
+}
+public struct TextResponse : MessagingAPI.Response, MessagingAPI.TextItem, Swift.Hashable {
   public let id: Swift.String
   public let timestamp: Foundation.Date
   public let message: Swift.String
@@ -216,6 +212,22 @@ public struct EquatableMessagingItem {
 }
 extension EquatableMessagingItem : Swift.Equatable {
   public static func == (lhs: MessagingAPI.EquatableMessagingItem, rhs: MessagingAPI.EquatableMessagingItem) -> Swift.Bool
+}
+public protocol Observable : AnyObject {
+  associatedtype Observable
+  var onUpdate: ([Foundation.UUID : (Self.Observable) -> Swift.Void]) { get set }
+  func addObserver<T>(_ observer: T, eagerObserver: Self.Observable?, onRemove: ((Foundation.UUID) -> Swift.Void)?, _ closure: @escaping (T?, Foundation.UUID, Self.Observable) -> Swift.Void) -> MessagingAPI.ObservationToken where T : AnyObject
+  func notifyObservers(_ observable: Self.Observable)
+}
+extension Observable {
+  public func addObserver<T>(_ observer: T, eagerObserver: Self.Observable? = nil, onRemove: ((Foundation.UUID) -> Swift.Void)? = nil, _ closure: @escaping (T?, Foundation.UUID, Self.Observable) -> Swift.Void) -> MessagingAPI.ObservationToken where T : AnyObject
+  public func notifyObservers(_ observable: Self.Observable)
+}
+@objc(ZDKObservationToken) final public class ObservationToken : ObjectiveC.NSObject {
+  @objc deinit
+  public init(id: Foundation.UUID, cancellationClosure: @escaping () -> Swift.Void)
+  @objc final public func cancel()
+  @objc override dynamic public init()
 }
 public struct OptionsResponse : MessagingAPI.Response, Swift.Hashable {
   public let agentName: Swift.String

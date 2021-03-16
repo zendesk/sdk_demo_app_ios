@@ -15,8 +15,8 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKUploadResponse.h"
-#import "ZDKProvider.h"
+#import <SupportProvidersSDK/ZDKUploadResponse.h>
+#import <SupportProvidersSDK/ZDKProvider.h>
 
 
 /**

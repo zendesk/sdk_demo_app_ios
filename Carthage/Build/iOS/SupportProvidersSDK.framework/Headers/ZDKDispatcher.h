@@ -16,7 +16,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "ZDKDispatcherResponse.h"
+#import <SupportProvidersSDK/ZDKDispatcherResponse.h>
 
 /**
  *  API success block.

@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKDictionaryCreatable.h"
+#import <SupportProvidersSDK/ZDKDictionaryCreatable.h>
 
 
 /**

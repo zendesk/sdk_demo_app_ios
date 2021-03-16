@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AnswerBotSDK
 import AnswerBotProvidersSDK
 @_exported import AnswerBotSDK
@@ -26,7 +26,9 @@ public struct InteractionData : AnswerBotSDK.InteractionDataProtocol, Swift.Equa
   final public let id: Swift.String
   final public let transferOptionDescription: MessagingAPI.TransferOptionDescription
   final public var onUpdate: ([Foundation.UUID : (MessagingAPI.Update) -> Swift.Void])
+  @available(*, deprecated, message: "Use isConversationOngoing(_ completion: @escaping (Bool) -> Void) instead")
   final public func isConversationOngoing() -> Swift.Bool
+  @objc final public func isConversationOngoing(_ completion: @escaping (Swift.Bool) -> Swift.Void)
   final public func start(messagingAPI: MessagingAPI.MessagingAPIProtocol)
   final public func stop()
   final public func onEvent(_ event: MessagingAPI.Event)

@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKAttachment.h"
+#import <SupportProvidersSDK/ZDKAttachment.h>
 
 /**
  *  Model for an upload response.

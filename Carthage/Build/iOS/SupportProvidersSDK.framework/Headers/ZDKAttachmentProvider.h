@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "ZDKProvider.h"
+#import <SupportProvidersSDK/ZDKProvider.h>
 
 
 /**
