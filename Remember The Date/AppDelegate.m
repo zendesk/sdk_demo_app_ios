@@ -163,10 +163,10 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     NSString * requestID = userInfo[@"zendesk_sdk_request_id"];
     if (requestID != nil) {
         [self handleSupportPush:requestID];
-        completionHandler;
+        completionHandler(UIBackgroundFetchResultNewData);
     } else {
         [self handleChatPush:userInfo];
-        completionHandler;
+        completionHandler(UIBackgroundFetchResultNoData);
     }
     
 }
