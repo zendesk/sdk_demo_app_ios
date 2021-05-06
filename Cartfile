@@ -1,20 +1,6 @@
-# Core layer framework
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/ZendeskCoreSDK/ZendeskCoreSDK.json" == 2.5.0
-
-# Answer Bot SDK
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/AnswerBotSDK/AnswerBotSDK.json" == 2.1.2
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/AnswerBotProvidersSDK/AnswerBotProvidersSDK.json" == 2.1.2
-
-# Support SDK
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/SupportSDK/SupportSDK.json" == 5.2.0
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/SupportProvidersSDK/SupportProvidersSDK.json" == 5.2.0
-
-# Chat SDK
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/ChatSDK/ChatSDK.json" == 2.10.0
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/ChatProvidersSDK/ChatProvidersSDK.json" == 2.10.0
-
-# Shared Zendesk UI frameworks
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/CommonUISDK/CommonUISDK.json" == 6.1.0
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/MessagingSDK/MessagingSDK.json" == 3.8.1
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/MessagingAPI/MessagingAPI.json" == 3.8.1
-binary "https://zendesk.jfrog.io/zendesk/libs-releases-local/ios/zendesk/SDKConfigurations/SDKConfigurations.json" == 1.1.7
+# Answer Bot
+github "zendesk/answer_bot_sdk_ios" ~> 2.1.3
+# Chat
+github "zendesk/chat_sdk_ios" ~> 2.11.0
+# Support
+github "zendesk/support_sdk_ios" ~> 5.3.0
