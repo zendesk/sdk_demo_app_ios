@@ -19,7 +19,7 @@
 #import <SupportProvidersSDK/ZDKHelpCenterDeflection.h>
 #import <SupportProvidersSDK/ZDKProvider.h>
 
-@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel, ZDKHelpCenterArticle, ZDKZendesk;
+@class ZDKHelpCenterCategoryViewModel, ZDKHelpCenterSectionViewModel, ZDKHelpCenterOverviewContentModel, ZDKHelpCenterArticle, ZDKZendesk, ZDKListArticleQuery;
 
 
 /**
@@ -171,13 +171,23 @@ typedef void (^ZDKHelpCenterGenericCallback)(id response, NSError *error);
 - (void) getArticleSuggestions:(ZDKHelpCenterDeflection*)search withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
- *  Fetch a list of FlatArticle objects for a given Help Center instance.
+ *  Fetch a list of FlatArticle objects for a given Help Center instance. Supplies a hardcoded perPage of 100 and page of 1 to getFlatArticles:withCallback.
  *
  *  @since 1.4.0.1
  *
  *  @param callback The callback that is invoked when a request is either successful or has error.
  */
-- (void) getFlatArticlesWithCallback:(ZDKHelpCenterCallback)callback;
+- (void) getFlatArticlesWithCallback:(ZDKHelpCenterCallback)callback  __attribute__((deprecated("Use getFlatArticles:withCallback: instead.")));
+
+/**
+ *  Fetch number of FlatArticle objects based on the number of results and page provided in the ZDKListArticleQuery object.
+ *
+ *  @since 5.2.0
+ *
+ *  @param query The page and amount of results to be returned (up to 100)
+ *  @param callback The callback that is invoked when a request is either successful or has error.
+ */
+- (void) getFlatArticles:(ZDKListArticleQuery*)query withCallback:(ZDKHelpCenterCallback)callback;
 
 /**
  *  Fetches a section object for a particular sectionId.
