@@ -119,7 +119,7 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     // Initialise the chat SDK
     //
-    [ZDKChat initializeWithAccountKey:@"rIglGV5mw01V83MN2g9o4aS0hIKliSG5" queue:dispatch_get_main_queue()];
+    [ZDKChat initializeWithAccountKey:@"2qNzXIeOGKD0LbLOWgAclb72G3LLfOHK" queue:dispatch_get_main_queue()];
     
     //
     //  The rest of the Mobile SDK code can be found in ZenHelpViewController.m
