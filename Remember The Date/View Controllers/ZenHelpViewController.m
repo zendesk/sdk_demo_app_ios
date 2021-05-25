@@ -12,9 +12,9 @@
 #import <AnswerBotSDK/AnswerBotSDK-Swift.h>
 #import <MessagingAPI/MessagingAPI.h>
 #import <MessagingSDK/MessagingSDK.h>
+#import <ChatSDK/ChatSDK.h>
+#import <ChatProvidersSDK/ChatProvidersSDK.h>
 
-#import <ZDCChat/ZDCChat.h>
-#import <ZDCChatAPI/ZDCChatAPI.h>
 #import "ZenHelpViewController.h"
 #import "SaveTheDateTabBarController.h"
 
@@ -174,23 +174,33 @@
 
 ///  Show Chat component
 - (IBAction)showChat:(id)sender {
-
     // update the visitor info before starting the chat
     NSString *visitorEmail = [self userEmail];
 
     if (visitorEmail) {
-
-        [ZDCChat updateVisitor:^(ZDCVisitorInfo *visitor) {
-            visitor.name = [self userName];
-            visitor.email = [self userEmail];
-        }];
+        ZDKVisitorInfo *visitorInfo = [[ZDKVisitorInfo alloc] initWithName:[self userName]
+                                                                     email:[self userEmail]
+                                                               phoneNumber:@""];
+        [[[ZDKChat instance] profileProvider] setVisitorInfo:visitorInfo
+                                                  completion:^(ZDKVisitorInfo *visitor, NSError *error) { }];
+        ZDKChat.instance.configuration.visitorInfo = visitorInfo;
     }
+    ZDKChatConfiguration *config = [ZDKChatConfiguration new];
+    config.preChatFormConfiguration = [[ZDKChatFormConfiguration alloc] initWithName:ZDKFormFieldStatusOptional
+                                                                               email:ZDKFormFieldStatusOptional
+                                                                         phoneNumber:ZDKFormFieldStatusHidden
+                                                                          department:ZDKFormFieldStatusOptional];
+    ZDKMessagingConfiguration *messagingConfig = [ZDKMessagingConfiguration new];
+    messagingConfig.isMultilineResponseOptionsEnabled = YES;
+    messagingConfig.name = @"RTD2";
+    ZDKAnswerBotEngine *abEngine = [ZDKAnswerBotEngine engineAndReturnError:nil];
+    ZDKChatEngine *chatEngine = [ZDKChatEngine engineAndReturnError:nil];
+    NSArray<id <ZDKEngine>> *engines = @[(id <ZDKEngine>)abEngine, (id <ZDKEngine>)chatEngine];
+
+    UIViewController *viewController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[messagingConfig, config] error:nil];
 
     // present as new modal using global pre-chat config and whatever visitor info has been persisted
-    [ZDCChat startChat:^(ZDCConfig *config) {
-        config.preChatDataRequirements.department = ZDCPreChatDataOptional;
-        config.preChatDataRequirements.message = ZDCPreChatDataOptional;
-    }];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(NSString *) userEmail {
