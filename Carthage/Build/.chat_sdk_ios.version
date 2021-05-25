@@ -1,0 +1,28 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "2.11.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "ba493e31b72025d44351bd985b3735858501a2ed470c667bcaa23b0336d83f04",
+      "name" : "ChatSDK",
+      "container" : "ChatSDK.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "ca667e7de1cca156903e26f4bf9fd5a61b1756f0b10b7c619ad8db0c67cc9a41",
+      "name" : "ChatSDK",
+      "container" : "ChatSDK.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}

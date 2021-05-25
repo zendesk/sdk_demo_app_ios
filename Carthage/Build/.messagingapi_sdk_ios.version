@@ -1,0 +1,28 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "3.8.2",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "11874c1688dd59edb09203b5d642a0dd4cf05e71031b9fc40079dfb386f01eae",
+      "name" : "MessagingAPI",
+      "container" : "MessagingAPI.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "3588ff2a78c49fc5500e658c203f012af5753d1fa2902a2de63f6ef7b4b89193",
+      "name" : "MessagingAPI",
+      "container" : "MessagingAPI.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}

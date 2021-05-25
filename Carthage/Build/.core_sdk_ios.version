@@ -1,0 +1,28 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "2.5.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "64409673040116549908dcb3942375a828739fab155af619a9182bc76df501c5",
+      "name" : "ZendeskCoreSDK",
+      "container" : "ZendeskCoreSDK.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "02fa4c62693c56f8eb02ce43c0747cddcd2739c38f6b0857956f6bde0ae035be",
+      "name" : "ZendeskCoreSDK",
+      "container" : "ZendeskCoreSDK.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}
