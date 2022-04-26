@@ -1,6 +1,6 @@
 # Answer Bot
-github "zendesk/answer_bot_sdk_ios" ~> 2.1.4
+github "zendesk/answer_bot_sdk_ios" ~> 2.2.0
 # Chat
-github "zendesk/chat_sdk_ios" ~> 2.11.2
+github "zendesk/chat_sdk_ios" ~> 2.12.0
 # Support
-github "zendesk/support_sdk_ios" ~> 5.4.0
+github "zendesk/support_sdk_ios" ~> 5.5.0
