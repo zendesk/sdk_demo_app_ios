@@ -98,17 +98,17 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     //
     
 #ifdef DEBUG
-    [ZDKCoreLogger setEnabled:YES];
+    [ZDKClassicCoreLogger setEnabled:YES];
 #else
-    [ZDKCoreLogger setEnabled:NO];
+    [ZDKClassicCoreLogger setEnabled:NO];
 #endif
 
     //
     // Initialize the Zendesk SDK
     //
-    [ZDKZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
-    [ZDKSupport initializeWithZendesk:[ZDKZendesk instance]];
-    [ZDKAnswerBot initializeWithZendesk:[ZDKZendesk instance] support:[ZDKSupport instance]];
+    [ZDKClassicZendesk initializeWithAppId:@"e5dd7520b178e21212f5cc2751a28f4b5a7dc76698dc79bd" clientId:@"client_for_rtd_jwt_endpoint" zendeskUrl:@"https://rememberthedate.zendesk.com"];
+    [ZDKSupport initializeWithZendesk:[ZDKClassicZendesk instance]];
+    [ZDKAnswerBot initializeWithZendesk:[ZDKClassicZendesk instance] support:[ZDKSupport instance]];
 
     
     //
@@ -136,10 +136,10 @@ NSString * const APNS_ID_KEY = @"APNS_ID_KEY";
     NSString *identifier = [deviceToken deviceIdentifier];
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:APNS_ID_KEY];
     
-    if ([[ZDKZendesk instance] objCIdentity] != nil ) {
+    if ([[ZDKClassicZendesk instance] objCIdentity] != nil ) {
         
         NSString * locale = [[NSLocale preferredLanguages] firstObject];
-        [[[ZDKPushProvider alloc] initWithZendesk:[ZDKZendesk instance]] registerWithDeviceIdentifier:identifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
+        [[[ZDKClassicPushProvider alloc] initWithZendesk:[ZDKClassicZendesk instance]] registerWithDeviceIdentifier:identifier locale:locale completion:^(NSString * _Nullable registrationResponse, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"Couldn't register device: %@. Error: %@ in %@", identifier, error, self.class);
             } else if (registrationResponse) {

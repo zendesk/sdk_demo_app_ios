@@ -34,7 +34,7 @@
         
         if (email.length > 0) {
             id<ZDKObjCIdentity> userIdentity = [[ZDKObjCJwt alloc] initWithToken:email];
-            [[ZDKZendesk instance] setIdentity:userIdentity];
+            [[ZDKClassicZendesk instance] setIdentity:userIdentity];
 
             return YES;
         }
@@ -137,7 +137,7 @@
         ZDKAnswerBotEngine *abEngine = [ZDKAnswerBotEngine engineAndReturnError:nil];
         ZDKSupportEngine *supportEngine = [ZDKSupportEngine engineAndReturnError:nil];
         NSArray<id <ZDKEngine>> *engines = @[(id <ZDKEngine>)abEngine, (id <ZDKEngine>)supportEngine];
-        UIViewController *requestController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[config] error:nil];
+        UIViewController *requestController = [[ZDKClassicMessaging instance] buildUIWithEngines:engines configs:@[config] error:nil];
     
         [self.navigationController pushViewController:requestController animated:YES];
         
@@ -190,14 +190,14 @@
                                                                                email:ZDKFormFieldStatusOptional
                                                                          phoneNumber:ZDKFormFieldStatusHidden
                                                                           department:ZDKFormFieldStatusOptional];
-    ZDKMessagingConfiguration *messagingConfig = [ZDKMessagingConfiguration new];
+    ZDKClassicMessagingConfiguration *messagingConfig = [ZDKClassicMessagingConfiguration new];
     messagingConfig.isMultilineResponseOptionsEnabled = YES;
     messagingConfig.name = @"RTD2";
     ZDKAnswerBotEngine *abEngine = [ZDKAnswerBotEngine engineAndReturnError:nil];
     ZDKChatEngine *chatEngine = [ZDKChatEngine engineAndReturnError:nil];
     NSArray<id <ZDKEngine>> *engines = @[(id <ZDKEngine>)abEngine, (id <ZDKEngine>)chatEngine];
 
-    UIViewController *viewController = [[ZDKMessaging instance] buildUIWithEngines:engines configs:@[messagingConfig, config] error:nil];
+    UIViewController *viewController = [[ZDKClassicMessaging instance] buildUIWithEngines:engines configs:@[messagingConfig, config] error:nil];
 
     // present as new modal using global pre-chat config and whatever visitor info has been persisted
     [self.navigationController pushViewController:viewController animated:YES];
